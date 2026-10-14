@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80" role="img" aria-label="Sedex Active Member">
+  <title>Sedex Active Member</title>
+  <!-- Shield (pink border, black fill) fitted to 80×80 -->
+  <path d="M 40,2 L 75,15 L 75,55 Q 75,76 40,78 Q 5,76 5,55 L 5,15 Z"
+    fill="black" stroke="#e91e8c" stroke-width="3" stroke-linejoin="round"/>
+  <!-- Pink horizontal accent band -->
+  <rect x="5" y="33" width="70" height="16" fill="#e91e8c"/>
+  <!-- Sedex wordmark -->
+  <text x="40" y="27" text-anchor="middle"
+    font-family="'Arial Black',Arial,sans-serif" font-size="20" font-weight="900" fill="white"
+    letter-spacing="-0.5">Sedex</text>
+  <!-- ACTIVE MEMBER in the pink band -->
+  <text x="40" y="45" text-anchor="middle"
+    font-family="'Arial Black',Arial,sans-serif" font-size="8.5" font-weight="900" fill="white">ACTIVE MEMBER</text>
+  <!-- Pink checkmark near the bottom of shield -->
+  <polyline points="32,63 39,70 51,56"
+    fill="none" stroke="#e91e8c" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

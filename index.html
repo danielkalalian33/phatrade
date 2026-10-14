@@ -1,0 +1,863 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#2D4A35" />
+
+  <title>PHATRADE | Phatrade Essential Oils | Egyptian Natural Aromatic Ingredients</title>
+
+  <!-- Meta description: 50 — 160 chars (Req 12.7) -->
+  <meta name="description" content="PHATRADE: Where Nature Meets Global Trust. Egyptian manufacturer of essential oils, concretes, absolutes, and aroma chemicals since 1975. GFSI, HACCP, FDA, and Kosher certified." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="PHATRADE" />
+  <meta property="og:title" content="PHATRADE | Egyptian Natural Aromatic Ingredients Since 1975" />
+  <meta property="og:description" content="PHATRADE: Where Nature Meets Global Trust. Egyptian manufacturer of essential oils, concretes, absolutes, and aroma chemicals since 1975. GFSI, HACCP, FDA, and Kosher certified." />
+  <meta property="og:image" content="assets/images/logo.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="PHATRADE | Egyptian Natural Aromatic Ingredients" />
+  <meta name="twitter:description" content="Egyptian manufacturer of essential oils, concretes, absolutes, and aroma chemicals since 1975." />
+
+  <link rel="canonical" href="https://www.phatrade-eg.com/" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Favicon (Req Task 1) -->
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+
+  <!-- Shared stylesheets (Req 2.1 — 2.4) -->
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+
+  <!-- Page-specific stylesheet -->
+  <link rel="stylesheet" href="assets/css/pages/home.css" />
+
+  <!--
+    Critical inline CSS  —  prevents layout shift (CLS) and flash of unstyled
+    navbar / hero before external stylesheets are parsed (Req 12.3, 17.2).
+
+    Covers:
+      - Navbar placeholder dimensions matching .navbar in components.css
+      - <main> padding-top offset so content clears the fixed navbar
+      - Hero minimum height, positioning, display, and background-color fallback
+
+    Uses hard-coded values where CSS custom properties may not yet be
+    resolved (i.e. before main.css is fetched and applied).
+  -->
+  <style>
+    /* Reserve navbar height so <main> doesn't jump when components.js injects */
+    #navbar-root {
+      display: block;
+      height: 100px; /* --navbar-height */
+      background-color: #2D4A35; /* matches .navbar background */
+    }
+
+    /* Offset main content below fixed navbar */
+    main {
+      padding-top: 100px; /* --navbar-height */
+    }
+
+    /* Make body bg match hero so padding-top gap is invisible */
+    body { background-color: #1e3326; }
+
+    /* Hero: establish stacking context and dark fallback background */
+    .hero {
+      position: relative;
+      min-height: calc(100vh - 72px);
+      background-color: #1e3326;
+      overflow: hidden;
+    }
+  </style>
+
+  <!-- Structured Data: Organization schema for Google rich results -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "PHATRADE",
+    "alternateName": "Phatrade Essential Oils",
+    "url": "https://www.phatrade-eg.com",
+    "logo": "https://www.phatrade-eg.com/assets/images/logo.png",
+    "foundingDate": "1975",
+    "description": "Egyptian manufacturer and exporter of essential oils, concretes, absolutes, and aroma chemicals since 1975. GFSI, HACCP, FDA, and Kosher certified.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "3 Street 194, Western Extension, Industrial Zone",
+      "addressLocality": "Obour City",
+      "postalCode": "11181",
+      "addressRegion": "Cairo",
+      "addressCountry": "EG"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+2-02-4481-0158",
+      "contactType": "sales",
+      "email": "info@phatrade-eg.com",
+      "availableLanguage": ["English", "Arabic"]
+    },
+    "sameAs": [],
+    "knowsAbout": [
+      "Essential Oils",
+      "Concretes",
+      "Absolutes",
+      "Aroma Chemicals",
+      "Natural Aromatic Ingredients",
+      "Neroli Oil",
+      "Geranium Oil",
+      "Jasmine Concrete"
+    ],
+    "areaServed": "Worldwide",
+    "hasCredential": [
+      "ISO 22000 Food Safety Management Certification",
+      "ISO 14001 Environmental Management Certification",
+      "ISO 45001 Health & Safety Management Certification",
+      "HALAL Certification",
+      "FDA Registration",
+      "Kosher Certification",
+      "SEDEX Registration"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "PHATRADE",
+    "url": "https://www.phatrade-eg.com",
+    "telephone": "+2-02-4481-0158",
+    "email": "info@phatrade-eg.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "3 Street 194, Western Extension, Industrial Zone",
+      "addressLocality": "Obour City",
+      "postalCode": "11181",
+      "addressRegion": "Cairo",
+      "addressCountry": "EG"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 30.2672,
+      "longitude": 31.5822
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
+      "opens": "09:00",
+      "closes": "17:00"
+    },
+    "currenciesAccepted": "USD, EUR, EGP",
+    "priceRange": "$$"
+  }
+  </script>
+</head>
+
+<body>
+
+  <!-- Navbar mount point  —  components.js injects the full navbar here -->
+  <div id="navbar-root"></div>
+
+  <!-- =====================================================================
+       Main content
+       id="main-content" is the target of the skip link in components.js
+       ===================================================================== -->
+  <main id="main-content">
+
+    <!-- ================================================================
+         HERO  —  Split layout: large text left, decorative right
+         ================================================================ -->
+    <section class="hero" id="hero" aria-labelledby="hero-heading">
+      <div class="hero__inner">
+        <div class="hero__text">
+          <span class="hero__eyebrow reveal">Where Nature Meets Global Trust</span>
+          <h1 id="hero-heading" class="hero__title reveal">
+            Egypt's Finest<br><em class="hero__title-accent">Aromatic Ingredients</em>
+          </h1>
+          <p class="hero__tagline reveal">
+            Premium essential oils, concretes, and absolutes,<br>grown and crafted in Egypt.
+          </p>
+          <p class="hero__slogan reveal reveal--delay-1">
+            <span class="hero__slogan-line1">Where Nature Meets</span>
+            <span class="hero__slogan-line2">Global Trust</span>
+          </p>
+          <div class="hero__ctas reveal">
+            <a href="products.html" class="btn btn--primary btn--lg">Explore Products</a>
+            <a href="contact.html#form-sample" class="btn btn--ghost btn--lg">Request a Sample</a>
+          </div>
+        </div>
+        <!-- Botanical illustration — fills the empty center space -->
+        <div class="hero__visual" aria-hidden="true">
+          <img
+            src="assets/images/hero-botanical.svg"
+            alt=""
+            width="360"
+            height="480"
+            class="hero__botanical"
+            aria-hidden="true"
+          />
+        </div>
+        <div class="hero__badge-col" aria-hidden="true">
+          <div class="hero__badge">
+            <span class="hero__badge-num">50</span>
+            <span class="hero__badge-label">Years of<br>Excellence</span>
+          </div>
+          <div class="hero__badge hero__badge--accent">
+            <span class="hero__badge-num">5</span>
+            <span class="hero__badge-label">Continents<br>Served</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+        <!-- ================================================================
+         MARQUEE TICKER — Infinite scrolling strip
+         ================================================================ -->
+    <div class="marquee-section" aria-hidden="true">
+      <div class="marquee-track">
+        <div class="marquee-inner">
+
+          <!-- Set 1 -->
+          <span class="marquee-item">
+            <svg class="marquee-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2C12 2 5 10.4 5 14.5a7 7 0 0 0 14 0C19 10.4 12 2 12 2z"/></svg>
+            Essential Oils
+          </span>
+          <span class="marquee-sep">✦</span>
+
+          <span class="marquee-item">
+            <svg class="marquee-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M12 2a4 4 0 0 1 0 8 4 4 0 0 1 0-8z" opacity="0.6"/><path d="M12 14a4 4 0 0 1 0 8 4 4 0 0 1 0-8z" opacity="0.6"/><path d="M2 12a4 4 0 0 1 8 0 4 4 0 0 1-8 0z" opacity="0.6"/><path d="M14 12a4 4 0 0 1 8 0 4 4 0 0 1-8 0z" opacity="0.6"/></svg>
+            Concretes
+          </span>
+          <span class="marquee-sep">✦</span>
+
+          <span class="marquee-item">
+            <svg class="marquee-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/></svg>
+            Absolutes
+          </span>
+          <span class="marquee-sep">✦</span>
+
+          <span class="marquee-item">
+            <svg class="marquee-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 3h6M9 3v6l-4 9a1 1 0 0 0 .9 1.5h12.2a1 1 0 0 0 .9-1.5L15 9V3"/><line x1="6.5" y1="14" x2="17.5" y2="14"/></svg>
+            Aroma Chemicals
+          </span>
+          <span class="marquee-sep">✦</span>
+
+          <span class="marquee-item">
+            <svg class="marquee-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2L3 7v5c0 5 3.9 9.7 9 11 5.1-1.3 9-6 9-11V7l-9-5z"/><polyline points="9 12 11 14 15 10"/></svg>
+            ISO 22000 Certified
+          </span>
+          <span class="marquee-sep">✦</span>
+
+          <span class="marquee-item">
+            <svg class="marquee-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2L3 7v5c0 5 3.9 9.7 9 11 5.1-1.3 9-6 9-11V7l-9-5z"/><polyline points="9 12 11 14 15 10"/></svg>
+            HALAL Certified
+          </span>
+          <span class="marquee-sep">✦</span>
+
+          <span class="marquee-item">
+            <svg class="marquee-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            FDA Registered
+          </span>
+          <span class="marquee-sep">✦</span>
+
+          <span class="marquee-item">
+            <svg class="marquee-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2L3 7v5c0 5 3.9 9.7 9 11 5.1-1.3 9-6 9-11V7l-9-5z"/><polyline points="9 12 11 14 15 10"/></svg>
+            Kosher Certified
+          </span>
+          <span class="marquee-sep">✦</span>
+
+          <span class="marquee-item">
+            <svg class="marquee-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2L3 7v5c0 5 3.9 9.7 9 11 5.1-1.3 9-6 9-11V7l-9-5z"/><polyline points="9 12 11 14 15 10"/></svg>
+            SEDEX Registered
+          </span>
+          <span class="marquee-sep">✦</span>
+
+          <span class="marquee-item">
+            <svg class="marquee-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            Egyptian Origin
+          </span>
+          <span class="marquee-sep">✦</span>
+
+          <span class="marquee-item">
+            <svg class="marquee-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            Global Export
+          </span>
+          <span class="marquee-sep">✦</span>
+
+          <!-- Set 2 — duplicate for seamless loop -->
+          <span class="marquee-item">
+            <svg class="marquee-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2C12 2 5 10.4 5 14.5a7 7 0 0 0 14 0C19 10.4 12 2 12 2z"/></svg>
+            Essential Oils
+          </span>
+          <span class="marquee-sep">✦</span>
+
+          <span class="marquee-item">
+            <svg class="marquee-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M12 2a4 4 0 0 1 0 8 4 4 0 0 1 0-8z" opacity="0.6"/><path d="M12 14a4 4 0 0 1 0 8 4 4 0 0 1 0-8z" opacity="0.6"/><path d="M2 12a4 4 0 0 1 8 0 4 4 0 0 1-8 0z" opacity="0.6"/><path d="M14 12a4 4 0 0 1 8 0 4 4 0 0 1-8 0z" opacity="0.6"/></svg>
+            Concretes
+          </span>
+          <span class="marquee-sep">✦</span>
+
+          <span class="marquee-item">
+            <svg class="marquee-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/></svg>
+            Absolutes
+          </span>
+          <span class="marquee-sep">✦</span>
+
+          <span class="marquee-item">
+            <svg class="marquee-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 3h6M9 3v6l-4 9a1 1 0 0 0 .9 1.5h12.2a1 1 0 0 0 .9-1.5L15 9V3"/><line x1="6.5" y1="14" x2="17.5" y2="14"/></svg>
+            Aroma Chemicals
+          </span>
+          <span class="marquee-sep">✦</span>
+
+          <span class="marquee-item">
+            <svg class="marquee-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2L3 7v5c0 5 3.9 9.7 9 11 5.1-1.3 9-6 9-11V7l-9-5z"/><polyline points="9 12 11 14 15 10"/></svg>
+            ISO 22000 Certified
+          </span>
+          <span class="marquee-sep">✦</span>
+
+          <span class="marquee-item">
+            <svg class="marquee-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2L3 7v5c0 5 3.9 9.7 9 11 5.1-1.3 9-6 9-11V7l-9-5z"/><polyline points="9 12 11 14 15 10"/></svg>
+            HALAL Certified
+          </span>
+          <span class="marquee-sep">✦</span>
+
+          <span class="marquee-item">
+            <svg class="marquee-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            FDA Registered
+          </span>
+          <span class="marquee-sep">✦</span>
+
+          <span class="marquee-item">
+            <svg class="marquee-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2L3 7v5c0 5 3.9 9.7 9 11 5.1-1.3 9-6 9-11V7l-9-5z"/><polyline points="9 12 11 14 15 10"/></svg>
+            Kosher Certified
+          </span>
+          <span class="marquee-sep">✦</span>
+
+          <span class="marquee-item">
+            <svg class="marquee-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2L3 7v5c0 5 3.9 9.7 9 11 5.1-1.3 9-6 9-11V7l-9-5z"/><polyline points="9 12 11 14 15 10"/></svg>
+            SEDEX Registered
+          </span>
+          <span class="marquee-sep">✦</span>
+
+          <span class="marquee-item">
+            <svg class="marquee-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            Egyptian Origin
+          </span>
+          <span class="marquee-sep">✦</span>
+
+          <span class="marquee-item">
+            <svg class="marquee-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            Global Export
+          </span>
+          <span class="marquee-sep">✦</span>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ================================================================
+         ABOUT INTRO  —  Split: dark left text / light right image area
+         ================================================================ -->
+    <section class="about-intro section" id="about-intro" aria-labelledby="about-intro-heading">
+      <div class="container">
+        <div class="about-intro__inner">
+          <div class="about-intro__text reveal">
+            <span class="section-heading__eyebrow">Who We Are</span>
+            <h2 id="about-intro-heading">Egypt's Leading Aromatic Ingredient Manufacturer</h2>
+            <p>
+              Founded in 1975, PHATRADE has grown from a spice and herb trading company into one
+              of Egypt's most trusted producers of essential oils, concretes, and absolutes.
+              Every ingredient we supply is cultivated on our own farm, extracted at our Sadat City
+              facility, and GC-verified at our Obour City laboratory before it reaches you.
+            </p>
+            <p class="about-intro__slogan">Where Nature Meets Global Trust</p>
+            <a href="about.html" class="btn btn--primary" style="align-self:flex-start;margin-top:var(--space-4)">Our Story</a>
+          </div>
+          <div class="about-intro__stats reveal reveal--delay-2">
+            <div class="stat-counter" data-target="50">
+              <div class="stat-counter__value-row">
+                <span class="stat-counter__num" aria-live="polite">0</span>
+                <span class="stat-counter__suffix">+</span>
+              </div>
+              <span class="stat-counter__label">Years of Manufacturing Experience</span>
+            </div>
+            <div class="stat-counter" data-target="26">
+              <div class="stat-counter__value-row">
+                <span class="stat-counter__num" aria-live="polite">0</span>
+                <span class="stat-counter__suffix"></span>
+              </div>
+              <span class="stat-counter__label">Product Lines</span>
+            </div>
+            <div class="stat-counter" data-target="5">
+              <div class="stat-counter__value-row">
+                <span class="stat-counter__num" aria-live="polite">0</span>
+                <span class="stat-counter__suffix"></span>
+              </div>
+              <span class="stat-counter__label">Export Continents</span>
+            </div>
+            <div class="stat-counter" data-target="4">
+              <div class="stat-counter__value-row">
+                <span class="stat-counter__num" aria-live="polite">0</span>
+                <span class="stat-counter__suffix"></span>
+              </div>
+              <span class="stat-counter__label">International Certifications</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         FACILITY TEASER  —  Three-photo strip
+         ================================================================ -->
+    <div class="facility-teaser" aria-hidden="true">
+      <div class="facility-teaser__photo">
+        <img
+          src="assets/images/facilities/facility-distillation-hall-panoramic.jpg"
+          alt=""
+          loading="lazy"
+          width="900"
+          height="320"
+        />
+      </div>
+      <div class="facility-teaser__photo">
+        <img
+          src="assets/images/facilities/facility-flower-loading.jpg"
+          alt=""
+          loading="lazy"
+          width="450"
+          height="320"
+        />
+      </div>
+      <div class="facility-teaser__photo">
+        <img
+          src="assets/images/facilities/facility-flowers-raw-material.jpg"
+          alt=""
+          loading="lazy"
+          width="450"
+          height="320"
+        />
+      </div>
+    </div>
+
+    <!-- ================================================================
+         PRODUCT CATEGORIES  —  Dark background with large cards
+         ================================================================ -->
+    <section class="product-showcase section" id="product-preview" aria-labelledby="product-showcase-heading">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="section-heading__eyebrow">What We Make</span>
+          <h2 id="product-showcase-heading">Our Product Categories</h2>
+          <p class="section-heading__subtitle">From single-origin Egyptian essential oils to rare concretes and absolutes.</p>
+        </div>
+        <div class="product-showcase__grid">
+          <a href="products.html?category=Essential%20Oils" class="showcase-card reveal" aria-label="Browse Essential Oils">
+            <div class="showcase-card__number" aria-hidden="true">01</div>
+            <div class="showcase-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 2C12 2 5 10.4 5 14.5a7 7 0 0 0 14 0C19 10.4 12 2 12 2z"/></svg>
+            </div>
+            <h3 class="showcase-card__name">Essential Oils</h3>
+            <p class="showcase-card__desc">15 steam-distilled and cold-pressed oils from Egyptian farms.</p>
+            <span class="showcase-card__arrow" aria-hidden="true">→</span>
+          </a>
+          <a href="products.html?category=Concretes" class="showcase-card reveal reveal--delay-1" aria-label="Browse Concretes">
+            <div class="showcase-card__number" aria-hidden="true">02</div>
+            <div class="showcase-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M12 2a4 4 0 0 1 0 8 4 4 0 0 1 0-8z" opacity="0.5"/><path d="M12 14a4 4 0 0 1 0 8 4 4 0 0 1 0-8z" opacity="0.5"/><path d="M2 12a4 4 0 0 1 8 0 4 4 0 0 1-8 0z" opacity="0.5"/><path d="M14 12a4 4 0 0 1 8 0 4 4 0 0 1-8 0z" opacity="0.5"/></svg>
+            </div>
+            <h3 class="showcase-card__name">Concretes</h3>
+            <p class="showcase-card__desc">9 solvent-extracted concretes retaining full botanical complexity.</p>
+            <span class="showcase-card__arrow" aria-hidden="true">→</span>
+          </a>
+          <a href="products.html?category=Absolutes" class="showcase-card reveal reveal--delay-2" aria-label="Browse Absolutes">
+            <div class="showcase-card__number" aria-hidden="true">03</div>
+            <div class="showcase-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/></svg>
+            </div>
+            <h3 class="showcase-card__name">Absolutes</h3>
+            <p class="showcase-card__desc">Wax-free, highly concentrated floral extracts for fine fragrance.</p>
+            <span class="showcase-card__arrow" aria-hidden="true">→</span>
+          </a>
+          <a href="products.html?category=Aroma%20Chemicals" class="showcase-card reveal reveal--delay-3" aria-label="Browse Aroma Chemicals">
+            <div class="showcase-card__number" aria-hidden="true">04</div>
+            <div class="showcase-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M9 3h6M9 3v6l-4 9a1 1 0 0 0 .9 1.5h12.2a1 1 0 0 0 .9-1.5L15 9V3"/><line x1="6.5" y1="14" x2="17.5" y2="14"/></svg>
+            </div>
+            <h3 class="showcase-card__name">Aroma Chemicals</h3>
+            <p class="showcase-card__desc">Naturally derived isolates for precision perfumery and flavors.</p>
+            <span class="showcase-card__arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         WHY PHATRADE  —  Icon feature grid on light background
+         ================================================================ -->
+    <section class="features section" id="selling-points" aria-labelledby="features-heading">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="section-heading__eyebrow">Our Strengths</span>
+          <h2 id="features-heading">Why PHATRADE</h2>
+        </div>
+        <div class="features__grid">
+          <div class="feature-item reveal">
+            <div class="feature-item__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M12 2C6.5 2 4 8 4 12a8 8 0 0 0 16 0C20 8 17.5 2 12 2z"/><path d="M12 2v20"/></svg>
+            </div>
+            <div>
+              <h3 class="feature-item__title">Pure Natural Extracts</h3>
+              <p class="feature-item__text">Zero synthetic additives. Every ingredient GC-verified for purity and authenticity.</p>
+            </div>
+          </div>
+          <div class="feature-item reveal reveal--delay-1">
+            <div class="feature-item__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M12 2L3 7v5c0 5 3.9 9.7 9 11 5.1-1.3 9-6 9-11V7l-9-5z"/><polyline points="9 12 11 14 15 10"/></svg>
+            </div>
+            <div>
+              <h3 class="feature-item__title">International Certifications</h3>
+              <p class="feature-item__text">GFSI, HACCP, FDA, and Kosher certified, opening doors to the world's most regulated markets.</p>
+            </div>
+          </div>
+          <div class="feature-item reveal reveal--delay-2">
+            <div class="feature-item__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M9 3h6v7l3.5 6a2 2 0 0 1-1.7 3H7.2a2 2 0 0 1-1.7-3L9 10V3z"/><line x1="6" y1="14" x2="18" y2="14"/></svg>
+            </div>
+            <div>
+              <h3 class="feature-item__title">In-House GC Laboratory</h3>
+              <p class="feature-item__text">Three dedicated GC units at Obour City for rigorous batch-by-batch quality analysis.</p>
+            </div>
+          </div>
+          <div class="feature-item reveal reveal--delay-3">
+            <div class="feature-item__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </div>
+            <div>
+              <h3 class="feature-item__title">Full Batch Traceability</h3>
+              <p class="feature-item__text">Every shipment traced back to the exact source harvest, from farm to formulation.</p>
+            </div>
+          </div>
+          <div class="feature-item reveal reveal--delay-1">
+            <div class="feature-item__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M12 20V10"/><path d="M18 6s-1 8-6 10C7 14 6 6 6 6s6-4 12 0z"/></svg>
+            </div>
+            <div>
+              <h3 class="feature-item__title">Own Farm in Egypt</h3>
+              <p class="feature-item__text">Bitter orange, geranium, basil, and violet cultivated directly at our Sadat City farm.</p>
+            </div>
+          </div>
+          <div class="feature-item reveal reveal--delay-2">
+            <div class="feature-item__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <div>
+              <h3 class="feature-item__title">Global Export Reach</h3>
+              <p class="feature-item__text">Supplying fragrance, flavor, and cosmetic manufacturers across five continents.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         CERTIFICATIONS  —  Dark band
+         ================================================================ -->
+    <section class="certifications section--sm" id="certifications" aria-labelledby="certifications-heading">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="section-heading__eyebrow">Compliance &amp; Standards</span>
+          <h2 id="certifications-heading">Quality Certifications</h2>
+          <p class="section-heading__subtitle">Audited, registered, and certified by internationally recognised bodies.</p>
+        </div>
+        <ul class="certifications-strip" role="list" aria-label="Quality certifications list">
+          <li class="cert-badge reveal">
+            <img src="assets/images/certifications/fssc22000.jpg" alt="FSSC 22000 Food Safety Certification" width="90" height="90" loading="lazy" class="cert-badge__logo"/>
+          </li>
+          <li class="cert-badge reveal reveal--delay-1">
+            <img src="assets/images/certifications/iso22000.png" alt="ISO 22000 Food Safety certified — ACCENT" width="90" height="90" loading="lazy" class="cert-badge__logo"/>
+          </li>
+          <li class="cert-badge reveal reveal--delay-2">
+            <img src="assets/images/certifications/iso14001.png" alt="ISO 14001 Environmental Management certified — ACCENT" width="90" height="90" loading="lazy" class="cert-badge__logo"/>
+          </li>
+          <li class="cert-badge reveal reveal--delay-3">
+            <img src="assets/images/certifications/iso45001.png" alt="ISO 45001 Health and Safety certified — ACCENT" width="90" height="90" loading="lazy" class="cert-badge__logo"/>
+          </li>
+          <li class="cert-badge reveal">
+            <img src="assets/images/certifications/halal.png" alt="HALAL IFNAS certified" width="90" height="90" loading="lazy" class="cert-badge__logo"/>
+          </li>
+          <li class="cert-badge reveal reveal--delay-1">
+            <img src="assets/images/certifications/fda.svg" alt="FDA Approved Certified" width="90" height="90" loading="lazy" class="cert-badge__logo"/>
+          </li>
+          <li class="cert-badge reveal reveal--delay-2">
+            <img src="assets/images/certifications/kosher.jpg" alt="Orthodox Union Kosher Certified" width="90" height="90" loading="lazy" class="cert-badge__logo"/>
+          </li>
+          <li class="cert-badge reveal reveal--delay-3">
+            <img src="assets/images/certifications/sedex.svg" alt="Sedex Active Member" width="90" height="90" loading="lazy" class="cert-badge__logo"/>
+          </li>
+          <li class="cert-badge reveal">
+            <img src="assets/images/certifications/ecovadis.svg" alt="EcoVadis Committed Sustainability Rating JUL 2026" width="90" height="90" loading="lazy" class="cert-badge__logo"/>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         GLOBAL REACH  —  Two-column split
+         ================================================================ -->
+    <section class="location-reach section" id="location-reach" aria-labelledby="location-reach-heading">
+      <div class="container">
+        <div class="location-reach__inner">
+          <div class="location-reach__text reveal">
+            <span class="section-heading__eyebrow">Where We Export</span>
+            <h2 id="location-reach-heading">Egyptian Origin,<br>Global Reach</h2>
+            <div class="location-reach__origin">
+              <span class="location-reach__origin-flag" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 24" width="36" height="24" style="border-radius:3px;display:inline-block;vertical-align:middle;"><rect width="36" height="8" y="0" fill="#CE1126"/><rect width="36" height="8" y="8" fill="#FFFFFF"/><rect width="36" height="8" y="16" fill="#000000"/><g transform="translate(18,12)"><ellipse cx="0" cy="0" rx="3" ry="4" fill="none" stroke="#C09300" stroke-width="0.8"/><line x1="0" y1="-4" x2="0" y2="4" stroke="#C09300" stroke-width="0.6"/><line x1="-3" y1="0" x2="3" y2="0" stroke="#C09300" stroke-width="0.5"/></g></svg></span>
+              <span>Country of Origin: <strong>Egypt</strong></span>
+            </div>
+            <p class="location-reach__description">
+              PHATRADE has been cultivating and processing Egypt's finest aromatic crops since 1975.
+              Our production facilities in Obour City and Sadat City supply natural ingredients to
+              buyers across five continents.
+            </p>
+            <p class="location-reach__export-label">Markets Served</p>
+            <ul class="location-reach__regions" aria-label="Export regions">
+              <li class="region-tag">Europe</li>
+              <li class="region-tag">Middle East</li>
+              <li class="region-tag">North America</li>
+              <li class="region-tag">Asia-Pacific</li>
+              <li class="region-tag">Africa</li>
+            </ul>
+          </div>
+          <div class="location-reach__visual reveal reveal--delay-2" aria-hidden="true">
+            <svg viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;max-width:600px;border-radius:12px;box-shadow:0 8px 32px rgba(45,74,53,0.18);" aria-hidden="true">
+              <defs>
+                <radialGradient id="mapBg" cx="50%" cy="45%" r="65%">
+                  <stop offset="0%" stop-color="#3D6347"/>
+                  <stop offset="100%" stop-color="#2D4A35"/>
+                </radialGradient>
+                <filter id="landShadow" x="-5%" y="-5%" width="110%" height="110%">
+                  <feDropShadow dx="1" dy="2" stdDeviation="3" flood-color="rgba(0,0,0,0.2)"/>
+                </filter>
+              </defs>
+
+              <!-- Ocean background -->
+              <rect width="1000" height="500" fill="url(#mapBg)"/>
+
+              <!-- Grid lines (latitude/longitude subtle) -->
+              <g stroke="rgba(201,168,76,0.15)" stroke-width="0.5" fill="none">
+                <line x1="0" y1="100" x2="1000" y2="100"/>
+                <line x1="0" y1="200" x2="1000" y2="200"/>
+                <line x1="0" y1="300" x2="1000" y2="300"/>
+                <line x1="0" y1="400" x2="1000" y2="400"/>
+                <line x1="200" y1="0" x2="200" y2="500"/>
+                <line x1="400" y1="0" x2="400" y2="500"/>
+                <line x1="600" y1="0" x2="600" y2="500"/>
+                <line x1="800" y1="0" x2="800" y2="500"/>
+              </g>
+
+              <!-- ═══ CONTINENTS (Natural Earth simplified) ═══ -->
+
+              <!-- North America -->
+              <path filter="url(#landShadow)"
+                fill="#F0EDE4" stroke="#8B9E5A" stroke-width="0.8"
+                d="M 68 58 L 82 52 L 102 48 L 128 50 L 148 58 L 162 70 L 170 84 L 168 98
+                   L 175 108 L 178 122 L 172 138 L 162 150 L 150 162 L 138 172 L 122 178
+                   L 108 180 L 98 188 L 92 200 L 88 215 L 80 225 L 72 220 L 66 208 L 62 192
+                   L 58 175 L 55 158 L 52 140 L 50 120 L 52 100 L 56 82 L 62 68 Z"/>
+
+              <!-- Greenland -->
+              <path fill="#F0EDE4" stroke="#8B9E5A" stroke-width="0.6"
+                d="M 168 22 L 185 18 L 198 22 L 202 35 L 198 48 L 188 55 L 175 52 L 165 42 L 162 32 Z"/>
+
+              <!-- Central America -->
+              <path fill="#F0EDE4" stroke="#8B9E5A" stroke-width="0.5"
+                d="M 138 178 L 148 175 L 158 178 L 162 188 L 155 198 L 144 200 L 136 192 Z"/>
+
+              <!-- Caribbean islands (dots) -->
+              <circle cx="175" cy="185" r="3" fill="#F0EDE4" stroke="#8B9E5A" stroke-width="0.5"/>
+              <circle cx="182" cy="188" r="2.5" fill="#F0EDE4" stroke="#8B9E5A" stroke-width="0.5"/>
+              <circle cx="190" cy="182" r="2" fill="#F0EDE4" stroke="#8B9E5A" stroke-width="0.5"/>
+
+              <!-- South America -->
+              <path filter="url(#landShadow)"
+                fill="#F0EDE4" stroke="#8B9E5A" stroke-width="0.8"
+                d="M 158 210 L 175 205 L 192 208 L 205 218 L 212 232 L 215 248 L 218 265
+                   L 215 282 L 208 298 L 198 315 L 185 328 L 170 335 L 155 332 L 142 320
+                   L 132 305 L 128 288 L 128 270 L 132 252 L 138 238 L 145 225 Z"/>
+
+              <!-- Europe (detailed) -->
+              <path filter="url(#landShadow)"
+                fill="#F0EDE4" stroke="#8B9E5A" stroke-width="0.8"
+                d="M 455 45 L 472 38 L 490 42 L 505 50 L 515 62 L 518 75 L 512 88
+                   L 498 95 L 485 98 L 472 95 L 460 88 L 450 78 L 448 65 Z"/>
+
+              <!-- Scandinavia -->
+              <path fill="#F0EDE4" stroke="#8B9E5A" stroke-width="0.6"
+                d="M 470 22 L 480 15 L 492 18 L 498 28 L 495 40 L 485 45 L 474 42 L 468 32 Z"/>
+
+              <!-- Iberian Peninsula -->
+              <path fill="#F0EDE4" stroke="#8B9E5A" stroke-width="0.6"
+                d="M 450 82 L 462 78 L 472 82 L 475 95 L 468 108 L 455 112 L 444 105 L 442 92 Z"/>
+
+              <!-- Italy / Balkans -->
+              <path fill="#F0EDE4" stroke="#8B9E5A" stroke-width="0.5"
+                d="M 490 88 L 502 85 L 510 95 L 508 108 L 498 112 L 488 108 L 485 98 Z"/>
+
+              <!-- Africa (accurate shape) -->
+              <path filter="url(#landShadow)"
+                fill="#F0EDE4" stroke="#8B9E5A" stroke-width="0.8"
+                d="M 468 112 L 490 105 L 512 108 L 528 118 L 538 132 L 542 150 L 540 168
+                   L 535 185 L 528 202 L 518 222 L 505 240 L 490 258 L 475 272 L 462 282
+                   L 452 285 L 442 280 L 432 268 L 425 252 L 420 235 L 418 218 L 420 200
+                   L 422 182 L 425 165 L 428 148 L 430 132 L 432 118 L 440 110 L 452 108 Z"/>
+
+              <!-- Madagascar -->
+              <path fill="#F0EDE4" stroke="#8B9E5A" stroke-width="0.5"
+                d="M 548 238 L 555 232 L 562 238 L 562 252 L 555 260 L 548 255 Z"/>
+
+              <!-- ═══ EGYPT — highlighted ═══ -->
+              <path fill="#2D4A35" stroke="#C9A84C" stroke-width="2"
+                d="M 490 108 L 512 108 L 520 120 L 518 135 L 508 142 L 492 142 L 482 135 L 480 120 Z"/>
+
+              <!-- Egypt pin label -->
+              <circle cx="500" cy="125" r="7" fill="#C9A84C" stroke="#fff" stroke-width="2.5"/>
+              <circle cx="500" cy="125" r="3" fill="#2D4A35"/>
+              <text x="515" y="118" font-family="'Arial', sans-serif" font-size="11" font-weight="700" fill="#C9A84C" letter-spacing="1">EGYPT</text>
+
+              <!-- Middle East / Arabian Peninsula -->
+              <path fill="#F0EDE4" stroke="#8B9E5A" stroke-width="0.8"
+                d="M 525 108 L 548 102 L 568 108 L 578 122 L 575 138 L 562 148 L 548 150
+                   L 535 145 L 525 135 L 522 120 Z"/>
+
+              <!-- Asia (large — Central, South, East) -->
+              <path filter="url(#landShadow)"
+                fill="#F0EDE4" stroke="#8B9E5A" stroke-width="0.8"
+                d="M 548 55 L 580 45 L 618 40 L 658 42 L 695 48 L 728 55 L 752 65
+                   L 768 80 L 772 98 L 765 115 L 748 128 L 728 135 L 708 138 L 688 135
+                   L 668 132 L 648 130 L 628 132 L 610 138 L 595 148 L 580 148 L 568 142
+                   L 560 132 L 558 118 L 555 105 L 552 88 L 548 72 Z"/>
+
+              <!-- India -->
+              <path fill="#F0EDE4" stroke="#8B9E5A" stroke-width="0.7"
+                d="M 618 140 L 635 135 L 648 140 L 655 158 L 650 175 L 638 185 L 625 180
+                   L 615 168 L 612 152 Z"/>
+
+              <!-- Southeast Asia -->
+              <path fill="#F0EDE4" stroke="#8B9E5A" stroke-width="0.7"
+                d="M 715 135 L 738 128 L 758 132 L 768 148 L 765 162 L 750 168 L 735 165
+                   L 720 155 Z"/>
+
+              <!-- China / East Asia -->
+              <path fill="#F0EDE4" stroke="#8B9E5A" stroke-width="0.7"
+                d="M 715 58 L 748 52 L 778 55 L 802 65 L 815 80 L 812 98 L 800 112
+                   L 782 120 L 762 122 L 742 118 L 725 108 L 715 95 L 712 78 Z"/>
+
+              <!-- Japan -->
+              <path fill="#F0EDE4" stroke="#8B9E5A" stroke-width="0.5"
+                d="M 808 72 L 818 68 L 825 75 L 822 85 L 812 88 L 806 82 Z"/>
+
+              <!-- Australia -->
+              <path filter="url(#landShadow)"
+                fill="#F0EDE4" stroke="#8B9E5A" stroke-width="0.8"
+                d="M 752 285 L 782 275 L 812 272 L 840 278 L 862 292 L 872 310 L 868 330
+                   L 855 348 L 835 358 L 812 362 L 788 358 L 768 345 L 752 328 L 742 310
+                   L 742 295 Z"/>
+
+              <!-- New Zealand -->
+              <path fill="#F0EDE4" stroke="#8B9E5A" stroke-width="0.5"
+                d="M 890 342 L 898 335 L 905 340 L 905 352 L 898 358 L 890 353 Z"/>
+
+              <!-- Russia / Siberia -->
+              <path fill="#F0EDE4" stroke="#8B9E5A" stroke-width="0.7"
+                d="M 515 28 L 560 18 L 620 15 L 680 18 L 730 22 L 768 28 L 785 38 L 780 52
+                   L 758 55 L 720 50 L 680 45 L 640 42 L 600 42 L 560 45 L 535 48 L 518 42 Z"/>
+
+              <!-- ═══ EXPORT LINES (curved arcs for professionalism) ═══ -->
+
+              <!-- To Europe -->
+              <path d="M 500 125 Q 490 80 478 72" fill="none" stroke="#C9A84C"
+                stroke-width="1.8" stroke-dasharray="6 4" opacity="0.85"/>
+              <circle cx="478" cy="72" r="5.5" fill="#C9A84C" stroke="#fff" stroke-width="2"/>
+              <rect x="445" y="55" width="55" height="16" rx="4" fill="rgba(240,237,228,0.95)"/>
+              <text x="472" y="67" text-anchor="middle" font-family="Arial, sans-serif" font-size="9.5" font-weight="700" fill="#2D4A35">Europe</text>
+
+              <!-- To Middle East -->
+              <path d="M 500 125 Q 525 120 542 118" fill="none" stroke="#C9A84C"
+                stroke-width="1.8" stroke-dasharray="6 4" opacity="0.85"/>
+              <circle cx="542" cy="118" r="5.5" fill="#C9A84C" stroke="#fff" stroke-width="2"/>
+              <rect x="545" y="110" width="72" height="16" rx="4" fill="rgba(240,237,228,0.95)"/>
+              <text x="581" y="122" text-anchor="middle" font-family="Arial, sans-serif" font-size="9.5" font-weight="700" fill="#2D4A35">Middle East</text>
+
+              <!-- To North America -->
+              <path d="M 500 125 Q 380 105 175 140" fill="none" stroke="#C9A84C"
+                stroke-width="1.8" stroke-dasharray="6 4" opacity="0.85"/>
+              <circle cx="175" cy="140" r="5.5" fill="#C9A84C" stroke="#fff" stroke-width="2"/>
+              <rect x="108" y="130" width="80" height="16" rx="4" fill="rgba(240,237,228,0.95)"/>
+              <text x="148" y="142" text-anchor="middle" font-family="Arial, sans-serif" font-size="9.5" font-weight="700" fill="#2D4A35">N. America</text>
+
+              <!-- To Asia-Pacific -->
+              <path d="M 500 125 Q 620 115 730 148" fill="none" stroke="#C9A84C"
+                stroke-width="1.8" stroke-dasharray="6 4" opacity="0.85"/>
+              <circle cx="730" cy="148" r="5.5" fill="#C9A84C" stroke="#fff" stroke-width="2"/>
+              <rect x="720" y="155" width="80" height="16" rx="4" fill="rgba(240,237,228,0.95)"/>
+              <text x="760" y="167" text-anchor="middle" font-family="Arial, sans-serif" font-size="9.5" font-weight="700" fill="#2D4A35">Asia-Pacific</text>
+
+              <!-- To Africa (sub-Saharan) -->
+              <path d="M 500 125 Q 492 165 478 210" fill="none" stroke="#C9A84C"
+                stroke-width="1.8" stroke-dasharray="6 4" opacity="0.85"/>
+              <circle cx="478" cy="210" r="5.5" fill="#C9A84C" stroke="#fff" stroke-width="2"/>
+              <rect x="460" y="218" width="48" height="16" rx="4" fill="rgba(240,237,228,0.95)"/>
+              <text x="484" y="230" text-anchor="middle" font-family="Arial, sans-serif" font-size="9.5" font-weight="700" fill="#2D4A35">Africa</text>
+
+              <!-- ═══ LEGEND ═══ -->
+              <rect x="18" y="458" width="188" height="30" rx="6" fill="rgba(240,237,228,0.95)"/>
+              <circle cx="34" cy="473" r="6" fill="#2D4A35"/>
+              <text x="46" y="477" font-family="Arial, sans-serif" font-size="9.5" fill="#2D4A35" font-weight="600">Origin (Egypt)</text>
+              <circle cx="126" cy="473" r="6" fill="#C9A84C" stroke="#2D4A35" stroke-width="1"/>
+              <text x="138" y="477" font-family="Arial, sans-serif" font-size="9.5" fill="#2D4A35" font-weight="600">Export</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         CTA BANNER  —  Full-width dark call to action
+         ================================================================ -->
+    <section class="cta-banner" aria-labelledby="cta-banner-heading">
+      <div class="container">
+        <div class="cta-banner__inner reveal">
+          <div class="cta-banner__text">
+            <h2 id="cta-banner-heading">Ready to source premium natural ingredients?</h2>
+            <p>Contact our team to discuss samples, pricing, or supplier qualification.</p>
+          </div>
+          <div class="cta-banner__actions">
+            <a href="contact.html#form-sample" class="btn btn--primary btn--lg">Request a Sample</a>
+            <a href="contact.html#form-general" class="btn btn--ghost btn--lg">Contact Our Team</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <!-- /main#main-content -->
+
+  <!-- Footer mount point  —  components.js injects the full footer here -->
+  <div id="footer-root"></div>
+
+  <!-- =================================================================
+       JavaScript modules
+       All <script type="module"> tags are deferred by default (Req 13.1)
+       ================================================================= -->
+
+  <!-- Inject shared navbar + footer into their mount points -->
+  <script src="assets/js/site-content.js"></script>
+  <script defer src="assets/js/components.js"></script>
+
+  <!-- Hamburger toggle, active-link highlight, hash scroll (Req 1.3 — 1.5, 1.8) -->
+  <script defer src="assets/js/nav.js"></script>
+
+  <!-- Homepage animations: scroll-reveal, count-up, navbar scroll -->
+  <script defer src="assets/js/home.js"></script>
+
+</body>
+</html>

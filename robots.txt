@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# Do not index JS/CSS/data assets
+Disallow: /assets/js/
+Disallow: /assets/css/
+Disallow: /assets/data/
+
+# Do not index error page
+Disallow: /404.html
+
+# Do not index admin panel
+Disallow: /admin.html
+
+Sitemap: https://www.phatrade-eg.com/sitemap.xml

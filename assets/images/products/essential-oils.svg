@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" width="400" height="280">
+  <defs>
+    <linearGradient id="eo-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3326"/>
+      <stop offset="100%" stop-color="#2D4A35"/>
+    </linearGradient>
+    <linearGradient id="eo-bottle" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c8860a"/>
+      <stop offset="30%" stop-color="#d4940e"/>
+      <stop offset="60%" stop-color="#b87208"/>
+      <stop offset="100%" stop-color="#9a5e06"/>
+    </linearGradient>
+    <linearGradient id="eo-bottle-shine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="rgba(255,220,100,0.4)"/>
+      <stop offset="30%" stop-color="rgba(255,220,100,0.0)"/>
+      <stop offset="100%" stop-color="rgba(0,0,0,0.3)"/>
+    </linearGradient>
+    <linearGradient id="eo-label" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F0EDE4"/>
+      <stop offset="100%" stop-color="#e0ddd4"/>
+    </linearGradient>
+    <linearGradient id="eo-oil" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="rgba(201,168,76,0.6)"/>
+      <stop offset="100%" stop-color="rgba(180,140,40,0.8)"/>
+    </linearGradient>
+    <radialGradient id="eo-glow" cx="40%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="rgba(201,168,76,0.15)"/>
+      <stop offset="100%" stop-color="rgba(0,0,0,0)"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="400" height="280" fill="url(#eo-bg)"/>
+  <rect width="400" height="280" fill="url(#eo-glow)"/>
+
+  <!-- Subtle botanical background pattern -->
+  <g opacity="0.06" stroke="#8B9E5A" stroke-width="1" fill="none">
+    <path d="M50 260 C60 240 70 220 80 200 C90 180 95 160 90 140 C85 120 75 105 80 85"/>
+    <path d="M80 200 C100 195 115 185 118 168"/>
+    <path d="M80 170 C98 165 110 155 112 140"/>
+    <path d="M350 260 C340 240 330 220 320 200 C310 180 305 160 310 140 C315 120 325 105 320 85"/>
+    <path d="M320 200 C300 195 285 185 282 168"/>
+  </g>
+
+  <!-- Main amber bottle -->
+  <!-- Bottle body -->
+  <path d="M168 90 L168 240 Q168 255 183 255 L217 255 Q232 255 232 240 L232 90 Z" fill="url(#eo-bottle)"/>
+  <!-- Bottle shine overlay -->
+  <path d="M168 90 L168 240 Q168 255 183 255 L217 255 Q232 255 232 240 L232 90 Z" fill="url(#eo-bottle-shine)"/>
+  <!-- Oil level inside bottle -->
+  <path d="M170 145 L230 145 L230 240 Q230 253 217 253 L183 253 Q170 253 170 240 Z" fill="url(#eo-oil)"/>
+  <!-- Bottle neck -->
+  <rect x="183" y="65" width="34" height="28" rx="4" fill="#b87208"/>
+  <rect x="183" y="65" width="34" height="28" rx="4" fill="url(#eo-bottle-shine)"/>
+  <!-- Bottle cap -->
+  <rect x="179" y="52" width="42" height="16" rx="4" fill="#2D4A35"/>
+  <rect x="183" y="54" width="34" height="12" rx="3" fill="#3D6347"/>
+  <!-- Cap highlight -->
+  <rect x="184" y="55" width="12" height="4" rx="2" fill="rgba(255,255,255,0.15)"/>
+
+  <!-- Label on bottle -->
+  <rect x="172" y="155" width="56" height="72" rx="3" fill="url(#eo-label)" opacity="0.92"/>
+  <rect x="174" y="157" width="52" height="68" rx="2" fill="none" stroke="#C9A84C" stroke-width="0.8"/>
+  <!-- Label content -->
+  <text x="200" y="173" text-anchor="middle" font-family="Arial, sans-serif" font-size="6.5" font-weight="700" fill="#2D4A35" letter-spacing="1">PHATRADE</text>
+  <!-- Small drop icon on label -->
+  <path d="M200 178 C200 178 196 183 196 186 a4 4 0 0 0 8 0 C204 183 200 178 200 178Z" fill="#C9A84C"/>
+  <text x="200" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="5.5" font-weight="600" fill="#2D4A35" letter-spacing="0.5">ESSENTIAL OIL</text>
+  <line x1="178" y1="204" x2="222" y2="204" stroke="#C9A84C" stroke-width="0.5"/>
+  <text x="200" y="213" text-anchor="middle" font-family="Arial, sans-serif" font-size="5" fill="#5a6b5e">Egyptian Origin</text>
+  <text x="200" y="220" text-anchor="middle" font-family="Arial, sans-serif" font-size="4.5" fill="#5a6b5e">Steam Distilled</text>
+
+  <!-- Botanical leaves left -->
+  <path d="M80 200 C70 180 55 170 52 155 C50 142 58 132 68 138 C78 144 82 162 80 200Z" fill="rgba(139,158,90,0.5)"/>
+  <path d="M80 200 C75 182 72 165 76 150" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1" stroke-linecap="round"/>
+  <path d="M95 185 C85 175 78 165 78 155 C78 145 85 138 93 143 C101 148 100 165 95 185Z" fill="rgba(139,158,90,0.4)"/>
+
+  <!-- Botanical leaves right -->
+  <path d="M320 200 C330 180 345 170 348 155 C350 142 342 132 332 138 C322 144 318 162 320 200Z" fill="rgba(139,158,90,0.5)"/>
+  <path d="M305 185 C315 175 322 165 322 155 C322 145 315 138 307 143 C299 148 300 165 305 185Z" fill="rgba(139,158,90,0.4)"/>
+
+  <!-- Small oil drops floating -->
+  <path d="M130 100 C130 100 126 106 126 109 a4 4 0 0 0 8 0 C134 106 130 100 130 100Z" fill="rgba(201,168,76,0.5)"/>
+  <path d="M270 120 C270 120 267 125 267 127 a3 3 0 0 0 6 0 C273 125 270 120 270 120Z" fill="rgba(201,168,76,0.4)"/>
+  <path d="M140 155 C140 155 138 159 138 161 a2.5 2.5 0 0 0 5 0 C143 159 140 155 140 155Z" fill="rgba(201,168,76,0.35)"/>
+
+  <!-- Reflection/surface -->
+  <ellipse cx="200" cy="257" rx="35" ry="5" fill="rgba(0,0,0,0.25)"/>
+
+  <!-- Category text -->
+  <text x="200" y="276" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="700" fill="rgba(201,168,76,0.7)" letter-spacing="3">ESSENTIAL OILS</text>
+</svg>

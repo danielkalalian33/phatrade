@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" width="400" height="280">
+  <defs>
+    <linearGradient id="bg-marigold-con" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2D4A35"/>
+      <stop offset="100%" stop-color="#1e3326"/>
+    </linearGradient>
+    <linearGradient id="jar-marigold-con" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3a2c18"/>
+      <stop offset="100%" stop-color="#1e1608"/>
+    </linearGradient>
+    <linearGradient id="lid-marigold-con" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#d4a020"/>
+      <stop offset="100%" stop-color="#8a6010"/>
+    </linearGradient>
+    <radialGradient id="glow-marigold-con" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="rgba(139,158,90,0.1)"/>
+      <stop offset="100%" stop-color="rgba(0,0,0,0)"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="280" fill="url(#bg-marigold-con)"/>
+  <rect width="400" height="280" fill="url(#glow-marigold-con)"/>
+  <ellipse cx="70" cy="100" rx="12" ry="20" transform="rotate(-25 70 100)" fill="rgba(240,237,228,0.15)"/>
+  <ellipse cx="330" cy="90" rx="10" ry="18" transform="rotate(20 330 90)" fill="rgba(240,237,228,0.15)"/>
+  <ellipse cx="80" cy="200" rx="9" ry="16" transform="rotate(15 80 200)" fill="rgba(240,237,228,0.12)"/>
+  <ellipse cx="320" cy="195" rx="11" ry="18" transform="rotate(-18 320 195)" fill="rgba(240,237,228,0.12)"/>
+  <path d="M150 145 L150 240 Q150 252 162 252 L238 252 Q250 252 250 240 L250 145 Z" fill="url(#jar-marigold-con)"/>
+  <path d="M152 145 L152 240 Q152 251 162 251 L178 251 L178 145 Z" fill="rgba(255,255,255,0.04)"/>
+  <ellipse cx="200" cy="143" rx="50" ry="8" fill="rgba(210,100,10,0.8)"/>
+  <rect x="146" y="136" width="108" height="12" rx="4" fill="#2a1e10"/>
+  <ellipse cx="200" cy="110" rx="56" ry="13" fill="url(#lid-marigold-con)"/>
+  <ellipse cx="200" cy="106" rx="52" ry="9" fill="#d4a020"/>
+  <ellipse cx="186" cy="103" rx="18" ry="5" fill="rgba(255,240,150,0.22)"/>
+  <ellipse cx="200" cy="96" rx="16" ry="6" fill="#b88c20"/>
+  <ellipse cx="200" cy="93" rx="12" ry="4" fill="#c8a030"/>
+  <rect x="158" y="160" width="84" height="70" rx="3" fill="rgba(240,237,228,0.92)"/>
+  <rect x="160" y="162" width="80" height="66" rx="2" fill="none" stroke="#C9A84C" stroke-width="0.8"/>
+  <rect x="160" y="162" width="80" height="8" rx="2" fill="#C9A84C" opacity="0.7"/>
+  <text x="200" y="169" text-anchor="middle" font-family="Arial, sans-serif" font-size="5" font-weight="700" fill="#1e3326" letter-spacing="1">PHATRADE</text>
+  <path d="M200 174 C200 174 197 178 197 180 a3 3 0 0 0 6 0 C203 178 200 174 200 174Z" fill="#C9A84C"/>
+  <text x="200" y="194" text-anchor="middle" font-family="'Arial Black', Arial, sans-serif" font-size="7" font-weight="900" fill="#2D4A35">MARIGOLD</text>
+  <line x1="163" y1="198" x2="237" y2="198" stroke="#C9A84C" stroke-width="0.6"/>
+  <text x="200" y="208" text-anchor="middle" font-family="Arial, sans-serif" font-size="4.5" fill="#5a6b5e" font-style="italic">T. erecta</text>
+  <text x="200" y="218" text-anchor="middle" font-family="Arial, sans-serif" font-size="4.2" fill="#5a6b5e">Solvent Extracted</text>
+  <text x="200" y="227" text-anchor="middle" font-family="Arial, sans-serif" font-size="4" fill="#8B9E5A">Egypt · GC Verified</text>
+  <ellipse cx="200" cy="254" rx="50" ry="6" fill="rgba(0,0,0,0.28)"/>
+</svg>

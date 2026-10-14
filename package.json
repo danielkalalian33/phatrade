@@ -1,0 +1,16 @@
+{
+  "name": "phatrade-portfolio-website",
+  "version": "1.0.0",
+  "description": "PHATRADE – Pharaonic Essential Oils static portfolio website",
+  "type": "module",
+  "scripts": {
+    "test": "vitest --run"
+  },
+  "devDependencies": {
+    "axe-core": "4.10.0",
+    "fast-check": "3.23.2",
+    "vitest": "2.1.9",
+    "jsdom": "25.0.1",
+    "@vitest/coverage-v8": "2.1.9"
+  }
+}

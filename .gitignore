@@ -1,0 +1,5 @@
+node_modules/
+.kiro/
+*.log
+test-output.txt
+test-err.txt

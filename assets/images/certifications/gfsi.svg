@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80" role="img" aria-label="GFSI certification">
+  <title>GFSI Certified</title>
+  <!-- Gold circle background -->
+  <circle cx="40" cy="40" r="38" fill="#C9A84C"/>
+  <!-- Shield -->
+  <path d="M40 16 L56 23 L56 40 C56 52 40 62 40 62 C40 62 24 52 24 40 L24 23 Z" fill="#2D4A35"/>
+  <!-- Checkmark -->
+  <polyline points="30,40 37,48 52,32" fill="none" stroke="#C9A84C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Text -->
+  <text x="40" y="74" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="800" fill="#2D4A35" letter-spacing="1">GFSI</text>
+</svg>

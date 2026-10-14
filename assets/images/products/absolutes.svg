@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" width="400" height="280">
+  <defs>
+    <linearGradient id="abs-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a2e20"/>
+      <stop offset="100%" stop-color="#0e1e14"/>
+    </linearGradient>
+    <linearGradient id="abs-bottle" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a0f05"/>
+      <stop offset="35%" stop-color="#2a1808"/>
+      <stop offset="65%" stop-color="#1e1206"/>
+      <stop offset="100%" stop-color="#120a03"/>
+    </linearGradient>
+    <linearGradient id="abs-liquid" x1="0%" y1="0%" x2="20%" y2="100%">
+      <stop offset="0%" stop-color="rgba(180,100,10,0.85)"/>
+      <stop offset="100%" stop-color="rgba(120,60,5,0.95)"/>
+    </linearGradient>
+    <linearGradient id="abs-shine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="rgba(255,200,80,0.35)"/>
+      <stop offset="40%" stop-color="rgba(255,200,80,0.0)"/>
+    </linearGradient>
+    <linearGradient id="abs-gold-cap" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f0c030"/>
+      <stop offset="100%" stop-color="#8a6010"/>
+    </linearGradient>
+    <radialGradient id="abs-glow" cx="45%" cy="35%" r="50%">
+      <stop offset="0%" stop-color="rgba(201,168,76,0.18)"/>
+      <stop offset="100%" stop-color="rgba(0,0,0,0)"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="400" height="280" fill="url(#abs-bg)"/>
+  <rect width="400" height="280" fill="url(#abs-glow)"/>
+
+  <!-- Starlike sparkles -->
+  <g fill="rgba(201,168,76,0.3)">
+    <circle cx="80" cy="60" r="1.5"/>
+    <circle cx="320" cy="80" r="1"/>
+    <circle cx="100" cy="200" r="1.2"/>
+    <circle cx="300" cy="190" r="1"/>
+    <circle cx="350" cy="130" r="1.5"/>
+    <circle cx="55" cy="140" r="1"/>
+    <circle cx="160" cy="30" r="1"/>
+    <circle cx="250" cy="25" r="1.2"/>
+  </g>
+
+  <!-- Tall thin dropper bottle -->
+  <!-- Bottle body -->
+  <path d="M178 100 L178 248 Q178 258 188 258 L212 258 Q222 258 222 248 L222 100 Z" fill="url(#abs-bottle)"/>
+  <!-- Liquid fill -->
+  <path d="M180 130 L220 130 L220 248 Q220 256 212 256 L188 256 Q180 256 180 248 Z" fill="url(#abs-liquid)"/>
+  <!-- Bottle glass shine -->
+  <path d="M178 100 L178 248 Q178 258 188 258 L192 258 L192 100 Z" fill="url(#abs-shine)"/>
+  <!-- Bottle shoulder curve -->
+  <path d="M175 98 Q175 88 185 88 L215 88 Q225 88 225 98 L222 100 L178 100 Z" fill="#1a0f05"/>
+
+  <!-- Dropper neck -->
+  <rect x="191" y="58" width="18" height="32" rx="3" fill="#1a0f05"/>
+  <rect x="191" y="58" width="18" height="32" rx="3" fill="url(#abs-shine)"/>
+
+  <!-- Gold dropper cap -->
+  <rect x="187" y="38" width="26" height="22" rx="5" fill="url(#abs-gold-cap)"/>
+  <!-- Dropper rubber bulb -->
+  <ellipse cx="200" cy="35" rx="10" ry="8" fill="#8a4010"/>
+  <ellipse cx="197" cy="32" rx="4" ry="3" fill="rgba(255,180,80,0.3)"/>
+
+  <!-- Label -->
+  <rect x="181" y="148" width="38" height="80" rx="2" fill="rgba(10,8,5,0.8)" stroke="rgba(201,168,76,0.6)" stroke-width="0.8"/>
+  <text x="200" y="164" text-anchor="middle" font-family="Arial, sans-serif" font-size="5.5" font-weight="700" fill="#C9A84C" letter-spacing="1">PHATRADE</text>
+  <!-- Mini drop on label -->
+  <path d="M200 168 C200 168 197 172 197 174 a3 3 0 0 0 6 0 C203 172 200 168 200 168Z" fill="#C9A84C"/>
+  <text x="200" y="185" text-anchor="middle" font-family="Arial, sans-serif" font-size="5" font-weight="600" fill="#C9A84C">ABSOLUTE</text>
+  <line x1="184" y1="189" x2="216" y2="189" stroke="rgba(201,168,76,0.4)" stroke-width="0.5"/>
+  <text x="200" y="198" text-anchor="middle" font-family="Arial, sans-serif" font-size="4.5" fill="rgba(240,237,228,0.7)">Egyptian Origin</text>
+  <text x="200" y="206" text-anchor="middle" font-family="Arial, sans-serif" font-size="4.2" fill="rgba(240,237,228,0.6)">Alcohol Washed</text>
+  <text x="200" y="220" text-anchor="middle" font-family="Arial, sans-serif" font-size="3.8" fill="rgba(201,168,76,0.5)">100% NATURAL</text>
+
+  <!-- Gold liquid drops falling -->
+  <path d="M155 95 C155 95 152 100 152 103 a3 3 0 0 0 6 0 C158 100 155 95 155 95Z" fill="rgba(180,110,10,0.6)"/>
+  <path d="M245 110 C245 110 243 114 243 116 a2 2 0 0 0 4 0 C247 114 245 110 245 110Z" fill="rgba(180,110,10,0.5)"/>
+  <path d="M140 135 C140 135 138 138 138 140 a2 2 0 0 0 4 0 C142 138 140 135 140 135Z" fill="rgba(180,110,10,0.4)"/>
+
+  <!-- Elegant leaf accents -->
+  <path d="M90 180 C78 165 65 160 62 148 C60 138 68 130 76 136 C84 142 88 162 90 180Z" fill="rgba(139,158,90,0.35)"/>
+  <path d="M310 180 C322 165 335 160 338 148 C340 138 332 130 324 136 C316 142 312 162 310 180Z" fill="rgba(139,158,90,0.35)"/>
+
+  <!-- Reflection -->
+  <ellipse cx="200" cy="261" rx="25" ry="4" fill="rgba(0,0,0,0.4)"/>
+  <text x="200" y="276" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="700" fill="rgba(201,168,76,0.7)" letter-spacing="3">ABSOLUTES</text>
+</svg>

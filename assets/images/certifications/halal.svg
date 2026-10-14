@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80" role="img" aria-label="HALAL Certified IFNAS">
+  <title>HALAL Certified</title>
+
+  <!-- White background -->
+  <rect width="80" height="80" fill="white"/>
+
+  <!-- Outer green ring -->
+  <circle cx="40" cy="40" r="37" fill="none" stroke="#1e8449" stroke-width="2.5"/>
+  <!-- Inner thin ring -->
+  <circle cx="40" cy="40" r="33" fill="none" stroke="#1e8449" stroke-width="0.8"/>
+
+  <!-- Mosque: two slim minarets + central dome at top -->
+  <!-- Left minaret body -->
+  <rect x="20" y="12" width="3" height="12" rx="1.5" fill="#1e8449"/>
+  <!-- Left minaret dome/top -->
+  <ellipse cx="21.5" cy="11" rx="2.2" ry="3.2" fill="#1e8449"/>
+  <!-- Right minaret body -->
+  <rect x="57" y="12" width="3" height="12" rx="1.5" fill="#1e8449"/>
+  <!-- Right minaret dome/top -->
+  <ellipse cx="58.5" cy="11" rx="2.2" ry="3.2" fill="#1e8449"/>
+  <!-- Central mosque dome (arch) -->
+  <path d="M 31,24 Q 31,12 40,12 Q 49,12 49,24 Z" fill="#1e8449"/>
+  <!-- Mosque base rectangle -->
+  <rect x="31" y="22" width="18" height="5" rx="1" fill="#1e8449"/>
+
+  <!-- Crescent moon (green C-shape opening to the right)
+       Created by green outer circle minus offset white inner circle -->
+  <circle cx="36" cy="37" r="21" fill="#1e8449"/>
+  <circle cx="44" cy="37" r="17" fill="white"/>
+
+  <!-- Arabic حلال text inside the crescent hollow (right side) -->
+  <text x="57" y="40" text-anchor="middle"
+        font-family="Arial,sans-serif" font-size="9" font-weight="bold"
+        fill="#1e8449">حلال</text>
+
+  <!-- HALAL text -->
+  <text x="40" y="64" text-anchor="middle"
+        font-family="'Arial Black',Arial,sans-serif" font-size="10.5" font-weight="900"
+        fill="#1e8449">HALAL</text>
+
+  <!-- IFNAS text -->
+  <text x="40" y="74" text-anchor="middle"
+        font-family="Arial,sans-serif" font-size="6.5"
+        fill="#1e8449">IFNAS</text>
+</svg>

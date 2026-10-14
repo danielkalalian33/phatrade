@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="EcoVadis Committed Sustainability Rating">
+  <title>EcoVadis Committed Sustainability Rating</title>
+  <!-- Cream background circle -->
+  <circle cx="100" cy="100" r="96" fill="#F5F0EA"/>
+  <!-- Rose-gold border ring -->
+  <circle cx="100" cy="100" r="96" fill="none" stroke="#C4987A" stroke-width="4"/>
+  <circle cx="100" cy="100" r="90" fill="none" stroke="#C4987A" stroke-width="1.2" opacity="0.5"/>
+
+  <!-- Green petal decorations at bottom -->
+  <path d="M 100,190 C 70,175 55,155 68,135 C 80,155 100,165 100,180 Z" fill="#7DAA8B" opacity="0.7"/>
+  <path d="M 100,190 C 130,175 145,155 132,135 C 120,155 100,165 100,180 Z" fill="#7DAA8B" opacity="0.7"/>
+  <path d="M 100,190 C 55,175 40,145 60,120 C 65,145 85,165 100,175 Z" fill="#5C9470" opacity="0.45"/>
+  <path d="M 100,190 C 145,175 160,145 140,120 C 135,145 115,165 100,175 Z" fill="#5C9470" opacity="0.45"/>
+  <!-- Rose-gold petal outlines -->
+  <path d="M 100,190 C 70,175 55,155 68,135 C 80,155 100,165 100,180 Z" fill="none" stroke="#C4987A" stroke-width="1"/>
+  <path d="M 100,190 C 130,175 145,155 132,135 C 120,155 100,165 100,180 Z" fill="none" stroke="#C4987A" stroke-width="1"/>
+  <path d="M 100,190 C 55,175 40,145 60,120 C 65,145 85,165 100,175 Z" fill="none" stroke="#C4987A" stroke-width="1" opacity="0.6"/>
+  <path d="M 100,190 C 145,175 160,145 140,120 C 135,145 115,165 100,175 Z" fill="none" stroke="#C4987A" stroke-width="1" opacity="0.6"/>
+
+  <!-- COMMITTED -->
+  <text x="100" y="42" text-anchor="middle"
+    font-family="'Arial Black',Arial,sans-serif" font-size="16" font-weight="900"
+    fill="#5C3B1E" letter-spacing="3">COMMITTED</text>
+
+  <!-- ecovadis wordmark -->
+  <text x="100" y="82" text-anchor="middle"
+    font-family="Arial,sans-serif" font-size="26" font-weight="300"
+    fill="#2D2D2D" letter-spacing="-0.5">eco</text>
+  <!-- green leaf accent on the "v" -->
+  <ellipse cx="122" cy="63" rx="4" ry="6" fill="#4CAF50" transform="rotate(-15 122 63)"/>
+  <text x="122" y="82" text-anchor="start"
+    font-family="Arial,sans-serif" font-size="26" font-weight="300"
+    fill="#2D2D2D" letter-spacing="-0.5">vadis</text>
+
+  <!-- Sustainability Rating -->
+  <text x="100" y="106" text-anchor="middle"
+    font-family="Arial,sans-serif" font-size="12" font-weight="400"
+    fill="#555" letter-spacing="0.3">Sustainability Rating</text>
+
+  <!-- Divider line -->
+  <line x1="60" y1="115" x2="140" y2="115" stroke="#C4987A" stroke-width="1.5"/>
+
+  <!-- JUL 2026 -->
+  <text x="100" y="136" text-anchor="middle"
+    font-family="'Arial Black',Arial,sans-serif" font-size="18" font-weight="900"
+    fill="#2D2D2D" letter-spacing="1">JUL 2026</text>
+</svg>

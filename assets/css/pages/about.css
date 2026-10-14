@@ -1,0 +1,469 @@
+﻿/* ==========================================================================
+   PHATRADE
+   pages/about.css — About page styles
+   Sections: Company Story, Timeline, Contact CTA
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Timeline — Mobile-first (column) layout
+   Requirements: 4.2, 4.3
+   -------------------------------------------------------------------------- */
+
+/* Ordered list reset */
+.timeline__list {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-8) 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  position: relative;
+}
+
+/* Each milestone item: icon + content stacked vertically on mobile */
+.timeline__list .timeline__item {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-5);
+  position: relative;
+  align-items: flex-start;
+}
+
+/* Vertical connecting line between items (mobile) */
+.timeline__list .timeline__item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 40px;              /* Below the dot */
+  left: 19px;             /* Centred on the 40px dot */
+  width: 2px;
+  bottom: calc(-1 * var(--space-8));
+  background-color: var(--color-accent);
+  opacity: 0.40;
+}
+
+/* --------------------------------------------------------------------------
+   2. Timeline — Desktop (row) layout ≥ 768 px
+   Requirements: 4.2, 4.3
+   -------------------------------------------------------------------------- */
+
+@media (min-width: 768px) {
+  .timeline__list {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0;
+    /* Horizontal connecting line across the top via ::after */
+  }
+
+  /* Horizontal connecting line spanning the dot row */
+  .timeline__list::after {
+    content: '';
+    position: absolute;
+    top: 19px;            /* Centred on the 40px dot */
+    left: 40px;
+    right: 40px;
+    height: 2px;
+    background-color: var(--color-accent);
+    opacity: 0.40;
+    pointer-events: none;
+  }
+
+  /* Remove the vertical per-item line; use the list-level line instead */
+  .timeline__list .timeline__item:not(:last-child)::after {
+    display: none;
+  }
+
+  /* Each item becomes a vertical column centred around the dot */
+  .timeline__list .timeline__item {
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--space-4);
+    padding-inline: var(--space-3);
+  }
+
+  .timeline__list .timeline__connector {
+    align-items: center;
+  }
+
+  .timeline__list .timeline__content {
+    padding-bottom: 0;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. Section-level spacing
+   -------------------------------------------------------------------------- */
+
+#timeline {
+  padding-block: var(--space-16);
+  background-color: var(--color-bg);
+}
+
+/* --------------------------------------------------------------------------
+   Contact CTA Section — Task 6.4
+   -------------------------------------------------------------------------- */
+
+.about-cta {
+  background-color: var(--color-primary);
+  /* Override the default section padding slightly for a tighter, punchy strip */
+  padding-block: var(--space-20);
+}
+
+.about-cta .section-heading__eyebrow {
+  /* Gold eyebrow reads well on dark background */
+  color: var(--color-accent);
+}
+
+.about-cta__heading {
+  font-family: var(--font-heading);
+  font-size: clamp(var(--text-2xl), 3.5vw, var(--text-4xl));
+  font-weight: var(--weight-bold);
+  color: var(--color-white);
+  margin-block: var(--space-4) var(--space-6);
+  line-height: var(--leading-tight);
+}
+
+.about-cta__body {
+  font-size: var(--text-lg);
+  color: rgba(255, 255, 255, 0.80);
+  line-height: var(--leading-relaxed);
+  max-width: 58ch;
+  margin-inline: auto;
+  margin-bottom: var(--space-10);
+}
+
+/* The primary btn styles already handle background/color.
+   We simply ensure the focus ring uses the accent outline (gold on dark) which
+   is already the global default (:focus-visible uses --color-accent), so no
+   extra override is needed.                                                   */
+.about-cta__btn {
+  /* Ensure the button stays on the same line if the text is short */
+  min-width: 180px;
+}
+
+/* --------------------------------------------------------------------------
+   4. Company Story — redesigned professional layout
+   -------------------------------------------------------------------------- */
+
+/* Story intro banner (dark full-width) */
+.story-banner {
+  background-color: var(--color-primary-dark);
+  padding-block: var(--space-20);
+}
+
+.story-banner__inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--space-16);
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .story-banner__inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+  }
+}
+
+.story-banner__eyebrow {
+  display: inline-block;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-accent);
+  padding-bottom: var(--space-2);
+  border-bottom: 2px solid var(--color-accent);
+  width: fit-content;
+  margin-bottom: var(--space-5);
+}
+
+.story-banner__heading {
+  font-size: clamp(var(--text-3xl), 5vw, var(--text-5xl));
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--color-white);
+  margin: 0 0 var(--space-6);
+  line-height: 1.05;
+}
+
+.story-banner__subtitle {
+  font-size: var(--text-lg);
+  color: rgba(255,255,255,0.70);
+  line-height: var(--leading-relaxed);
+  max-width: 52ch;
+  margin: 0;
+}
+
+.story-banner__stats {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  flex-shrink: 0;
+  padding-left: var(--space-12);
+  border-left: 1px solid rgba(255,255,255,0.12);
+}
+
+@media (max-width: 768px) {
+  .story-banner__stats {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-left: 0;
+    border-left: none;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    padding-top: var(--space-8);
+    gap: var(--space-8) var(--space-12);
+  }
+}
+
+.story-stat {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.story-stat__year {
+  font-family: var(--font-heading);
+  font-size: var(--text-4xl);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--color-accent);
+  line-height: 1;
+}
+
+.story-stat__label {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.50);
+  line-height: var(--leading-snug);
+}
+
+/* Story body — 3 chapter columns */
+.story-body {
+  background-color: var(--color-bg);
+}
+
+.story-body__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-10);
+}
+
+.story-chapter + .story-chapter {
+  padding-left: var(--space-10);
+  border-left: 1px solid var(--border-color);
+}
+
+@media (max-width: 768px) {
+  .story-body__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+  .story-chapter + .story-chapter {
+    padding-left: 0;
+    border-left: none;
+    padding-top: var(--space-8);
+    border-top: 1px solid var(--border-color);
+  }
+}
+
+.story-chapter__marker {
+  font-family: var(--font-heading);
+  font-size: var(--text-xs);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-accent-dark);
+  margin-bottom: var(--space-3);
+  padding-bottom: var(--space-3);
+  border-bottom: 2px solid var(--color-accent);
+  width: fit-content;
+}
+
+.story-chapter__heading {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-primary);
+  margin: 0 0 var(--space-4);
+  line-height: var(--leading-snug);
+}
+
+.story-chapter__text {
+  font-size: var(--text-base);
+  color: #4a5a4e;
+  line-height: var(--leading-relaxed);
+  margin: 0;
+  max-width: none;
+}
+
+/* Core values section */
+.story-values {
+  background-color: var(--color-white);
+  border-top: 1px solid var(--border-color);
+}
+
+.story-values__header {
+  margin-bottom: var(--space-10);
+}
+
+.story-values__heading {
+  font-size: clamp(var(--text-2xl), 3vw, var(--text-3xl));
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: var(--color-primary);
+  margin: var(--space-2) 0 0;
+}
+
+.story-values__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-1);
+}
+
+@media (max-width: 640px) {
+  .story-values__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.story-value {
+  display: flex;
+  gap: var(--space-6);
+  align-items: flex-start;
+  padding: var(--space-8);
+  background-color: var(--color-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  transition: box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.story-value:hover {
+  box-shadow: var(--shadow-card);
+  border-color: var(--color-secondary);
+}
+
+.story-value__icon {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  background-color: rgba(45, 74, 53, 0.07);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+}
+
+.story-value__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.story-value__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+.story-value__text {
+  font-size: var(--text-sm);
+  color: #4a5a4e;
+  line-height: var(--leading-relaxed);
+  margin: 0;
+  max-width: none;
+}
+
+/* Stub old classes so cached references don't break */
+.company-story__layout { display: block; }
+.values-grid { display: none; }
+
+/* Timeline container from about.js */
+.timeline {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-8) 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .timeline {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0;
+  }
+}
+
+/* Story banner slogan */
+.story-banner__slogan {
+  margin-top: var(--space-6);
+  padding-top: var(--space-6);
+  border-top: 1px solid rgba(255,255,255,0.10);
+}
+
+.story-banner__slogan-main {
+  display: block;
+  font-size: clamp(var(--text-base), 2vw, var(--text-xl));
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-accent);
+  line-height: 1.3;
+}
+
+
+/* --------------------------------------------------------------------------
+   About Photo Strip — full-bleed 4-panel mosaic between story body & values
+   -------------------------------------------------------------------------- */
+
+.about-photos {
+  overflow: hidden;
+  line-height: 0;
+}
+
+.about-photos__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+}
+
+@media (min-width: 640px) {
+  .about-photos__grid {
+    grid-template-columns: repeat(4, 1fr);
+    height: 340px;
+  }
+}
+
+.about-photos__item {
+  margin: 0;
+  overflow: hidden;
+}
+
+.about-photos__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  aspect-ratio: 3 / 4;
+  transition: transform 0.5s ease;
+}
+
+@media (min-width: 640px) {
+  .about-photos__item img {
+    aspect-ratio: unset;
+  }
+}
+
+.about-photos__item:hover img {
+  transform: scale(1.05);
+}

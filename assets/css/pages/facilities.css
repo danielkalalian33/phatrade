@@ -1,0 +1,624 @@
+/* ==========================================================================
+   PHATRADE
+   pages/facilities.css — Facilities page specific styles
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Page Header
+   -------------------------------------------------------------------------- */
+
+.page-header {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.page-header .section-heading__title {
+  color: var(--color-white);
+}
+
+.page-header .section-heading__eyebrow {
+  color: var(--color-accent);
+}
+
+.page-header .section-heading__subtitle {
+  color: rgba(255, 255, 255, 0.80);
+}
+
+/* --------------------------------------------------------------------------
+   Stats strip (Task 9.3)
+   -------------------------------------------------------------------------- */
+
+/* Tinted background band for visual separation */
+#stats {
+  background-color: var(--color-bg);
+}
+
+/* The 5th stat has a two-word value ("15 min") — scale font slightly smaller
+   so it sits comfortably without wrapping in the value cell */
+#stats .stat-item:last-child .stat-item__value {
+  font-size: clamp(var(--text-2xl), 4vw, var(--text-3xl));
+}
+
+/* On very small viewports cap individual stat width so they stack cleanly */
+@media (max-width: 479px) {
+  #stats .stat-item {
+    flex-basis: calc(50% - var(--space-3));
+    max-width: calc(50% - var(--space-3));
+  }
+}
+
+
+/* --------------------------------------------------------------------------
+   Facility section layout (Task 9.4)
+   Two-column on desktop (content | highlight card), single-column on mobile
+   -------------------------------------------------------------------------- */
+
+.facility-section--alt {
+  background-color: var(--color-surface);
+}
+
+/* Two-column grid: main content + aside card */
+.facility-section__layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-10);
+  align-items: start;
+}
+
+@media (min-width: 900px) {
+  .facility-section__layout {
+    grid-template-columns: 1fr 360px;
+    gap: var(--space-12);
+  }
+}
+
+/* Eyebrow → heading → intro paragraph */
+.facility-section__content .section-heading__eyebrow {
+  display: inline-block;
+  margin-bottom: var(--space-3);
+}
+
+.facility-section__content .section-heading__title {
+  text-align: left;
+  margin-bottom: var(--space-4);
+}
+
+.facility-section__intro {
+  font-size: var(--text-lg);
+  color: #5a6b5e;
+  line-height: var(--leading-relaxed);
+  max-width: 65ch;
+  margin-bottom: var(--space-6);
+}
+
+/* --------------------------------------------------------------------------
+   Facility address block
+   -------------------------------------------------------------------------- */
+
+.facility-address {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  font-style: normal;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-primary);
+  margin-bottom: var(--space-8);
+  padding: var(--space-4);
+  background-color: rgba(45, 74, 53, 0.05);
+  border-left: 3px solid var(--color-accent);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  line-height: var(--leading-relaxed);
+}
+
+.facility-address svg {
+  flex-shrink: 0;
+  color: var(--color-accent);
+  margin-top: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   Obour City capability list
+   -------------------------------------------------------------------------- */
+
+.facility-capabilities {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.facility-capabilities__item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+.facility-capabilities__icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(45, 74, 53, 0.08);
+  border-radius: var(--radius-md);
+  color: var(--color-primary);
+}
+
+.facility-capabilities__label {
+  display: block;
+  font-size: var(--text-base);
+  font-weight: var(--weight-semibold);
+  color: var(--color-primary);
+  margin-bottom: var(--space-1);
+}
+
+.facility-capabilities__desc {
+  font-size: var(--text-sm);
+  color: #5a6b5e;
+  line-height: var(--leading-relaxed);
+  max-width: none;  /* override global p max-width inside list */
+}
+
+/* --------------------------------------------------------------------------
+   Sadat City equipment mini-stat grid
+   -------------------------------------------------------------------------- */
+
+.facility-equipment {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+  margin-top: var(--space-6);
+}
+
+@media (min-width: 480px) {
+  .facility-equipment {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.facility-equipment__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-5) var(--space-4);
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  text-align: center;
+}
+
+.facility-equipment__value {
+  font-family: var(--font-heading);
+  font-size: var(--text-4xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-accent);
+  line-height: 1;
+}
+
+.facility-equipment__label {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-primary);
+  line-height: var(--leading-snug);
+  text-align: center;
+  max-width: 100px;
+}
+
+/* --------------------------------------------------------------------------
+   Facility highlight card (aside)
+   -------------------------------------------------------------------------- */
+
+.facility-highlight {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-lg);
+  /* Stick to top on desktop when content scrolls past */
+  position: sticky;
+  top: calc(var(--navbar-height) + var(--space-6));
+}
+
+.facility-highlight__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-accent);
+  margin-bottom: var(--space-6);
+}
+
+.facility-highlight__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.facility-highlight__row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding-bottom: var(--space-5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.facility-highlight__row:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.facility-highlight__row dt {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-accent);
+}
+
+.facility-highlight__row dd {
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.85);
+  line-height: var(--leading-relaxed);
+  margin: 0;
+}
+
+/* Sticky is only useful on desktop where both columns are visible */
+@media (max-width: 899px) {
+  .facility-highlight {
+    position: static;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Farm crop cards (Task 9.4)
+   -------------------------------------------------------------------------- */
+
+.farm-crops {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+  gap: var(--space-6);
+}
+
+.farm-crop {
+  background-color: var(--color-white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+}
+
+.farm-crop:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+.farm-crop__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: var(--space-8) 0 var(--space-6);
+  background: linear-gradient(
+    135deg,
+    rgba(45, 74, 53, 0.08) 0%,
+    rgba(139, 158, 90, 0.10) 100%
+  );
+  color: var(--color-primary);
+}
+
+.farm-crop__body {
+  padding: var(--space-6);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.farm-crop__name {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-primary);
+  margin: 0;
+  line-height: var(--leading-snug);
+}
+
+.farm-crop__botanical {
+  font-size: var(--text-sm);
+  color: var(--color-secondary);
+  font-style: italic;
+  max-width: none;
+}
+
+.farm-crop__desc {
+  font-size: var(--text-sm);
+  color: #5a6b5e;
+  line-height: var(--leading-relaxed);
+  flex: 1;
+  max-width: none;
+}
+
+.farm-crop__products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: auto;
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--border-color);
+}
+
+/* --------------------------------------------------------------------------
+   Location Overview — professional map section
+   -------------------------------------------------------------------------- */
+
+.facilities-map-section {
+  background-color: var(--color-white);
+  border-top: 1px solid var(--border-color);
+}
+
+.facilities-map-section__header {
+  text-align: center;
+  margin-bottom: var(--space-12);
+}
+
+.facilities-map-section__header .section-heading__title {
+  text-align: center;
+  margin-bottom: var(--space-4);
+}
+
+.facilities-map-section__body {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: var(--space-10);
+  align-items: start;
+}
+
+@media (max-width: 960px) {
+  .facilities-map-section__body {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Location cards */
+.facilities-map-section__cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.location-card {
+  background-color: var(--color-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  transition: box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.location-card:hover {
+  box-shadow: var(--shadow-card);
+  border-color: var(--color-secondary);
+}
+
+.location-card--alt {
+  background-color: var(--color-surface);
+}
+
+.location-card__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.location-card__dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 2px solid var(--color-white);
+  box-shadow: 0 0 0 2px currentColor;
+}
+
+.location-card__dot--primary {
+  background-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.location-card__dot--accent {
+  background-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.location-card__name {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-primary);
+  margin: 0;
+  line-height: var(--leading-snug);
+}
+
+.location-card__role {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-secondary);
+  margin: var(--space-1) 0 0;
+}
+
+.location-card__specs {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin: 0;
+}
+
+.location-card__specs > div {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+}
+
+.location-card__specs dt {
+  font-weight: 600;
+  color: var(--color-primary);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding-top: 2px;
+}
+
+.location-card__specs dd {
+  color: #4a5a4e;
+  line-height: var(--leading-relaxed);
+  margin: 0;
+}
+
+.location-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-primary);
+  text-decoration: none;
+  margin-top: var(--space-2);
+  transition: color var(--transition-fast), gap var(--transition-fast);
+}
+
+.location-card__link:hover {
+  color: var(--color-accent-dark);
+  gap: var(--space-3);
+}
+
+/* Map panel */
+.facilities-map-section__map {
+  position: sticky;
+  top: calc(var(--navbar-height) + var(--space-6));
+}
+
+.facilities-map-section__map img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  display: block;
+}
+
+@media (max-width: 960px) {
+  .facilities-map-section__map {
+    position: static;
+  }
+}
+
+
+/* --------------------------------------------------------------------------
+   Facility Photo Gallery — overview grid (4 photos, featured + 3 small)
+   -------------------------------------------------------------------------- */
+
+.facility-gallery {
+  background-color: var(--color-surface);
+}
+
+.facility-gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+}
+
+@media (min-width: 768px) {
+  .facility-gallery__grid {
+    /* 2-col layout: featured fills left column across all 3 rows,
+       3 small items stack on the right — no empty cells */
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    height: 520px;
+  }
+}
+
+.facility-gallery__item {
+  margin: 0;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  line-height: 0;
+}
+
+.facility-gallery__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  aspect-ratio: 4 / 3;
+  transition: transform 0.45s ease;
+}
+
+.facility-gallery__item--featured {
+  grid-column: 1 / -1;
+}
+
+@media (min-width: 768px) {
+  .facility-gallery__item--featured {
+    grid-column: 1;
+    grid-row: 1 / 4; /* spans all 3 rows — fills the full left column */
+  }
+
+  .facility-gallery__item--featured img {
+    aspect-ratio: unset;
+    height: 100%;
+  }
+}
+
+.facility-gallery__item:hover img {
+  transform: scale(1.04);
+}
+
+/* --------------------------------------------------------------------------
+   Facility Photo Strip — 3-up grid inside each facility section
+   -------------------------------------------------------------------------- */
+
+.facility-photos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-10);
+}
+
+.facility-photos__item {
+  margin: 0;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-card);
+}
+
+.facility-photos__item img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.45s ease;
+}
+
+.facility-photos__item:hover img {
+  transform: scale(1.04);
+}
+
+.facility-photos__item figcaption {
+  line-height: var(--leading-normal);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--color-primary);
+  background-color: var(--color-white);
+  padding: var(--space-3) var(--space-4);
+  border-top: 2px solid var(--color-accent);
+  text-align: center;
+}

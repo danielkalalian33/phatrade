@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" width="400" height="280">
+  <defs>
+    <linearGradient id="con-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2D4A35"/>
+      <stop offset="100%" stop-color="#1e3326"/>
+    </linearGradient>
+    <linearGradient id="con-jar" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4a3820"/>
+      <stop offset="40%" stop-color="#3a2c18"/>
+      <stop offset="100%" stop-color="#2a1e10"/>
+    </linearGradient>
+    <linearGradient id="con-lid" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#d4a020"/>
+      <stop offset="100%" stop-color="#9e7b2e"/>
+    </linearGradient>
+    <linearGradient id="con-wax" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#c8a040"/>
+      <stop offset="100%" stop-color="#a07828"/>
+    </linearGradient>
+    <radialGradient id="con-glow" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="rgba(139,158,90,0.12)"/>
+      <stop offset="100%" stop-color="rgba(0,0,0,0)"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="400" height="280" fill="url(#con-bg)"/>
+  <rect width="400" height="280" fill="url(#con-glow)"/>
+
+  <!-- Scattered petals background -->
+  <g opacity="0.18" fill="#F0EDE4">
+    <ellipse cx="60" cy="80" rx="12" ry="20" transform="rotate(-30 60 80)"/>
+    <ellipse cx="340" cy="70" rx="10" ry="18" transform="rotate(25 340 70)"/>
+    <ellipse cx="75" cy="190" rx="9" ry="16" transform="rotate(15 75 190)"/>
+    <ellipse cx="330" cy="180" rx="11" ry="19" transform="rotate(-20 330 180)"/>
+    <ellipse cx="120" cy="50" rx="8" ry="14" transform="rotate(40 120 50)"/>
+    <ellipse cx="280" cy="55" rx="9" ry="15" transform="rotate(-35 280 55)"/>
+  </g>
+
+  <!-- Wide-mouth concrete jar -->
+  <!-- Jar body -->
+  <path d="M148 140 L148 238 Q148 250 160 250 L240 250 Q252 250 252 238 L252 140 Z" fill="url(#con-jar)"/>
+  <!-- Jar shine -->
+  <path d="M150 140 L150 238 Q150 249 160 249 L175 249 L175 140 Z" fill="rgba(255,255,255,0.04)"/>
+  <!-- Jar rim -->
+  <rect x="144" y="132" width="112" height="12" rx="4" fill="#3a2c18"/>
+  <!-- Wax/concrete content visible at top -->
+  <ellipse cx="200" cy="138" rx="52" ry="8" fill="url(#con-wax)"/>
+  <!-- Wax texture lines -->
+  <path d="M155 136 C170 133 185 135 200 134 C215 133 230 135 245 136" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <path d="M160 140 C175 137 190 139 200 138 C210 137 225 139 240 140" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="0.8"/>
+
+  <!-- Gold lid -->
+  <ellipse cx="200" cy="108" rx="58" ry="14" fill="url(#con-lid)"/>
+  <ellipse cx="200" cy="104" rx="54" ry="10" fill="#d4a020"/>
+  <!-- Lid highlight -->
+  <ellipse cx="185" cy="101" rx="20" ry="5" fill="rgba(255,240,160,0.25)"/>
+  <!-- Lid knob -->
+  <ellipse cx="200" cy="94" rx="18" ry="7" fill="#b88c20"/>
+  <ellipse cx="200" cy="91" rx="14" ry="5" fill="#c8a030"/>
+
+  <!-- Label on jar -->
+  <rect x="155" y="158" width="90" height="68" rx="3" fill="rgba(240,237,228,0.9)"/>
+  <rect x="157" y="160" width="86" height="64" rx="2" fill="none" stroke="#C9A84C" stroke-width="0.8"/>
+  <text x="200" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="6.5" font-weight="700" fill="#2D4A35" letter-spacing="1">PHATRADE</text>
+  <path d="M200 179 C200 179 196 184 196 187 a4 4 0 0 0 8 0 C204 184 200 179 200 179Z" fill="#C9A84C"/>
+  <text x="200" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="5.5" font-weight="600" fill="#2D4A35">CONCRETE</text>
+  <line x1="162" y1="204" x2="238" y2="204" stroke="#C9A84C" stroke-width="0.5"/>
+  <text x="200" y="213" text-anchor="middle" font-family="Arial, sans-serif" font-size="4.8" fill="#5a6b5e">Solvent Extracted</text>
+  <text x="200" y="221" text-anchor="middle" font-family="Arial, sans-serif" font-size="4.5" fill="#5a6b5e">Egyptian Origin</text>
+
+  <!-- Flowers around jar -->
+  <g transform="translate(96,155)">
+    <ellipse cx="0" cy="-22" rx="10" ry="18" fill="rgba(240,237,228,0.55)" transform="rotate(0)"/>
+    <ellipse cx="0" cy="-22" rx="10" ry="18" fill="rgba(240,237,228,0.55)" transform="rotate(72)"/>
+    <ellipse cx="0" cy="-22" rx="10" ry="18" fill="rgba(240,237,228,0.55)" transform="rotate(144)"/>
+    <ellipse cx="0" cy="-22" rx="10" ry="18" fill="rgba(240,237,228,0.55)" transform="rotate(216)"/>
+    <ellipse cx="0" cy="-22" rx="10" ry="18" fill="rgba(240,237,228,0.55)" transform="rotate(288)"/>
+    <circle cx="0" cy="0" r="12" fill="rgba(201,168,76,0.7)"/>
+    <circle cx="0" cy="0" r="6" fill="rgba(201,168,76,0.9)"/>
+  </g>
+  <g transform="translate(304,155)">
+    <ellipse cx="0" cy="-22" rx="10" ry="18" fill="rgba(240,237,228,0.55)" transform="rotate(0)"/>
+    <ellipse cx="0" cy="-22" rx="10" ry="18" fill="rgba(240,237,228,0.55)" transform="rotate(72)"/>
+    <ellipse cx="0" cy="-22" rx="10" ry="18" fill="rgba(240,237,228,0.55)" transform="rotate(144)"/>
+    <ellipse cx="0" cy="-22" rx="10" ry="18" fill="rgba(240,237,228,0.55)" transform="rotate(216)"/>
+    <ellipse cx="0" cy="-22" rx="10" ry="18" fill="rgba(240,237,228,0.55)" transform="rotate(288)"/>
+    <circle cx="0" cy="0" r="12" fill="rgba(201,168,76,0.7)"/>
+    <circle cx="0" cy="0" r="6" fill="rgba(201,168,76,0.9)"/>
+  </g>
+
+  <!-- Shadow -->
+  <ellipse cx="200" cy="253" rx="52" ry="6" fill="rgba(0,0,0,0.3)"/>
+  <text x="200" y="276" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="700" fill="rgba(201,168,76,0.7)" letter-spacing="3">CONCRETES</text>
+</svg>

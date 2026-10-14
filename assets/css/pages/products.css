@@ -1,0 +1,283 @@
+/* ==========================================================================
+   PHATRADE
+   pages/products.css — Products page styles
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Page Header
+   -------------------------------------------------------------------------- */
+
+.products-header {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.products-header .section-heading__title {
+  color: var(--color-white);
+}
+
+.products-header .section-heading__eyebrow {
+  color: var(--color-accent);
+}
+
+.products-header .section-heading__subtitle {
+  color: rgba(255, 255, 255, 0.80);
+}
+
+/* --------------------------------------------------------------------------
+   2. Category Tabs
+   -------------------------------------------------------------------------- */
+
+.category-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-8);
+  padding-bottom: var(--space-4);
+  border-bottom: 2px solid var(--border-color);
+}
+
+.category-tab {
+  padding: var(--space-2) var(--space-5);
+  min-height: 44px; /* WCAG touch target */
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--color-primary);
+  background-color: transparent;
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast);
+  white-space: nowrap;
+}
+
+.category-tab:hover {
+  border-color: var(--color-primary);
+  background-color: rgba(45, 74, 53, 0.06);
+}
+
+.category-tab[aria-selected="true"] {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* Focus indicator on light background */
+.category-tab:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 5px rgba(45, 74, 53, 0.20);
+}
+
+/* --------------------------------------------------------------------------
+   3. Product Grid — rich card layout
+   -------------------------------------------------------------------------- */
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  gap: var(--space-6);
+  min-height: 200px;
+}
+
+/* Card */
+.product-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+  border: 1px solid var(--border-color);
+}
+
+.product-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+/* Image */
+.product-card__image-link {
+  display: block;
+  overflow: hidden;
+}
+
+.product-card__image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition-slow);
+}
+
+.product-card:hover .product-card__image {
+  transform: scale(1.04);
+}
+
+/* Body */
+.product-card__body {
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  flex: 1;
+}
+
+/* Meta row */
+.product-card__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.product-card__category {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px var(--space-3);
+  background-color: rgba(45, 74, 53, 0.08);
+  color: var(--color-primary);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-radius: var(--radius-full);
+}
+
+.product-card__method {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px var(--space-3);
+  background-color: rgba(201, 168, 76, 0.10);
+  color: var(--color-accent-dark);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  border-radius: var(--radius-full);
+}
+
+/* Name */
+.product-card__name {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-bold);
+  color: var(--color-primary);
+  margin: 0;
+  line-height: var(--leading-snug);
+}
+
+.product-card__name a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.product-card__name a:hover {
+  color: var(--color-accent-dark);
+}
+
+/* Botanical name */
+.product-card__botanical {
+  font-size: var(--text-xs);
+  color: var(--color-secondary);
+  margin: 0;
+}
+
+/* Description snippet */
+.product-card__desc {
+  font-size: var(--text-sm);
+  color: #5a6b5e;
+  line-height: var(--leading-relaxed);
+  margin: 0;
+  flex: 1;
+  max-width: none;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Actions */
+.product-card__actions {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  margin-top: auto;
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--border-color);
+}
+
+/* Note card variant */
+.product-card--note {
+  background-color: var(--color-surface);
+  border: 2px dashed var(--border-color);
+}
+
+.product-card--note .product-card__name {
+  font-size: var(--text-base);
+  font-style: italic;
+}
+
+/* --------------------------------------------------------------------------
+   4. TDS / SDS CTA Strip
+   -------------------------------------------------------------------------- */
+
+.products-docs-cta {
+  background-color: var(--color-bg-dark);
+  border-top: 1px solid var(--border-color);
+}
+
+.products-docs-cta__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+}
+
+.products-docs-cta__heading {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-primary);
+  margin-bottom: var(--space-2);
+}
+
+.products-docs-cta__text p {
+  font-size: var(--text-base);
+  color: #5a6b5e;
+  max-width: 50ch;
+}
+
+.products-docs-cta__link {
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   5. Responsive adjustments
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 639px) {
+  .category-tabs {
+    gap: var(--space-2);
+  }
+
+  .category-tab {
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--text-xs);
+  }
+
+  .products-docs-cta__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .products-docs-cta__link {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+}

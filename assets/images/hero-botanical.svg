@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 480" width="360" height="480" role="img" aria-hidden="true">
+
+  <!-- Outer glow ring -->
+  <circle cx="180" cy="240" r="160" fill="none" stroke="rgba(201,168,76,0.08)" stroke-width="1"/>
+  <circle cx="180" cy="240" r="130" fill="none" stroke="rgba(201,168,76,0.06)" stroke-width="1"/>
+
+  <!-- Large central oil drop -->
+  <path d="M180 60 C180 60 100 160 100 230 a80 80 0 0 0 160 0 C260 160 180 60 180 60 Z"
+        fill="rgba(201,168,76,0.12)" stroke="#C9A84C" stroke-width="1.5"/>
+
+  <!-- Inner drop highlight -->
+  <path d="M180 100 C180 100 135 175 135 225 a45 45 0 0 0 90 0 C225 175 180 100 180 100 Z"
+        fill="rgba(201,168,76,0.18)"/>
+
+  <!-- Drop vein line -->
+  <line x1="180" y1="100" x2="180" y2="295" stroke="#C9A84C" stroke-width="1" opacity="0.4" stroke-dasharray="4 3"/>
+
+  <!-- Left large leaf -->
+  <path d="M120 200 C80 160 50 200 70 240 C90 280 130 260 140 230 C150 200 120 200 120 200 Z"
+        fill="rgba(45,74,53,0.6)" stroke="#8B9E5A" stroke-width="1"/>
+  <line x1="120" y1="200" x2="90" y2="235" stroke="#8B9E5A" stroke-width="0.8" opacity="0.6"/>
+
+  <!-- Right large leaf -->
+  <path d="M240 200 C280 160 310 200 290 240 C270 280 230 260 220 230 C210 200 240 200 240 200 Z"
+        fill="rgba(45,74,53,0.6)" stroke="#8B9E5A" stroke-width="1"/>
+  <line x1="240" y1="200" x2="270" y2="235" stroke="#8B9E5A" stroke-width="0.8" opacity="0.6"/>
+
+  <!-- Small upper left leaf -->
+  <path d="M140 150 C110 120 90 150 105 175 C120 200 148 185 150 165 C152 145 140 150 140 150 Z"
+        fill="rgba(139,158,90,0.5)" stroke="#8B9E5A" stroke-width="1"/>
+
+  <!-- Small upper right leaf -->
+  <path d="M220 150 C250 120 270 150 255 175 C240 200 212 185 210 165 C208 145 220 150 220 150 Z"
+        fill="rgba(139,158,90,0.5)" stroke="#8B9E5A" stroke-width="1"/>
+
+  <!-- Bottom small leaves -->
+  <path d="M155 310 C130 295 125 320 140 335 C155 350 168 335 165 320 C162 305 155 310 155 310 Z"
+        fill="rgba(139,158,90,0.4)" stroke="#8B9E5A" stroke-width="0.8"/>
+  <path d="M205 310 C230 295 235 320 220 335 C205 350 192 335 195 320 C198 305 205 310 205 310 Z"
+        fill="rgba(139,158,90,0.4)" stroke="#8B9E5A" stroke-width="0.8"/>
+
+  <!-- Gold accent dots (pollen/dew drops) -->
+  <circle cx="155" cy="140" r="3" fill="#C9A84C" opacity="0.7"/>
+  <circle cx="205" cy="135" r="2.5" fill="#C9A84C" opacity="0.6"/>
+  <circle cx="135" cy="185" r="2" fill="#C9A84C" opacity="0.5"/>
+  <circle cx="245" cy="180" r="2" fill="#C9A84C" opacity="0.5"/>
+  <circle cx="180" cy="310" r="3.5" fill="#C9A84C" opacity="0.8"/>
+
+  <!-- Stem at bottom -->
+  <path d="M180 310 C175 340 170 360 180 380" stroke="#8B9E5A" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <path d="M175 350 C160 340 155 350 160 360" stroke="#8B9E5A" stroke-width="1" fill="none" stroke-linecap="round"/>
+  <path d="M178 365 C192 355 196 365 192 375" stroke="#8B9E5A" stroke-width="1" fill="none" stroke-linecap="round"/>
+
+  <!-- Decorative orbit dots -->
+  <circle cx="180" cy="78" r="2" fill="#C9A84C" opacity="0.4"/>
+  <circle cx="60" cy="195" r="1.5" fill="#C9A84C" opacity="0.3"/>
+  <circle cx="300" cy="195" r="1.5" fill="#C9A84C" opacity="0.3"/>
+  <circle cx="180" cy="415" r="2" fill="#C9A84C" opacity="0.3"/>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80" role="img" aria-label="HACCP certification">
+  <title>HACCP Certified</title>
+  <!-- Rounded square gold background -->
+  <rect width="76" height="76" x="2" y="2" rx="14" fill="#C9A84C"/>
+  <!-- H symbol made from lines -->
+  <line x1="24" y1="24" x2="24" y2="52" stroke="#2D4A35" stroke-width="5" stroke-linecap="round"/>
+  <line x1="56" y1="24" x2="56" y2="52" stroke="#2D4A35" stroke-width="5" stroke-linecap="round"/>
+  <line x1="24" y1="38" x2="56" y2="38" stroke="#2D4A35" stroke-width="4" stroke-linecap="round"/>
+  <!-- Text -->
+  <text x="40" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" font-weight="800" fill="#2D4A35" letter-spacing="0.5">HACCP</text>
+</svg>

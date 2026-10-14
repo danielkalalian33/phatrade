@@ -1,0 +1,135 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 260" role="img" aria-label="PHATRADE logo">
+  <title>PHATRADE</title>
+  <defs>
+    <!-- Teardrop outline gradient: dark green top to medium green bottom -->
+    <linearGradient id="outlineGrad" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#3a6b3a"/>
+      <stop offset="100%" stop-color="#4a8040"/>
+    </linearGradient>
+    <!-- Leaf fill: layered sage-green -->
+    <linearGradient id="leafFill" x1="20%" y1="10%" x2="80%" y2="95%">
+      <stop offset="0%" stop-color="#a8c080"/>
+      <stop offset="45%" stop-color="#90b068"/>
+      <stop offset="100%" stop-color="#6a9050"/>
+    </linearGradient>
+    <!-- Leaf shadow right side -->
+    <linearGradient id="leafShadow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5a8848" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#3a6030" stop-opacity="0.85"/>
+    </linearGradient>
+    <!-- Gold gradient for curves and drop -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#f5d060"/>
+      <stop offset="40%" stop-color="#d4a020"/>
+      <stop offset="100%" stop-color="#b87800"/>
+    </linearGradient>
+    <!-- Gold shine lighter -->
+    <linearGradient id="goldShine" x1="0%" y1="0%" x2="60%" y2="100%">
+      <stop offset="0%" stop-color="#f8e080"/>
+      <stop offset="55%" stop-color="#d0980a"/>
+      <stop offset="100%" stop-color="#a06800"/>
+    </linearGradient>
+    <!-- Inner glow for the drop -->
+    <radialGradient id="dropGlow" cx="40%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#ffe880"/>
+      <stop offset="100%" stop-color="#c88010"/>
+    </radialGradient>
+  </defs>
+
+  <!-- ═══ OUTER TEARDROP OUTLINE ═══ -->
+  <!-- Sharp point at top, wide rounded bottom -->
+  <path d="
+    M 100 4
+    C 100 4  82 28  65 58
+    C 45 95  28 138  28 172
+    C 28 220  58 255  100 255
+    C 142 255  172 220  172 172
+    C 172 138  155 95  135 58
+    C 118 28  100 4  100 4 Z
+  " fill="none" stroke="url(#outlineGrad)" stroke-width="6" stroke-linejoin="round"/>
+
+  <!-- ═══ LARGE LEAF (fills lower 65% of the teardrop) ═══ -->
+  <!-- Main leaf body -->
+  <path d="
+    M 100 100
+    C 72 118  50 148  46 178
+    C 42 205  52 232  70 246
+    C 82 253  92 255  100 254
+    C 108 255  118 253  130 246
+    C 148 232  158 205  154 178
+    C 150 148  128 118  100 100 Z
+  " fill="url(#leafFill)"/>
+
+  <!-- Leaf right-side shadow layer -->
+  <path d="
+    M 100 120
+    C 118 135  140 160  148 188
+    C 155 210  150 232  136 246
+    C 122 254  110 255  100 254
+    C 108 250  118 242  126 228
+    C 138 208  144 185  140 162
+    C 136 140  122 128  100 120 Z
+  " fill="url(#leafShadow)"/>
+
+  <!-- Leaf central vein -->
+  <path d="M 100 108 C 99 162  98 210  99 250"
+        fill="none" stroke="rgba(60,90,30,0.5)" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Leaf right veins -->
+  <path d="M 104 160 C 122 165  138 178  144 195"
+        fill="none" stroke="rgba(60,90,30,0.4)" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M 103 185 C 118 190  130 202  132 218"
+        fill="none" stroke="rgba(60,90,30,0.35)" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M 102 210 C 114 214  120 224  120 236"
+        fill="none" stroke="rgba(60,90,30,0.3)" stroke-width="1.2" stroke-linecap="round"/>
+
+  <!-- Leaf left veins -->
+  <path d="M 96 160 C 78 165  62 178  56 195"
+        fill="none" stroke="rgba(60,90,30,0.35)" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M 97 185 C 82 190  70 202  68 218"
+        fill="none" stroke="rgba(60,90,30,0.3)" stroke-width="1.2" stroke-linecap="round"/>
+
+  <!-- ═══ GOLD FLOWING CURVES (flame-like lines) ═══ -->
+  <!-- Primary large gold curve — sweeps from upper-left across and down -->
+  <path d="
+    M 72 72
+    C 66 95   60 122   58 150
+    C 55 178  62 205   75 228
+    C 84 244  94 252   100 254
+  " fill="none" stroke="url(#goldShine)" stroke-width="13" stroke-linecap="round" opacity="0.90"/>
+
+  <!-- Secondary gold curve — slightly right of first -->
+  <path d="
+    M 88 60
+    C 84 84   80 112   80 142
+    C 79 172  85 200   96 224
+    C 100 234  104 244  108 252
+  " fill="none" stroke="url(#goldGrad)" stroke-width="8" stroke-linecap="round" opacity="0.78"/>
+
+  <!-- Third right-side gold accent -->
+  <path d="
+    M 128 88
+    C 136 112   140 140   138 168
+    C 136 192   128 214   118 232
+  " fill="none" stroke="url(#goldGrad)" stroke-width="5" stroke-linecap="round" opacity="0.62"/>
+
+  <!-- ═══ GOLD OIL DROPLET (top center, inside teardrop) ═══ -->
+  <path d="
+    M 100 26
+    C 100 26  88 46   88 58
+    a12 12 0 0 0 24 0
+    C 112 46  100 26  100 26 Z
+  " fill="url(#dropGlow)"/>
+  <!-- Drop inner shine -->
+  <path d="M 96 34 C 93 40  92 48  93 55 C 94 48  96 40  96 34 Z"
+        fill="rgba(255,248,180,0.7)"/>
+  <!-- Drop highlight dot -->
+  <circle cx="96" cy="38" r="3" fill="rgba(255,252,200,0.5)"/>
+
+  <!-- ═══ LIGHT HIGHLIGHT on left edge of teardrop ═══ -->
+  <path d="
+    M 100 8
+    C 94 22   80 46   68 74
+    C 52 108  38 148  36 182
+  " fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="7" stroke-linecap="round"/>
+</svg>

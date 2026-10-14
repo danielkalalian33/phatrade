@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PHATRADE Admin Panel</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" href="assets/images/logo.png" />
+  <link rel="stylesheet" href="assets/css/admin.css" />
+</head>
+<body class="admin-body">
+
+  <!-- LOGIN -->
+  <div id="login-screen" class="login-screen">
+    <div class="login-card">
+      <div class="login-logo">
+        <img src="assets/images/logo.png" alt="PHATRADE" width="60" height="60" />
+        <h1 class="login-title">PHATRADE</h1>
+        <p class="login-subtitle">Admin Panel</p>
+      </div>
+      <form id="login-form" class="login-form">
+        <div class="admin-field">
+          <label for="admin-password">Password</label>
+          <input type="password" id="admin-password" placeholder="Enter admin password" autocomplete="current-password" />
+        </div>
+        <p id="login-error" class="login-error" style="display:none">Incorrect password. Try again.</p>
+        <button type="submit" class="admin-btn admin-btn--primary admin-btn--full">Sign In</button>
+      </form>
+      <p class="login-hint">Contact your site administrator if you have forgotten your password.</p>
+    </div>
+  </div>
+
+  <!-- DASHBOARD -->
+  <div id="dashboard" class="dashboard" style="display:none">
+    <aside class="admin-sidebar">
+      <div class="admin-sidebar__logo">
+        <img src="assets/images/logo.png" alt="PHATRADE" width="40" height="40" />
+        <span>Admin Panel</span>
+      </div>
+      <nav class="admin-nav">
+        <button class="admin-nav__item active" data-section="hero">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          Hero Section
+        </button>
+        <button class="admin-nav__item" data-section="about">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+          About &amp; Company
+        </button>
+        <button class="admin-nav__item" data-section="contact-info">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6"/></svg>
+          Contact Info
+        </button>
+        <button class="admin-nav__item" data-section="images">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          Images &amp; Logo
+        </button>
+        <button class="admin-nav__item" data-section="products-page">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+          Products Page
+        </button>
+        <button class="admin-nav__item" data-section="quality-page">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2L3 7v5c0 5 3.9 9.7 9 11 5.1-1.3 9-6 9-11V7l-9-5z"/><polyline points="9 12 11 14 15 10"/></svg>
+          Quality Page
+        </button>
+        <button class="admin-nav__item" data-section="sustainability-page">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 20V10"/><path d="M18 6s-1 8-6 10C7 14 6 6 6 6s6-4 12 0z"/></svg>
+          Sustainability
+        </button>
+        <button class="admin-nav__item" data-section="facilities-page">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M8 21V8M16 21V8M2 12h20"/></svg>
+          Facilities Page
+        </button>
+        <button class="admin-nav__item" data-section="applications-page">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2C8.5 2 6 5 6 8c0 4 4 7 6 10 2-3 6-6 6-10 0-3-2.5-6-6-6z"/></svg>
+          Applications Page
+        </button>
+        <button class="admin-nav__item" data-section="cta-banner">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 11.69 19 19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6"/></svg>
+          CTA Banner
+        </button>
+        <button class="admin-nav__item" data-section="password">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Change Password
+        </button>
+      </nav>
+      <div class="admin-sidebar__footer">
+        <a href="index.html" target="_blank" class="admin-btn admin-btn--ghost admin-btn--sm">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Preview Site
+        </a>
+        <button id="logout-btn" class="admin-btn admin-btn--danger admin-btn--sm">Sign Out</button>
+      </div>
+    </aside>
+
+    <main class="admin-main">
+      <header class="admin-header">
+        <div>
+          <h2 class="admin-header__title" id="section-title">Hero Section</h2>
+          <p class="admin-header__subtitle">Changes are saved to your browser and shown on the live site.</p>
+        </div>
+        <div class="admin-header__actions">
+          <button id="reset-btn" class="admin-btn admin-btn--ghost admin-btn--sm">Reset to Defaults</button>
+          <button id="save-btn" class="admin-btn admin-btn--primary">Save Changes</button>
+        </div>
+      </header>
+
+      <div id="admin-toast" class="admin-toast" style="display:none">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+        <span id="admin-toast-msg">Saved.</span>
+      </div>
+
+      <!-- HERO -->
+      <section id="section-hero" class="admin-section">
+        <div class="admin-card">
+          <h3 class="admin-card__title">Hero Text</h3>
+          <div class="admin-grid">
+            <div class="admin-field"><label>Eyebrow Text</label><input type="text" id="hero-eyebrow" /></div>
+            <div class="admin-field"><label>Title Line 1</label><input type="text" id="hero-title-line1" /></div>
+            <div class="admin-field"><label>Title Line 2 (gold italic)</label><input type="text" id="hero-title-line2" /></div>
+            <div class="admin-field admin-field--full"><label>Tagline</label><input type="text" id="hero-tagline" /></div>
+            <div class="admin-field"><label>Slogan Line 1</label><input type="text" id="hero-slogan-line1" /></div>
+            <div class="admin-field"><label>Slogan Line 2 (large gold)</label><input type="text" id="hero-slogan-line2" /></div>
+            <div class="admin-field"><label>Button 1 Text</label><input type="text" id="hero-cta1" /></div>
+            <div class="admin-field"><label>Button 2 Text</label><input type="text" id="hero-cta2" /></div>
+          </div>
+        </div>
+        <div class="admin-card">
+          <h3 class="admin-card__title">Hero Stat Badges</h3>
+          <div class="admin-grid">
+            <div class="admin-field"><label>Badge 1 Number</label><input type="text" id="badge1-num" /></div>
+            <div class="admin-field"><label>Badge 1 Label</label><input type="text" id="badge1-label" /></div>
+            <div class="admin-field"><label>Badge 2 Number</label><input type="text" id="badge2-num" /></div>
+            <div class="admin-field"><label>Badge 2 Label</label><input type="text" id="badge2-label" /></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="section-about" class="admin-section" style="display:none">
+        <div class="admin-card">
+          <h3 class="admin-card__title">About / Company</h3>
+          <div class="admin-grid">
+            <div class="admin-field admin-field--full"><label>Section Heading</label><input type="text" id="about-heading" /></div>
+            <div class="admin-field admin-field--full"><label>About Paragraph</label><textarea id="about-body" rows="5"></textarea></div>
+            <div class="admin-field admin-field--full"><label>Company Slogan</label><input type="text" id="company-slogan" /></div>
+          </div>
+        </div>
+        <div class="admin-card">
+          <h3 class="admin-card__title">Stats</h3>
+          <div class="admin-grid">
+            <div class="admin-field"><label>Stat 1 Number</label><input type="text" id="stat1-num" /></div>
+            <div class="admin-field"><label>Stat 1 Suffix</label><input type="text" id="stat1-suffix" /></div>
+            <div class="admin-field admin-field--full"><label>Stat 1 Label</label><input type="text" id="stat1-label" /></div>
+            <div class="admin-field"><label>Stat 2 Number</label><input type="text" id="stat2-num" /></div>
+            <div class="admin-field"><label>Stat 2 Suffix</label><input type="text" id="stat2-suffix" /></div>
+            <div class="admin-field admin-field--full"><label>Stat 2 Label</label><input type="text" id="stat2-label" /></div>
+            <div class="admin-field"><label>Stat 3 Number</label><input type="text" id="stat3-num" /></div>
+            <div class="admin-field"><label>Stat 3 Suffix</label><input type="text" id="stat3-suffix" /></div>
+            <div class="admin-field admin-field--full"><label>Stat 3 Label</label><input type="text" id="stat3-label" /></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT INFO -->
+      <section id="section-contact-info" class="admin-section" style="display:none">
+        <div class="admin-card">
+          <h3 class="admin-card__title">Contact Details</h3>
+          <div class="admin-grid">
+            <div class="admin-field admin-field--full"><label>Email Address</label><input type="email" id="contact-email" /></div>
+            <div class="admin-field"><label>Phone 1</label><input type="text" id="contact-phone1" /></div>
+            <div class="admin-field"><label>Phone 2</label><input type="text" id="contact-phone2" /></div>
+            <div class="admin-field admin-field--full"><label>Head Office Address</label><textarea id="contact-address1" rows="3"></textarea></div>
+            <div class="admin-field admin-field--full"><label>Factory &amp; Farm Address</label><textarea id="contact-address2" rows="3"></textarea></div>
+            <div class="admin-field admin-field--full"><label>WhatsApp Number (no +, e.g. 20224810158)</label><input type="text" id="contact-whatsapp" /></div>
+            <div class="admin-field admin-field--full"><label>LinkedIn URL</label><input type="url" id="social-linkedin" /></div>
+            <div class="admin-field admin-field--full"><label>Facebook URL</label><input type="url" id="social-facebook" /></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- IMAGES -->
+      <section id="section-images" class="admin-section" style="display:none">
+        <div class="admin-card">
+          <h3 class="admin-card__title">Logo</h3>
+          <div class="admin-image-upload">
+            <img id="logo-preview" src="assets/images/logo.png" alt="Logo" />
+            <div class="admin-image-upload__info">
+              <p>To change the logo: save your new file as <code>logo.png</code> in <code>assets/images/</code> then refresh.</p>
+            </div>
+          </div>
+        </div>
+        <div class="admin-card">
+          <h3 class="admin-card__title">Hero Background Image</h3>
+          <div class="admin-image-upload">
+            <div class="admin-image-upload__dropzone" id="hero-bg-dropzone">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <p>Click to upload hero background</p>
+              <p class="admin-hint">Recommended: 1920x1080 JPG or PNG</p>
+              <input type="file" id="hero-bg-input" accept="image/*" />
+            </div>
+            <div id="hero-bg-preview-wrap" style="display:none">
+              <img id="hero-bg-preview" alt="Hero background" style="width:100%;max-height:200px;object-fit:cover;border-radius:8px" />
+              <button class="admin-btn admin-btn--danger admin-btn--sm" id="hero-bg-remove" style="margin-top:8px">Remove Image</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRODUCTS PAGE -->
+      <section id="section-products-page" class="admin-section" style="display:none">
+        <div class="admin-card">
+          <h3 class="admin-card__title">Products Page Header</h3>
+          <div class="admin-grid">
+            <div class="admin-field admin-field--full"><label>Page Heading</label><input type="text" id="products-heading" /></div>
+            <div class="admin-field admin-field--full"><label>Page Subtitle</label><textarea id="products-subtitle" rows="3"></textarea></div>
+          </div>
+        </div>
+        <div class="admin-card">
+          <h3 class="admin-card__title">Product Categories Section</h3>
+          <div class="admin-grid">
+            <div class="admin-field admin-field--full"><label>Section Heading</label><input type="text" id="showcase-heading" /></div>
+            <div class="admin-field admin-field--full"><label>Section Subtitle</label><input type="text" id="showcase-subtitle" /></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- QUALITY PAGE -->
+      <section id="section-quality-page" class="admin-section" style="display:none">
+        <div class="admin-card">
+          <h3 class="admin-card__title">Quality Page Header</h3>
+          <div class="admin-grid">
+            <div class="admin-field admin-field--full"><label>Page Heading</label><input type="text" id="quality-heading" /></div>
+            <div class="admin-field admin-field--full"><label>Page Subtitle</label><textarea id="quality-subtitle" rows="3"></textarea></div>
+          </div>
+        </div>
+        <div class="admin-card">
+          <h3 class="admin-card__title">GC Laboratory Section</h3>
+          <div class="admin-grid">
+            <div class="admin-field admin-field--full"><label>GC Lab Heading</label><input type="text" id="gclab-heading" /></div>
+            <div class="admin-field admin-field--full"><label>GC Lab Intro Text</label><textarea id="gclab-intro" rows="3"></textarea></div>
+          </div>
+        </div>
+        <div class="admin-card">
+          <h3 class="admin-card__title">Traceability Section</h3>
+          <div class="admin-grid">
+            <div class="admin-field admin-field--full"><label>Traceability Subtitle</label><textarea id="traceability-subtitle" rows="3"></textarea></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SUSTAINABILITY PAGE -->
+      <section id="section-sustainability-page" class="admin-section" style="display:none">
+        <div class="admin-card">
+          <h3 class="admin-card__title">Sustainability Hero</h3>
+          <div class="admin-grid">
+            <div class="admin-field admin-field--full"><label>Hero Heading</label><input type="text" id="sus-heading" /></div>
+            <div class="admin-field admin-field--full"><label>Hero Subtitle</label><textarea id="sus-subtitle" rows="3"></textarea></div>
+          </div>
+        </div>
+        <div class="admin-card">
+          <h3 class="admin-card__title">Local Sourcing Section</h3>
+          <div class="admin-grid">
+            <div class="admin-field admin-field--full"><label>Sourcing Lead Paragraph</label><textarea id="sus-sourcing-lead" rows="3"></textarea></div>
+          </div>
+        </div>
+        <div class="admin-card">
+          <h3 class="admin-card__title">Farm to Ingredient Section</h3>
+          <div class="admin-grid">
+            <div class="admin-field admin-field--full"><label>Section Subtitle</label><textarea id="sus-process-subtitle" rows="3"></textarea></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FACILITIES PAGE -->
+      <section id="section-facilities-page" class="admin-section" style="display:none">
+        <div class="admin-card">
+          <h3 class="admin-card__title">Facilities Page Header</h3>
+          <div class="admin-grid">
+            <div class="admin-field admin-field--full"><label>Page Heading</label><input type="text" id="facilities-heading" /></div>
+            <div class="admin-field admin-field--full"><label>Page Subtitle</label><textarea id="facilities-subtitle" rows="3"></textarea></div>
+          </div>
+        </div>
+        <div class="admin-card">
+          <h3 class="admin-card__title">Obour City Section</h3>
+          <div class="admin-grid">
+            <div class="admin-field admin-field--full"><label>Intro Paragraph</label><textarea id="obour-intro" rows="3"></textarea></div>
+          </div>
+        </div>
+        <div class="admin-card">
+          <h3 class="admin-card__title">Sadat City Section</h3>
+          <div class="admin-grid">
+            <div class="admin-field admin-field--full"><label>Intro Paragraph</label><textarea id="sadat-intro" rows="3"></textarea></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- APPLICATIONS PAGE -->
+      <section id="section-applications-page" class="admin-section" style="display:none">
+        <div class="admin-card">
+          <h3 class="admin-card__title">Applications Page Header</h3>
+          <div class="admin-grid">
+            <div class="admin-field admin-field--full"><label>Page Heading</label><input type="text" id="applications-heading" /></div>
+            <div class="admin-field admin-field--full"><label>Intro Paragraph</label><textarea id="applications-intro" rows="4"></textarea></div>
+          </div>
+        </div>
+        <div class="admin-card">
+          <h3 class="admin-card__title">Sectors Section</h3>
+          <div class="admin-grid">
+            <div class="admin-field admin-field--full"><label>Section Heading</label><input type="text" id="sectors-heading" /></div>
+            <div class="admin-field admin-field--full"><label>Section Subtitle</label><textarea id="sectors-subtitle" rows="3"></textarea></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA BANNER -->
+      <section id="section-cta-banner" class="admin-section" style="display:none">
+        <div class="admin-card">
+          <h3 class="admin-card__title">Homepage CTA Banner</h3>
+          <div class="admin-grid">
+            <div class="admin-field admin-field--full"><label>CTA Heading</label><input type="text" id="cta-heading-text" /></div>
+            <div class="admin-field admin-field--full"><label>CTA Subtext</label><input type="text" id="cta-subtext" /></div>
+            <div class="admin-field"><label>Button 1 Text</label><input type="text" id="cta-btn1" /></div>
+            <div class="admin-field"><label>Button 2 Text</label><input type="text" id="cta-btn2" /></div>
+          </div>
+        </div>
+        <div class="admin-card">
+          <h3 class="admin-card__title">Global Reach Section</h3>
+          <div class="admin-grid">
+            <div class="admin-field admin-field--full"><label>Section Heading</label><input type="text" id="reach-heading" /></div>
+            <div class="admin-field admin-field--full"><label>Description</label><textarea id="reach-description" rows="3"></textarea></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PASSWORD -->
+      <section id="section-password" class="admin-section" style="display:none">
+        <div class="admin-card">
+          <h3 class="admin-card__title">Change Admin Password</h3>
+          <div class="admin-grid">
+            <div class="admin-field admin-field--full"><label>Current Password</label><input type="password" id="current-password" /></div>
+            <div class="admin-field admin-field--full"><label>New Password</label><input type="password" id="new-password" /></div>
+            <div class="admin-field admin-field--full"><label>Confirm New Password</label><input type="password" id="confirm-password" /></div>
+          </div>
+          <p id="password-error" class="login-error" style="display:none;margin-top:8px"></p>
+          <button id="change-password-btn" class="admin-btn admin-btn--primary" style="margin-top:16px">Update Password</button>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+<script>
+(function() {
+  var STORAGE_KEY = 'phatrade_cms';
+  var PASSWORD_KEY = 'phatrade_admin_pw';
+  var DEFAULT_PW = 'phatrade2024';
+
+  var DEFAULTS = {
+    'hero-eyebrow': 'Where Nature Meets Global Trust',
+    'hero-title-line1': "Egypt's Finest",
+    'hero-title-line2': 'Aromatic Ingredients',
+    'hero-tagline': 'Premium essential oils, concretes, and absolutes, grown and crafted in Egypt.',
+    'hero-slogan-line1': 'Where Nature Meets',
+    'hero-slogan-line2': 'Global Trust',
+    'hero-cta1': 'Explore Products',
+    'hero-cta2': 'Request a Sample',
+    'badge1-num': '50',
+    'badge1-label': 'Years of Excellence',
+    'badge2-num': '5',
+    'badge2-label': 'Continents Served',
+    'about-heading': "Egypt's Leading Aromatic Ingredient Manufacturer",
+    'about-body': "Founded in 1975, PHATRADE has grown from a spice and herb trading company into one of Egypt's most trusted producers of essential oils, concretes, and absolutes. Every ingredient we supply is cultivated on our own farm, extracted at our Sadat City facility, and GC-verified at our Obour City laboratory before it reaches you.",
+    'company-slogan': 'Where Nature Meets Global Trust',
+    'stat1-num': '50', 'stat1-suffix': '+', 'stat1-label': 'Years of Manufacturing Experience',
+    'stat2-num': '27', 'stat2-suffix': '',  'stat2-label': 'Product Lines',
+    'stat3-num': '5',  'stat3-suffix': '',  'stat3-label': 'Export Continents',
+    'contact-email': 'info@phatrade-eg.com',
+    'contact-phone1': '+2 02 4481 0158',
+    'contact-phone2': '+2 02 4481 0159',
+    'contact-address1': '3 Street 194, Western Extension, Industrial Zone, Obour City 11181, Cairo Governorate, Egypt',
+    'contact-address2': 'Km 15, Sadat City, Kafr Dawood Road, Al-Beheira Governorate, Egypt',
+    'contact-whatsapp': '20224810158',
+    'social-linkedin': '#',
+    'social-facebook': '#',
+    'products-heading': 'Product Range',
+    'products-subtitle': 'Natural aromatic ingredients cultivated and extracted in Egypt, from essential oils and concretes to absolutes and aroma chemicals, available for B2B enquiry.',
+    'showcase-heading': 'Our Product Categories',
+    'showcase-subtitle': 'From single-origin Egyptian essential oils to rare concretes and absolutes.',
+    'quality-heading': 'Quality Assurance',
+    'quality-subtitle': 'Every batch of PHATRADE essential oils is produced and verified against internationally recognised food-safety and quality standards, from cultivation through to shipment.',
+    'gclab-heading': 'GC Laboratory',
+    'gclab-intro': 'Our on-site Gas Chromatography laboratory provides independent verification of purity and chemical composition for every product we produce. No outsourcing, no delays.',
+    'traceability-subtitle': 'Every PHATRADE batch is traceable through four documented stages, from cultivation on our own farm to final export, ensuring full transparency for supplier-qualification audits.',
+    'sus-heading': 'Sustainability',
+    'sus-subtitle': 'At PHATRADE, sustainability is woven into every stage of our work, from the fields where our crops grow to the shipment of the finished ingredient.',
+    'sus-sourcing-lead': 'By eliminating intermediary steps and keeping the entire supply chain close to home, PHATRADE guarantees the traceability and freshness that B2B buyers in fragrance, flavour, and cosmetic industries demand.',
+    'sus-process-subtitle': 'Every PHATRADE essential oil travels a deliberate, controlled journey, from the soil of our Egyptian farm to a labelled, documented ingredient ready for your formulation.',
+    'facilities-heading': 'Our Facilities',
+    'facilities-subtitle': 'Two strategically located sites in Egypt, combining head-office operations, advanced manufacturing, a dedicated QC laboratory, and our own farm, give PHATRADE full control from cultivation through to shipment.',
+    'obour-intro': "PHATRADE's principal site in Obour City houses all corporate functions alongside state-of-the-art production, quality control, and logistics operations under one roof, conveniently located just 15 minutes by road from Cairo International Airport.",
+    'sadat-intro': 'Situated 94 km north-west of Cairo in Al-Beheira Governorate, the Sadat City site combines an integrated extraction factory with our own cultivation farm, enabling complete farm-to-ingredient traceability from a single location.',
+    'applications-heading': 'Industries We Serve',
+    'applications-intro': "PHATRADE's essential oils, concretes, absolutes, and aroma chemicals are trusted by manufacturers across six global industries, from fine fragrance houses to pharmaceutical producers.",
+    'sectors-heading': 'Our Sector Expertise',
+    'sectors-subtitle': 'From fragrance creation to pharmaceutical formulation, our aromatic ingredients support diverse manufacturing needs with consistent quality and full traceability.',
+    'cta-heading-text': 'Ready to source premium natural ingredients?',
+    'cta-subtext': 'Contact our team to discuss samples, pricing, or supplier qualification.',
+    'cta-btn1': 'Request a Sample',
+    'cta-btn2': 'Contact Our Team',
+    'reach-heading': 'Egyptian Origin, Global Reach',
+    'reach-description': "PHATRADE has been cultivating and processing Egypt's finest aromatic crops since 1975. Our production facilities in Obour City and Sadat City supply natural ingredients to buyers across five continents."
+  };
+
+  function loadData() {
+    try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch(e) { return {}; }
+  }
+
+  function saveData(d) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(d));
+  }
+
+  function getPW() {
+    return localStorage.getItem(PASSWORD_KEY) || DEFAULT_PW;
+  }
+
+  function el(id) { return document.getElementById(id); }
+
+  function show(id) { var e = el(id); if(e) e.style.display = ''; }
+  function hide(id) { var e = el(id); if(e) e.style.display = 'none'; }
+
+  function showToast(msg) {
+    var t = el('admin-toast');
+    var m = el('admin-toast-msg');
+    if (!t || !m) return;
+    m.textContent = msg;
+    t.style.display = 'flex';
+    setTimeout(function() { t.style.display = 'none'; }, 4000);
+  }
+
+  function populateForms() {
+    var d = loadData();
+    var keys = Object.keys(DEFAULTS);
+    for (var i = 0; i < keys.length; i++) {
+      var k = keys[i];
+      var e = el(k);
+      if (e) e.value = (d[k] !== undefined) ? d[k] : DEFAULTS[k];
+    }
+    if (d['hero-bg-image']) {
+      var prev = el('hero-bg-preview');
+      if (prev) prev.src = d['hero-bg-image'];
+      show('hero-bg-preview-wrap');
+      hide('hero-bg-dropzone');
+    }
+  }
+
+  function showDashboard() {
+    hide('login-screen');
+    show('dashboard');
+    populateForms();
+  }
+
+  window.addEventListener('load', function() {
+
+    // Auto-login
+    if (sessionStorage.getItem('phatrade_admin_auth') === '1') {
+      showDashboard();
+    }
+
+    // Login form
+    var lf = el('login-form');
+    if (lf) {
+      lf.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var pw = el('admin-password').value;
+        if (pw === getPW()) {
+          sessionStorage.setItem('phatrade_admin_auth', '1');
+          hide('login-error');
+          showDashboard();
+        } else {
+          show('login-error');
+          el('admin-password').value = '';
+        }
+      });
+    }
+
+    // Logout
+    var lb = el('logout-btn');
+    if (lb) {
+      lb.addEventListener('click', function() {
+        sessionStorage.removeItem('phatrade_admin_auth');
+        hide('dashboard');
+        show('login-screen');
+        el('admin-password').value = '';
+      });
+    }
+
+    // Nav
+    var navBtns = document.querySelectorAll('.admin-nav__item');
+    var sectionTitles = { hero:'Hero Section', about:'About & Company', 'contact-info':'Contact Info', images:'Images & Logo', 'products-page':'Products Page', 'quality-page':'Quality Page', 'sustainability-page':'Sustainability Page', 'facilities-page':'Facilities Page', 'applications-page':'Applications Page', 'cta-banner':'CTA Banner', password:'Change Password' };
+    for (var i = 0; i < navBtns.length; i++) {
+      (function(btn) {
+        btn.addEventListener('click', function() {
+          var target = btn.getAttribute('data-section');
+          for (var j = 0; j < navBtns.length; j++) navBtns[j].classList.remove('active');
+          btn.classList.add('active');
+          var secs = document.querySelectorAll('.admin-section');
+          for (var k = 0; k < secs.length; k++) secs[k].style.display = 'none';
+          var sec = el('section-' + target);
+          if (sec) sec.style.display = '';
+          var st = el('section-title');
+          if (st) st.textContent = sectionTitles[target] || target;
+          var toast = el('admin-toast');
+          if (toast) toast.style.display = 'none';
+        });
+      })(navBtns[i]);
+    }
+
+    // Save
+    var sb = el('save-btn');
+    if (sb) {
+      sb.addEventListener('click', function() {
+        var d = loadData();
+        var keys = Object.keys(DEFAULTS);
+        for (var i = 0; i < keys.length; i++) {
+          var e = el(keys[i]);
+          if (e) d[keys[i]] = e.value;
+        }
+        saveData(d);
+        showToast('Changes saved! Refresh the site to see updates.');
+      });
+    }
+
+    // Reset
+    var rb = el('reset-btn');
+    if (rb) {
+      rb.addEventListener('click', function() {
+        if (!confirm('Reset this section to defaults?')) return;
+        var d = loadData();
+        var active = document.querySelector('.admin-section:not([style*="none"])');
+        if (active) {
+          var inputs = active.querySelectorAll('input, textarea');
+          for (var i = 0; i < inputs.length; i++) {
+            var inp = inputs[i];
+            if (inp.id && DEFAULTS[inp.id] !== undefined) {
+              d[inp.id] = DEFAULTS[inp.id];
+              inp.value = DEFAULTS[inp.id];
+            }
+          }
+        }
+        saveData(d);
+        showToast('Section reset to defaults.');
+      });
+    }
+
+    // Hero BG upload
+    var hbi = el('hero-bg-input');
+    if (hbi) {
+      hbi.addEventListener('change', function(e) {
+        var file = e.target.files[0];
+        if (!file) return;
+        var reader = new FileReader();
+        reader.onload = function(ev) {
+          var url = ev.target.result;
+          var d = loadData();
+          d['hero-bg-image'] = url;
+          saveData(d);
+          var prev = el('hero-bg-preview');
+          if (prev) prev.src = url;
+          show('hero-bg-preview-wrap');
+          hide('hero-bg-dropzone');
+          showToast('Hero image saved. Refresh the homepage to see it.');
+        };
+        reader.readAsDataURL(file);
+      });
+    }
+
+    var hbr = el('hero-bg-remove');
+    if (hbr) {
+      hbr.addEventListener('click', function() {
+        var d = loadData();
+        delete d['hero-bg-image'];
+        saveData(d);
+        hide('hero-bg-preview-wrap');
+        show('hero-bg-dropzone');
+        showToast('Hero image removed.');
+      });
+    }
+
+    // Change password
+    var cpb = el('change-password-btn');
+    if (cpb) {
+      cpb.addEventListener('click', function() {
+        var cur = el('current-password').value;
+        var nw  = el('new-password').value;
+        var con = el('confirm-password').value;
+        var err = el('password-error');
+        if (cur !== getPW()) { err.textContent = 'Current password is incorrect.'; err.style.display = 'block'; return; }
+        if (nw.length < 6)  { err.textContent = 'Password must be at least 6 characters.'; err.style.display = 'block'; return; }
+        if (nw !== con)     { err.textContent = 'Passwords do not match.'; err.style.display = 'block'; return; }
+        localStorage.setItem(PASSWORD_KEY, nw);
+        err.style.display = 'none';
+        el('current-password').value = '';
+        el('new-password').value = '';
+        el('confirm-password').value = '';
+        showToast('Password updated successfully.');
+      });
+    }
+
+  });
+})();
+</script>
+</body>
+</html>

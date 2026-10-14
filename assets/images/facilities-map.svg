@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 440" width="600" height="440" role="img" aria-label="Map showing Obour City and Sadat City facilities relative to Cairo">
+  <title>PHATRADE Facility Locations – Egypt</title>
+  <defs>
+    <style>
+      text { font-family: Georgia, serif; }
+      .label-city { font-size: 13px; font-weight: 700; fill: #1A1A1A; }
+      .label-facility { font-size: 11px; font-weight: 600; fill: #2D4A35; }
+      .label-distance { font-size: 10px; fill: #5a6b5e; font-style: italic; }
+      .dot-cairo { fill: #1A1A1A; }
+      .dot-obour { fill: #2D4A35; }
+      .dot-sadat { fill: #C9A84C; }
+      .route { stroke: #8B9E5A; stroke-width: 2; stroke-dasharray: 6 4; fill: none; opacity: 0.7; }
+      .bg { fill: #F0EDE4; }
+      .water { fill: #c8dde8; }
+      .land { fill: #e8e4d8; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="440" rx="12" fill="#F0EDE4"/>
+
+  <!-- Simplified Egypt outline / landmass -->
+  <polygon class="land" points="80,60 520,60 540,200 500,380 380,420 100,420 60,320 70,160"/>
+
+  <!-- Nile delta approximation -->
+  <polygon class="water" points="270,60 310,60 330,200 290,220 250,200"/>
+  <polygon class="water" points="290,220 310,230 305,320 295,320 285,310"/>
+
+  <!-- Cairo marker -->
+  <circle cx="310" cy="230" r="8" class="dot-cairo"/>
+  <text x="322" y="228" class="label-city">Cairo</text>
+
+  <!-- Obour City marker (~30 km NE of Cairo) -->
+  <circle cx="360" cy="190" r="10" class="dot-obour"/>
+  <text x="374" y="188" class="label-facility">Obour City</text>
+  <text x="374" y="202" class="label-distance">Head Office &amp; QC Lab</text>
+  <text x="374" y="215" class="label-distance">~15 min from Cairo Airport</text>
+
+  <!-- Sadat City marker (~94 km NW of Cairo) -->
+  <circle cx="160" cy="160" r="10" class="dot-sadat"/>
+  <text x="174" y="155" class="label-facility">Sadat City</text>
+  <text x="174" y="168" class="label-distance">Factory &amp; Farm</text>
+  <text x="174" y="181" class="label-distance">~94 km NW of Cairo</text>
+
+  <!-- Route lines -->
+  <line x1="310" y1="230" x2="360" y2="190" class="route"/>
+  <line x1="310" y1="230" x2="160" y2="160" class="route"/>
+
+  <!-- Cairo Airport marker -->
+  <rect x="355" y="145" width="14" height="14" rx="2" fill="#8B9E5A"/>
+  <text x="373" y="156" class="label-distance">Cairo Airport</text>
+
+  <!-- Distance labels on routes -->
+  <text x="332" y="215" class="label-distance" transform="rotate(-40 332 215)">~30 km</text>
+  <text x="225" y="208" class="label-distance" transform="rotate(-10 225 208)">~94 km</text>
+
+  <!-- Legend -->
+  <rect x="20" y="355" width="220" height="70" rx="8" fill="white" fill-opacity="0.85"/>
+  <circle cx="38" cy="374" r="7" class="dot-obour"/>
+  <text x="52" y="378" class="label-facility">Obour City (Head Office)</text>
+  <circle cx="38" cy="395" r="7" class="dot-sadat"/>
+  <text x="52" y="399" class="label-facility">Sadat City (Factory &amp; Farm)</text>
+  <circle cx="38" cy="416" r="7" class="dot-cairo"/>
+  <text x="52" y="420" class="label-city" font-size="11">Cairo (reference)</text>
+
+  <!-- Title bar -->
+  <rect x="0" y="0" width="600" height="46" rx="12" fill="#2D4A35"/>
+  <rect x="0" y="34" width="600" height="12" fill="#2D4A35"/>
+  <text x="300" y="28" text-anchor="middle" font-family="Georgia, serif" font-size="15" font-weight="700" fill="#C9A84C">PHATRADE — Production Facilities, Egypt</text>
+</svg>

@@ -1,0 +1,483 @@
+/* ==========================================================================
+   PHATRADE
+   pages/contact.css — Contact page styles
+   Sections: Page Header, Contact Info (address + map), Form Section headings
+   Requirements: 11.8, 11.9, 12.4, 12.7
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Page Header
+   -------------------------------------------------------------------------- */
+
+.contact-page-header {
+  background-color: var(--color-primary);
+  padding-block: var(--space-16) var(--space-12);
+  /* Offset for fixed navbar */
+  padding-top: calc(var(--navbar-height) + var(--space-16));
+}
+
+.contact-page-header__title {
+  font-family: var(--font-heading);
+  font-size: clamp(var(--text-3xl), 4vw, var(--text-5xl));
+  font-weight: var(--weight-bold);
+  color: var(--color-accent);
+  margin-bottom: var(--space-4);
+}
+
+.contact-page-header__intro {
+  font-size: var(--text-lg);
+  color: rgba(255, 255, 255, 0.85);
+  line-height: var(--leading-relaxed);
+  max-width: 65ch;
+}
+
+/* --------------------------------------------------------------------------
+   2. Contact Info Section — grid layout
+   -------------------------------------------------------------------------- */
+
+.contact-info-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-10);
+  align-items: start;
+}
+
+@media (min-width: 768px) {
+  .contact-info-grid {
+    grid-template-columns: 1fr 1.4fr;
+    gap: var(--space-12);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. Contact Info Card (address block)
+   -------------------------------------------------------------------------- */
+
+.contact-info-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-8);
+}
+
+/* --------------------------------------------------------------------------
+   4. Address
+   -------------------------------------------------------------------------- */
+
+.contact-address {
+  font-style: normal; /* override <address> italic default */
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.contact-office {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.contact-office__label {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.contact-office p {
+  font-size: var(--text-base);
+  color: var(--color-black);
+  line-height: var(--leading-relaxed);
+  max-width: none; /* override global p max-width */
+}
+
+/* Phones and email blocks */
+.contact-phones,
+.contact-email {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.contact-detail-label {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.contact-phones a,
+.contact-email a {
+  font-size: var(--text-base);
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color var(--transition-fast);
+}
+
+.contact-phones a:hover,
+.contact-email a:hover {
+  color: var(--color-accent-dark);
+}
+
+/* --------------------------------------------------------------------------
+   5. Static Map (Req 11.9)
+   -------------------------------------------------------------------------- */
+
+.contact-map {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.contact-map img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  background-color: var(--color-bg-dark); /* visible while loading */
+  object-fit: cover;
+}
+
+.contact-map__label {
+  font-size: var(--text-sm);
+  color: #5a6b5e;
+  text-align: center;
+  line-height: var(--leading-normal);
+  max-width: none;
+}
+
+/* --------------------------------------------------------------------------
+   6. Form Section headings (alternating background)
+   -------------------------------------------------------------------------- */
+
+.contact-form-section {
+  background-color: var(--color-white);
+}
+
+.contact-form-section--alt {
+  background-color: var(--color-bg);
+}
+
+/* Left-aligned section heading variant used on form sections */
+.contact-form-section .section-heading.text-left {
+  text-align: left;
+  margin-bottom: var(--space-10);
+}
+
+.contact-form-section .section-heading.text-left .section-heading__subtitle {
+  margin-inline: 0;
+}
+
+/* --------------------------------------------------------------------------
+   7. Responsive adjustments
+   -------------------------------------------------------------------------- */
+
+/* Ensure address block text doesn't overflow on small screens */
+@media (max-width: 479px) {
+  .contact-info-card {
+    padding: var(--space-6);
+  }
+
+  .contact-page-header__title {
+    font-size: var(--text-3xl);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   8. Contact Forms — layout, submit button, required note
+   Added for Task 16.1 (forms added in this task)
+   -------------------------------------------------------------------------- */
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+/* Align labels using the BEM class names used in the form HTML */
+.form-field__label {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--color-primary);
+  margin-bottom: var(--space-2);
+  display: block;
+}
+
+.form-field__required {
+  color: var(--color-error, #b91c1c);
+  margin-left: var(--space-1);
+}
+
+.form-field__input,
+.form-field__textarea {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-black);
+  background-color: var(--color-white);
+  border: 1.5px solid #cbd5c0;
+  border-radius: var(--radius-md);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  appearance: none;
+}
+
+.form-field__input:hover,
+.form-field__textarea:hover {
+  border-color: var(--color-secondary);
+}
+
+.form-field__input:focus,
+.form-field__textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(45, 74, 53, 0.15);
+}
+
+.form-field__textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Required note below the last field */
+.form-required-note {
+  font-size: var(--text-xs);
+  color: rgba(26, 26, 26, 0.60);
+  margin-bottom: 0;
+  max-width: none;
+}
+
+/* Submit button row */
+.contact-form__submit {
+  align-self: flex-start;
+}
+
+/* About CSS also needs value-card styles */
+
+/* --------------------------------------------------------------------------
+   Form Navigation Bar
+   -------------------------------------------------------------------------- */
+
+.contact-form-nav {
+  background-color: var(--color-bg-dark);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  padding-block: var(--space-4);
+  position: sticky;
+  top: var(--navbar-height);
+  z-index: 10;
+}
+
+.contact-form-nav__inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+}
+
+.contact-form-nav__label {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-primary);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.contact-form-nav__links {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.contact-form-nav__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  min-height: 44px; /* WCAG touch target */
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-primary);
+  background-color: var(--color-white);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  transition: background-color var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
+  white-space: nowrap;
+}
+
+.contact-form-nav__link:hover {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.contact-form-nav__link svg {
+  color: var(--color-accent-dark);
+  flex-shrink: 0;
+  transition: color var(--transition-fast);
+}
+
+.contact-form-nav__link:hover svg {
+  color: var(--color-accent);
+}
+
+/* --------------------------------------------------------------------------
+   WhatsApp link
+   -------------------------------------------------------------------------- */
+
+.contact-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: #25D366;
+  text-decoration: none;
+  transition: opacity var(--transition-fast);
+  padding: var(--space-1) 0;
+}
+
+.contact-whatsapp:hover {
+  opacity: 0.8;
+}
+
+/* --------------------------------------------------------------------------
+   Success toast notification
+   -------------------------------------------------------------------------- */
+
+.form-success-toast {
+  position: fixed;
+  bottom: var(--space-8);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-6);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  font-size: var(--text-base);
+  font-weight: 600;
+  z-index: var(--z-toast);
+  max-width: calc(100vw - 2rem);
+  text-align: center;
+}
+
+.form-success-toast[hidden] {
+  display: none;
+}
+
+.form-success-toast svg {
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .contact-form-nav {
+    position: static;
+  }
+  .contact-form-nav__inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-3);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   FAQ Accordion
+   -------------------------------------------------------------------------- */
+
+.contact-faq {
+  background-color: var(--color-bg);
+  border-top: 1px solid var(--border-color);
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background-color: var(--color-white);
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  width: 100%;
+  padding: var(--space-5) var(--space-6);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-primary);
+  line-height: var(--leading-snug);
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.faq-question:hover {
+  background-color: rgba(45,74,53,0.03);
+  color: var(--color-primary-dark);
+}
+
+.faq-question[aria-expanded="true"] {
+  background-color: rgba(45,74,53,0.04);
+  color: var(--color-primary);
+}
+
+.faq-icon {
+  flex-shrink: 0;
+  color: var(--color-accent-dark);
+  transition: transform var(--transition-base);
+}
+
+.faq-question[aria-expanded="true"] .faq-icon {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  padding: 0 var(--space-6) var(--space-5);
+  border-top: 1px solid var(--border-color);
+  background-color: rgba(45,74,53,0.02);
+}
+
+.faq-answer[hidden] {
+  display: none;
+}
+
+.faq-answer p {
+  font-size: var(--text-base);
+  color: #4a5a4e;
+  line-height: var(--leading-relaxed);
+  margin: var(--space-4) 0 0;
+  max-width: none;
+}
+
+@media (max-width: 640px) {
+  .faq-question {
+    padding: var(--space-4) var(--space-4);
+    font-size: var(--text-sm);
+  }
+  .faq-answer {
+    padding: 0 var(--space-4) var(--space-4);
+  }
+}

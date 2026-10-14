@@ -1,0 +1,332 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#2D4A35" />
+  <title>Products | PHATRADE | Phatrade Essential Oils</title>
+  <meta
+    name="description"
+    content="Browse PHATRADE's full catalogue of essential oils, concretes, absolutes, and aroma chemicals sourced and produced in Egypt since 1975."
+  />
+  <link rel="canonical" href="https://www.phatrade-eg.com/products.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="PHATRADE" />
+  <meta property="og:title" content="Products | PHATRADE Essential Oils, Concretes & Absolutes" />
+  <meta property="og:description" content="Browse PHATRADE's full catalogue of essential oils, concretes, absolutes, and aroma chemicals sourced and produced in Egypt since 1975." />
+  <meta property="og:image" content="assets/images/logo.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="PHATRADE Product Range" />
+  <meta name="twitter:description" content="Essential oils, concretes, absolutes, and aroma chemicals from Egypt." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Favicon -->
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+  <link rel="stylesheet" href="assets/css/pages/products.css" />
+  <style>
+    #navbar-root { display: block; height: 100px; background-color: #2D4A35; }
+    main { padding-top: 100px; }
+  </style>
+
+  <!-- Structured Data: ItemList of products for Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "PHATRADE Essential Oils & Aromatic Ingredients",
+    "description": "Natural aromatic ingredients cultivated and extracted in Egypt since 1975.",
+    "url": "https://www.phatrade-eg.com/products.html",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Neroli Essential Oil",
+        "url": "https://www.phatrade-eg.com/product-detail.html?id=neroli-eo"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Geranium Essential Oil",
+        "url": "https://www.phatrade-eg.com/product-detail.html?id=geranium-eo"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Jasmine Concrete",
+        "url": "https://www.phatrade-eg.com/product-detail.html?id=jasmine-con"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Jasmine Absolute",
+        "url": "https://www.phatrade-eg.com/product-detail.html?id=jasmine-abs"
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "name": "Violet Absolute",
+        "url": "https://www.phatrade-eg.com/product-detail.html?id=violet-abs"
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "name": "Chamomile Blue Essential Oil",
+        "url": "https://www.phatrade-eg.com/product-detail.html?id=chamomile-blue"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Shared navbar injected here by components.js -->
+  <div id="navbar-root"></div>
+
+  <main id="main-content">
+
+    <!-- ------------------------------------------------------------------ -->
+    <!-- Page Header                                                          -->
+    <!-- ------------------------------------------------------------------ -->
+    <section class="section section--sm products-header" aria-labelledby="products-heading">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-heading__eyebrow">Our Catalogue</span>
+          <h1 id="products-heading" class="section-heading__title">Product Range</h1>
+          <p class="section-heading__subtitle">
+            Natural aromatic ingredients cultivated and extracted in Egypt, from essential oils
+            and concretes to absolutes and aroma chemicals, available for B2B enquiry.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------------ -->
+    <!-- Category Tabs + Product Grid                                         -->
+    <!-- ------------------------------------------------------------------ -->
+    <section class="section products-catalogue" aria-labelledby="products-heading">
+      <div class="container">
+
+        <!-- Category filter tab bar (Requirements 5.1, 5.6) -->
+        <div
+          class="category-tabs"
+          role="tablist"
+          aria-label="Product categories"
+        >
+          <button
+            role="tab"
+            id="tab-all"
+            class="category-tab"
+            aria-selected="true"
+            aria-controls="product-grid"
+          >All Products</button>
+
+          <button
+            role="tab"
+            id="tab-essential-oils"
+            class="category-tab"
+            aria-selected="false"
+            aria-controls="product-grid"
+            tabindex="-1"
+          >Essential Oils</button>
+
+          <button
+            role="tab"
+            id="tab-concretes"
+            class="category-tab"
+            aria-selected="false"
+            aria-controls="product-grid"
+            tabindex="-1"
+          >Concretes</button>
+
+          <button
+            role="tab"
+            id="tab-absolutes"
+            class="category-tab"
+            aria-selected="false"
+            aria-controls="product-grid"
+            tabindex="-1"
+          >Absolutes</button>
+
+          <button
+            role="tab"
+            id="tab-aroma-chemicals"
+            class="category-tab"
+            aria-selected="false"
+            aria-controls="product-grid"
+            tabindex="-1"
+          >Aroma Chemicals</button>
+        </div>
+
+        <!-- Product grid  —  populated by products.js (Requirements 5.1 — 5.5) -->
+        <div
+          id="product-grid"
+          class="product-grid"
+          role="tabpanel"
+          aria-labelledby="tab-all"
+          aria-live="polite"
+          aria-atomic="true"
+        >
+          <!-- Static fallback — products.js overwrites this when loaded -->
+
+          <article class="product-card" data-product-id="geranium-eo">
+            <a href="product-detail.html?id=geranium-eo" class="product-card__image-link" tabindex="-1" aria-hidden="true">
+              <img src="assets/images/products/essential-oils.svg" alt="Geranium botanical illustration" class="product-card__image" width="400" height="220" loading="lazy"/>
+            </a>
+            <div class="product-card__body">
+              <div class="product-card__meta">
+                <span class="product-card__category">Essential Oils</span>
+                <span class="product-card__method">Steam Distillation</span>
+              </div>
+              <h3 class="product-card__name"><a href="product-detail.html?id=geranium-eo">Geranium</a></h3>
+              <p class="product-card__botanical"><em>Pelargonium graveolens</em></p>
+              <p class="product-card__desc">Egyptian Geranium oil, cultivated on our own Sadat City farm. Rich in citronellol and geraniol, a cornerstone of fine fragrance.</p>
+              <div class="product-card__actions">
+                <a href="product-detail.html?id=geranium-eo" class="btn btn--primary btn--sm">View Details</a>
+                <a href="contact.html?form=product&product=Geranium" class="btn btn--secondary btn--sm">Enquire</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-product-id="neroli-eo">
+            <a href="product-detail.html?id=neroli-eo" class="product-card__image-link" tabindex="-1" aria-hidden="true">
+              <img src="assets/images/products/essential-oils.svg" alt="Neroli botanical illustration" class="product-card__image" width="400" height="220" loading="lazy"/>
+            </a>
+            <div class="product-card__body">
+              <div class="product-card__meta">
+                <span class="product-card__category">Essential Oils</span>
+                <span class="product-card__method">Steam Distillation</span>
+              </div>
+              <h3 class="product-card__name"><a href="product-detail.html?id=neroli-eo">Neroli</a></h3>
+              <p class="product-card__botanical"><em>Citrus aurantium (flowers)</em></p>
+              <p class="product-card__desc">Distilled from fresh blossoms of our own orange orchards. One of the most prized essentials in fine fragrance and luxury cosmetics.</p>
+              <div class="product-card__actions">
+                <a href="product-detail.html?id=neroli-eo" class="btn btn--primary btn--sm">View Details</a>
+                <a href="contact.html?form=product&product=Neroli" class="btn btn--secondary btn--sm">Enquire</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-product-id="jasmine-con">
+            <a href="product-detail.html?id=jasmine-con" class="product-card__image-link" tabindex="-1" aria-hidden="true">
+              <img src="assets/images/products/concretes.svg" alt="Jasmine Concrete botanical illustration" class="product-card__image" width="400" height="220" loading="lazy"/>
+            </a>
+            <div class="product-card__body">
+              <div class="product-card__meta">
+                <span class="product-card__category">Concretes</span>
+                <span class="product-card__method">Solvent Extraction</span>
+              </div>
+              <h3 class="product-card__name"><a href="product-detail.html?id=jasmine-con">Jasmine Concrete</a></h3>
+              <p class="product-card__botanical"><em>Jasminum grandiflorum / sambac</em></p>
+              <p class="product-card__desc">Sought by leading fragrance houses worldwide. Egypt's climate produces jasmine of exceptional quality and aromatic complexity.</p>
+              <div class="product-card__actions">
+                <a href="product-detail.html?id=jasmine-con" class="btn btn--primary btn--sm">View Details</a>
+                <a href="contact.html?form=product&product=Jasmine+Concrete" class="btn btn--secondary btn--sm">Enquire</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-product-id="jasmine-abs">
+            <a href="product-detail.html?id=jasmine-abs" class="product-card__image-link" tabindex="-1" aria-hidden="true">
+              <img src="assets/images/products/absolutes.svg" alt="Jasmine Absolute botanical illustration" class="product-card__image" width="400" height="220" loading="lazy"/>
+            </a>
+            <div class="product-card__body">
+              <div class="product-card__meta">
+                <span class="product-card__category">Absolutes</span>
+                <span class="product-card__method">Solvent Extraction</span>
+              </div>
+              <h3 class="product-card__name"><a href="product-detail.html?id=jasmine-abs">Jasmine Absolute</a></h3>
+              <p class="product-card__botanical"><em>Jasminum grandiflorum / sambac</em></p>
+              <p class="product-card__desc">Iconic in fine fragrance. Deep, warm, indolic complexity from Egyptian-grown jasmine, alcohol-washed for complete solubility.</p>
+              <div class="product-card__actions">
+                <a href="product-detail.html?id=jasmine-abs" class="btn btn--primary btn--sm">View Details</a>
+                <a href="contact.html?form=product&product=Jasmine+Absolute" class="btn btn--secondary btn--sm">Enquire</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-product-id="violet-abs">
+            <a href="product-detail.html?id=violet-abs" class="product-card__image-link" tabindex="-1" aria-hidden="true">
+              <img src="assets/images/products/absolutes.svg" alt="Violet Absolute botanical illustration" class="product-card__image" width="400" height="220" loading="lazy"/>
+            </a>
+            <div class="product-card__body">
+              <div class="product-card__meta">
+                <span class="product-card__category">Absolutes</span>
+                <span class="product-card__method">Solvent Extraction</span>
+              </div>
+              <h3 class="product-card__name"><a href="product-detail.html?id=violet-abs">Violet Absolute</a></h3>
+              <p class="product-card__botanical"><em>Viola odorata</em></p>
+              <p class="product-card__desc">Green leaf and powdery floral ionone character from farm-grown Egyptian violet. A multifaceted natural for luxury and niche perfumery.</p>
+              <div class="product-card__actions">
+                <a href="product-detail.html?id=violet-abs" class="btn btn--primary btn--sm">View Details</a>
+                <a href="contact.html?form=product&product=Violet+Absolute" class="btn btn--secondary btn--sm">Enquire</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-product-id="chamomile-blue">
+            <a href="product-detail.html?id=chamomile-blue" class="product-card__image-link" tabindex="-1" aria-hidden="true">
+              <img src="assets/images/products/essential-oils.svg" alt="Chamomile Blue botanical illustration" class="product-card__image" width="400" height="220" loading="lazy"/>
+            </a>
+            <div class="product-card__body">
+              <div class="product-card__meta">
+                <span class="product-card__category">Essential Oils</span>
+                <span class="product-card__method">Steam Distillation</span>
+              </div>
+              <h3 class="product-card__name"><a href="product-detail.html?id=chamomile-blue">Chamomile Blue</a></h3>
+              <p class="product-card__botanical"><em>Matricaria chamomilla</em></p>
+              <p class="product-card__desc">Prized for its deep blue chamazulene content. Extensively used in premium skincare, fine fragrance, and aromatherapy formulations.</p>
+              <div class="product-card__actions">
+                <a href="product-detail.html?id=chamomile-blue" class="btn btn--primary btn--sm">View Details</a>
+                <a href="contact.html?form=product&product=Chamomile+Blue" class="btn btn--secondary btn--sm">Enquire</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------------ -->
+    <!-- TDS / SDS CTA (Requirement 5.9)                                     -->
+    <!-- ------------------------------------------------------------------ -->
+    <section class="section section--sm products-docs-cta" aria-labelledby="docs-cta-heading">
+      <div class="container">
+        <div class="products-docs-cta__inner">
+          <div class="products-docs-cta__text">
+            <h2 id="docs-cta-heading" class="products-docs-cta__heading">
+              Need Technical or Safety Data Sheets?
+            </h2>
+            <p>
+              Technical Data Sheets (TDS) and Safety Data Sheets (SDS) are available
+              to download for qualified buyers and procurement teams.
+            </p>
+          </div>
+          <a href="contact.html?form=general" class="btn btn--primary products-docs-cta__link">
+            Request TDS &amp; SDS via Contact Form
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Shared footer injected here by components.js -->
+  <div id="footer-root"></div>
+
+  <!-- Scripts (type="module" defers execution automatically) -->
+  <script defer src="assets/data/products.js"></script>
+  <script src="assets/js/site-content.js"></script>
+  <script defer src="assets/js/components.js"></script>
+  <script defer src="assets/js/nav.js"></script>
+  <script defer src="assets/js/animations.js"></script>
+  <script defer src="assets/js/products.js"></script>
+
+</body>
+</html>

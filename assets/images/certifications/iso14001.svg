@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80" role="img" aria-label="ACCENT ISO 14001 Certified">
+  <title>ISO 14001 Certified — ACCENT</title>
+  <defs>
+    <radialGradient id="g14k" cx="40%" cy="35%" r="60%">
+      <stop offset="0%"  stop-color="#2e7040"/>
+      <stop offset="100%" stop-color="#164428"/>
+    </radialGradient>
+    <path id="t14kTop" d="M 12,40 A 28,28 0 0,0 68,40"/>
+    <path id="t14kBot" d="M 10,40 A 30,30 0 0,1 70,40"/>
+  </defs>
+  <circle cx="40" cy="40" r="39" fill="url(#g14k)"/>
+  <text font-family="'Arial Black',Arial,sans-serif" font-size="9" font-weight="900"
+    fill="white" letter-spacing="3.5">
+    <textPath href="#t14kTop" startOffset="13%">ACCENT</textPath>
+  </text>
+  <text x="40" y="40" text-anchor="middle"
+    font-family="Arial,sans-serif" font-size="15" font-weight="900" fill="white">ISO 14001</text>
+  <text x="40" y="54" text-anchor="middle"
+    font-family="Arial,sans-serif" font-size="13" font-weight="900" fill="white">CERTIFIED</text>
+  <g opacity="0.28" fill="white">
+    <rect x="10" y="57" width="3" height="3"/><rect x="15" y="57" width="3" height="3"/>
+    <rect x="22" y="57" width="3" height="3"/><rect x="35" y="57" width="3" height="3"/>
+    <rect x="45" y="57" width="3" height="3"/><rect x="56" y="57" width="3" height="3"/>
+    <rect x="63" y="57" width="3" height="3"/>
+    <rect x="13" y="62" width="3" height="3"/><rect x="20" y="62" width="3" height="3"/>
+    <rect x="30" y="62" width="3" height="3"/><rect x="40" y="62" width="3" height="3"/>
+    <rect x="50" y="62" width="3" height="3"/><rect x="60" y="62" width="3" height="3"/>
+    <rect x="17" y="67" width="3" height="3"/><rect x="27" y="67" width="3" height="3"/>
+    <rect x="37" y="67" width="3" height="3"/><rect x="47" y="67" width="3" height="3"/>
+    <rect x="57" y="67" width="3" height="3"/>
+  </g>
+  <text font-family="Arial,sans-serif" font-size="6.5" fill="white" letter-spacing="0.5">
+    <textPath href="#t14kBot" startOffset="12%" side="right">ATS.EMS.25.08</textPath>
+  </text>
+</svg>

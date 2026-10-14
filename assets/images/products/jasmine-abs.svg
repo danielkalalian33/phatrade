@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" width="400" height="280">
+  <defs>
+    <linearGradient id="bg-jasmine-abs" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141e16"/>
+      <stop offset="100%" stop-color="#0e1810"/>
+    </linearGradient>
+    <linearGradient id="btl-jasmine-abs" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#160d04"/>
+      <stop offset="50%" stop-color="#241408"/>
+      <stop offset="100%" stop-color="#100a02"/>
+    </linearGradient>
+    <linearGradient id="shine-jasmine-abs" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="rgba(255,200,80,0.3)"/>
+      <stop offset="40%" stop-color="rgba(255,200,80,0.0)"/>
+    </linearGradient>
+    <linearGradient id="cap-jasmine-abs" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f0c030"/>
+      <stop offset="100%" stop-color="#8a6010"/>
+    </linearGradient>
+    <radialGradient id="glow-jasmine-abs" cx="45%" cy="35%" r="50%">
+      <stop offset="0%" stop-color="rgba(201,168,76,0.15)"/>
+      <stop offset="100%" stop-color="rgba(0,0,0,0)"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="280" fill="url(#bg-jasmine-abs)"/>
+  <rect width="400" height="280" fill="url(#glow-jasmine-abs)"/>
+  <!-- Gold sparkles -->
+  <circle cx="85" cy="65" r="1.2" fill="rgba(201,168,76,0.4)"/>
+  <circle cx="315" cy="80" r="1" fill="rgba(201,168,76,0.35)"/>
+  <circle cx="100" cy="195" r="1" fill="rgba(201,168,76,0.3)"/>
+  <circle cx="305" cy="185" r="1.2" fill="rgba(201,168,76,0.3)"/>
+  <circle cx="345" cy="130" r="1" fill="rgba(201,168,76,0.25)"/>
+  <!-- Elegant leaf accents -->
+  <path d="M88 185 C76 170 62 164 60 152 C58 142 66 134 74 140 C82 146 86 166 88 185Z" fill="rgba(139,158,90,0.3)"/>
+  <path d="M312 185 C324 170 338 164 340 152 C342 142 334 134 326 140 C318 146 314 166 312 185Z" fill="rgba(139,158,90,0.3)"/>
+  <!-- Bottle body -->
+  <path d="M180 105 L180 250 Q180 260 190 260 L210 260 Q220 260 220 250 L220 105 Z" fill="url(#btl-jasmine-abs)"/>
+  <!-- Liquid -->
+  <path d="M182 132 L218 132 L218 250 Q218 258 210 258 L190 258 Q182 258 182 250 Z" fill="rgba(130,65,8,0.92)"/>
+  <!-- Shine -->
+  <path d="M180 105 L180 250 Q180 260 190 260 L194 260 L194 105 Z" fill="url(#shine-jasmine-abs)"/>
+  <!-- Shoulder -->
+  <path d="M177 103 Q177 93 187 93 L213 93 Q223 93 223 103 L220 105 L180 105 Z" fill="#160d04"/>
+  <!-- Neck -->
+  <rect x="193" y="62" width="14" height="33" rx="3" fill="#160d04"/>
+  <rect x="193" y="62" width="14" height="33" rx="3" fill="url(#shine-jasmine-abs)"/>
+  <!-- Cap -->
+  <rect x="189" y="42" width="22" height="22" rx="5" fill="url(#cap-jasmine-abs)"/>
+  <ellipse cx="200" cy="39" rx="9" ry="7" fill="#7a3a0a"/>
+  <ellipse cx="197" cy="36" rx="3.5" ry="2.5" fill="rgba(255,180,80,0.28)"/>
+  <!-- Label (dark, luxury) -->
+  <rect x="183" y="152" width="34" height="82" rx="2" fill="rgba(8,6,3,0.82)" stroke="rgba(201,168,76,0.6)" stroke-width="0.8"/>
+  <rect x="183" y="152" width="34" height="8" rx="2" fill="#C9A84C" opacity="0.8"/>
+  <text x="200" y="159" text-anchor="middle" font-family="Arial, sans-serif" font-size="4.8" font-weight="700" fill="#1e3326" letter-spacing="1">PHATRADE</text>
+  <path d="M200 163 C200 163 197.5 167 197.5 169 a2.5 2.5 0 0 0 5 0 C202.5 167 200 163 200 163Z" fill="#C9A84C"/>
+  <text x="200" y="181" text-anchor="middle" font-family="'Arial Black', Arial, sans-serif" font-size="7" font-weight="900" fill="#C9A84C">JASMINE</text>
+  <line x1="186" y1="185" x2="214" y2="185" stroke="rgba(201,168,76,0.5)" stroke-width="0.5"/>
+  <text x="200" y="195" text-anchor="middle" font-family="Arial, sans-serif" font-size="4" fill="rgba(240,237,228,0.75)" font-style="italic">J. grandiflorum</text>
+  <text x="200" y="205" text-anchor="middle" font-family="Arial, sans-serif" font-size="3.8" fill="rgba(240,237,228,0.65)">Absolute</text>
+  <text x="200" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="3.8" fill="rgba(240,237,228,0.55)">Egypt</text>
+  <text x="200" y="228" text-anchor="middle" font-family="Arial, sans-serif" font-size="3.5" fill="rgba(201,168,76,0.5)">100% NATURAL</text>
+  <!-- Reflection -->
+  <ellipse cx="200" cy="262" rx="22" ry="3.5" fill="rgba(0,0,0,0.38)"/>
+</svg>
