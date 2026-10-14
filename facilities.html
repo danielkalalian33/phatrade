@@ -139,15 +139,108 @@
 
           <!-- Map panel -->
           <div class="facilities-map-section__map">
-            <img
-              src="assets/images/facilities-map.svg"
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
               id="facilities-map"
-              alt="Map showing Obour City and Sadat City facilities relative to Cairo"
-              width="600"
-              height="440"
-              loading="lazy"
-              onerror="showFacilitiesTextFallback()"
-            />
+              viewBox="0 0 600 440"
+              style="overflow:hidden;"
+              role="img"
+              aria-label="Satellite map showing PHATRADE facilities at Obour City, Sadat City, and Cairo, Egypt">
+              <title>PHATRADE Facility Locations – Egypt</title>
+
+              <defs>
+                <linearGradient id="fm_sand" x1="0" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox">
+                  <stop offset="0%"  stop-color="#C89650"/>
+                  <stop offset="50%" stop-color="#D4A86A"/>
+                  <stop offset="100%" stop-color="#BA8840"/>
+                </linearGradient>
+                <clipPath id="fm_clip">
+                  <rect width="600" height="440" rx="12"/>
+                </clipPath>
+              </defs>
+
+              <!-- Fallback background while satellite image loads -->
+              <rect width="600" height="440" fill="url(#fm_sand)" clip-path="url(#fm_clip)"/>
+
+              <!--
+                ESRI World Imagery — public, no API key required
+                bbox: west=29.9, south=29.5, east=32.8, north=31.2 (Cairo / Nile Delta region)
+                imageSR=4326 → equirectangular output, coordinates match our overlay exactly
+                Marker pixel positions (x = (lon−29.9)×207, y = (31.2−lat)×259):
+                  Cairo (31.24, 30.04)  → (277, 301)
+                  Obour City (31.47, 30.27) → (325, 241)
+                  Sadat City (30.53, 30.37) → (130, 215)
+                  Cairo Airport (31.41, 30.11) → (312, 282)
+              -->
+              <image clip-path="url(#fm_clip)"
+                href="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/export?bbox=29.9,29.5,32.8,31.2&amp;bboxSR=4326&amp;size=600,440&amp;imageSR=4326&amp;format=jpg&amp;f=image"
+                xlink:href="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/export?bbox=29.9,29.5,32.8,31.2&amp;bboxSR=4326&amp;size=600,440&amp;imageSR=4326&amp;format=jpg&amp;f=image"
+                x="0" y="0" width="600" height="440" preserveAspectRatio="xMidYMid meet"/>
+
+              <!-- ═══ ROUTE LINES ═══ -->
+              <line x1="277" y1="301" x2="325" y2="241" stroke="#90CC50" stroke-width="2.2" stroke-dasharray="6 4" opacity="0.95"/>
+              <line x1="277" y1="301" x2="130" y2="215" stroke="#90CC50" stroke-width="2.2" stroke-dasharray="6 4" opacity="0.95"/>
+
+              <!-- Distance labels -->
+              <text x="308" y="270" font-family="Georgia,serif" font-size="10" font-style="italic"
+                    fill="#C8F060" opacity="0.95" transform="rotate(-47 308 270)">~30 km</text>
+              <text x="199" y="272" font-family="Georgia,serif" font-size="10" font-style="italic"
+                    fill="#C8F060" opacity="0.95" transform="rotate(-18 199 272)">~94 km</text>
+
+              <!-- ═══ CAIRO AIRPORT ═══ lon=31.41 lat=30.11 → (312,282) -->
+              <rect x="305" y="276" width="14" height="14" rx="2" fill="#7A8860" opacity="0.90"/>
+              <line x1="312" y1="277" x2="312" y2="289" stroke="#fff" stroke-width="1.5"/>
+              <line x1="306" y1="283" x2="318" y2="283" stroke="#fff" stroke-width="1.5"/>
+              <rect x="322" y="276" width="76" height="15" rx="3" fill="rgba(255,255,255,0.82)"/>
+              <text x="326" y="287" font-family="Georgia,serif" font-size="9.5" fill="#1A1A1A" font-style="italic">Cairo Airport</text>
+
+              <!-- ═══ OBOUR CITY ═══ lon=31.47 lat=30.27 → (325,241) -->
+              <circle cx="325" cy="241" r="10" fill="#2D5A30" stroke="#fff" stroke-width="1.5"/>
+              <rect x="339" y="224" width="190" height="95" rx="5" fill="rgba(240,237,228,0.88)"/>
+              <text x="344" y="238" font-family="Georgia,serif" font-size="11.5" font-weight="700" fill="#1A2A10">Obour City</text>
+              <text x="344" y="251" font-family="Georgia,serif" font-size="10"   font-style="italic" fill="#2A3A18">Head Office &amp; QC Lab</text>
+              <text x="344" y="264" font-family="Georgia,serif" font-size="10"   font-style="italic" fill="#2A3A18">~15 min from Cairo Airport</text>
+              <text x="344" y="278" font-family="Georgia,serif" font-size="9.5"  font-style="italic" fill="#2A3A18">Showcasing the clean rooms,</text>
+              <text x="344" y="291" font-family="Georgia,serif" font-size="9.5"  font-style="italic" fill="#2A3A18">test labs, and administrative</text>
+              <text x="344" y="304" font-family="Georgia,serif" font-size="9.5"  font-style="italic" fill="#2A3A18">center</text>
+
+              <!-- ═══ SADAT CITY ═══ lon=30.53 lat=30.37 → (130,215) -->
+              <circle cx="130" cy="215" r="10" fill="#C9A84C" stroke="#fff" stroke-width="1.5"/>
+              <rect x="143" y="199" width="154" height="54" rx="5" fill="rgba(240,237,228,0.88)"/>
+              <text x="148" y="213" font-family="Georgia,serif" font-size="11.5" font-weight="700" fill="#1A2A10">Sadat City</text>
+              <text x="148" y="226" font-family="Georgia,serif" font-size="10"   font-style="italic" fill="#2A3A18">Factory &amp; Farm</text>
+              <text x="148" y="240" font-family="Georgia,serif" font-size="10"   font-style="italic" fill="#2A3A18">~94 km NW of Cairo</text>
+              <!-- Description -->
+              <rect x="34" y="258" width="168" height="54" rx="5" fill="rgba(0,0,0,0.48)"/>
+              <text x="40" y="271" font-family="Georgia,serif" font-size="9.5" font-style="italic" fill="#E8DFC8">Detailed view of the</text>
+              <text x="40" y="284" font-family="Georgia,serif" font-size="9.5" font-style="italic" fill="#E8DFC8">100-acre modern farm and</text>
+              <text x="40" y="297" font-family="Georgia,serif" font-size="9.5" font-style="italic" fill="#E8DFC8">state-of-the-art facility</text>
+
+              <!-- Nile Branch label -->
+              <text x="200" y="148" font-family="Georgia,serif" font-size="10" fill="#8ED4EC"
+                    font-style="italic" text-anchor="middle" opacity="0.92"
+                    transform="rotate(-42 200 148)">Nile Branch</text>
+
+              <!-- ═══ CAIRO ═══ lon=31.24 lat=30.04 → (277,301) -->
+              <circle cx="277" cy="301" r="9" fill="#1A1A1A" stroke="#90CC50" stroke-width="1.8"/>
+              <rect x="287" y="292" width="50" height="18" rx="3" fill="rgba(255,255,255,0.88)"/>
+              <text x="292" y="304" font-family="Georgia,serif" font-size="14" font-weight="700" fill="#1A1A1A">Cairo</text>
+
+              <!-- ═══ LEGEND ═══ -->
+              <rect x="14" y="344" width="228" height="84" rx="8" fill="rgba(255,255,255,0.92)"/>
+              <circle cx="32" cy="366" r="7" fill="#2D5A30"/>
+              <text x="46" y="371" font-family="Georgia,serif" font-size="11" font-weight="600" fill="#2D4A35">Obour City (Head Office)</text>
+              <circle cx="32" cy="391" r="7" fill="#C9A84C"/>
+              <text x="46" y="396" font-family="Georgia,serif" font-size="11" font-weight="600" fill="#2D4A35">Sadat City (Factory &amp; Farm)</text>
+              <circle cx="32" cy="416" r="7" fill="#1A1A1A"/>
+              <text x="46" y="421" font-family="Georgia,serif" font-size="11" font-weight="700" fill="#1A1A1A">Cairo (reference)</text>
+
+              <!-- ═══ TITLE BAR ═══ -->
+              <rect x="0" y="0" width="600" height="46" fill="#2D4A35" rx="10"/>
+              <rect x="0" y="34" width="600" height="12" fill="#2D4A35"/>
+              <text x="300" y="28" text-anchor="middle"
+                    font-family="Georgia, serif" font-size="15" font-weight="700"
+                    fill="#C9A84C" letter-spacing="0.5">PHATRADE — Production Facilities, Egypt</text>
+            </svg>
             <!-- Text fallback -->
             <dl id="facilities-fallback" hidden>
               <div><dt>Obour City</dt><dd>Head Office, QC Lab &amp; Manufacturing, approximately 30 km NE of Cairo</dd></div>

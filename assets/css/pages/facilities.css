@@ -505,12 +505,14 @@
   top: calc(var(--navbar-height) + var(--space-6));
 }
 
-.facilities-map-section__map img {
+.facilities-map-section__map img,
+.facilities-map-section__map svg {
   width: 100%;
   height: auto;
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-lg);
   display: block;
+  overflow: hidden;
 }
 
 @media (max-width: 960px) {
