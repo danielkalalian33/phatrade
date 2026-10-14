@@ -1,70 +1,230 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 440" width="600" height="440" role="img" aria-label="Map showing Obour City and Sadat City facilities relative to Cairo">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 440" width="600" height="440" role="img" aria-label="Satellite-style map showing PHATRADE facilities at Obour City and Sadat City relative to Cairo, Egypt">
   <title>PHATRADE Facility Locations – Egypt</title>
   <defs>
     <style>
-      text { font-family: Georgia, serif; }
-      .label-city { font-size: 13px; font-weight: 700; fill: #1A1A1A; }
-      .label-facility { font-size: 11px; font-weight: 600; fill: #2D4A35; }
-      .label-distance { font-size: 10px; fill: #5a6b5e; font-style: italic; }
+      .lbl-city  { font-family: Georgia, serif; font-size: 14px; font-weight: 700; }
+      .lbl-sub   { font-family: Georgia, serif; font-size: 11px; font-weight: 700; fill: #1A2A10; }
+      .lbl-info  { font-family: Georgia, serif; font-size: 9.5px; font-style: italic; fill: #2A3A18; }
       .dot-cairo { fill: #1A1A1A; }
-      .dot-obour { fill: #2D4A35; }
+      .dot-obour { fill: #2D5A30; }
       .dot-sadat { fill: #C9A84C; }
-      .route { stroke: #8B9E5A; stroke-width: 2; stroke-dasharray: 6 4; fill: none; opacity: 0.7; }
-      .bg { fill: #F0EDE4; }
-      .water { fill: #c8dde8; }
-      .land { fill: #e8e4d8; }
+      .route     { stroke: #90BC58; stroke-width: 2; stroke-dasharray: 6 4; fill: none; opacity: 0.9; }
     </style>
+
+    <!-- Desert sand gradient -->
+    <linearGradient id="fmSand" x1="0" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0%"   stop-color="#C89650"/>
+      <stop offset="50%"  stop-color="#D4A86A"/>
+      <stop offset="100%" stop-color="#BA8840"/>
+    </linearGradient>
+
+    <!-- Water gradient -->
+    <linearGradient id="fmWater" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0%"   stop-color="#6AB4D0"/>
+      <stop offset="100%" stop-color="#4A90B8"/>
+    </linearGradient>
+
+    <!-- Delta green gradient -->
+    <linearGradient id="fmDelta" x1="0.5" y1="1" x2="0.5" y2="0" gradientUnits="objectBoundingBox">
+      <stop offset="0%"   stop-color="#3A6520"/>
+      <stop offset="60%"  stop-color="#507C32"/>
+      <stop offset="100%" stop-color="#649048"/>
+    </linearGradient>
   </defs>
 
-  <!-- Background -->
-  <rect width="600" height="440" rx="12" fill="#F0EDE4"/>
+  <!-- ════════════════════════════════════
+       TERRAIN BACKGROUND
+  ════════════════════════════════════ -->
 
-  <!-- Simplified Egypt outline / landmass -->
-  <polygon class="land" points="80,60 520,60 540,200 500,380 380,420 100,420 60,320 70,160"/>
+  <!-- Desert base -->
+  <rect width="600" height="440" fill="url(#fmSand)"/>
 
-  <!-- Nile delta approximation -->
-  <polygon class="water" points="270,60 310,60 330,200 290,220 250,200"/>
-  <polygon class="water" points="290,220 310,230 305,320 295,320 285,310"/>
+  <!-- Western Desert (slightly lighter / yellowish) -->
+  <rect x="0"   y="0" width="160" height="440" fill="#D8B060" opacity="0.28"/>
 
-  <!-- Cairo marker -->
-  <circle cx="310" cy="230" r="8" class="dot-cairo"/>
-  <text x="322" y="228" class="label-city">Cairo</text>
+  <!-- Eastern Desert (rocky, darker) -->
+  <rect x="420" y="220" width="180" height="220" fill="#A87838" opacity="0.28"/>
+  <rect x="480" y="0"   width="120" height="220" fill="#B88040" opacity="0.22"/>
 
-  <!-- Obour City marker (~30 km NE of Cairo) -->
-  <circle cx="360" cy="190" r="10" class="dot-obour"/>
-  <text x="374" y="188" class="label-facility">Obour City</text>
-  <text x="374" y="202" class="label-distance">Head Office &amp; QC Lab</text>
-  <text x="374" y="215" class="label-distance">~15 min from Cairo Airport</text>
+  <!-- Scattered dune / desert variation -->
+  <ellipse cx="70"  cy="350" rx="90"  ry="28" fill="#C89848" opacity="0.20"/>
+  <ellipse cx="530" cy="390" rx="60"  ry="20" fill="#A87030" opacity="0.20"/>
+  <ellipse cx="110" cy="110" rx="55"  ry="18" fill="#C89848" opacity="0.15"/>
+  <ellipse cx="555" cy="80"  rx="42"  ry="13" fill="#B07840" opacity="0.15"/>
 
-  <!-- Sadat City marker (~94 km NW of Cairo) -->
-  <circle cx="160" cy="160" r="10" class="dot-sadat"/>
-  <text x="174" y="155" class="label-facility">Sadat City</text>
-  <text x="174" y="168" class="label-distance">Factory &amp; Farm</text>
-  <text x="174" y="181" class="label-distance">~94 km NW of Cairo</text>
+  <!-- ════════════════════════════════════
+       NILE DELTA (GREEN AGRICULTURAL)
+       Fan from Cairo (277,301) → Rosetta exit (131,0) → Damietta exit (378,0)
+  ════════════════════════════════════ -->
 
-  <!-- Route lines -->
-  <line x1="310" y1="230" x2="360" y2="190" class="route"/>
-  <line x1="310" y1="230" x2="160" y2="160" class="route"/>
+  <!-- Outer delta green (slightly lighter) -->
+  <polygon fill="#648A40" opacity="0.55" points="277,301 100,0 420,0"/>
 
-  <!-- Cairo Airport marker -->
-  <rect x="355" y="145" width="14" height="14" rx="2" fill="#8B9E5A"/>
-  <text x="373" y="156" class="label-distance">Cairo Airport</text>
+  <!-- Core delta -->
+  <polygon fill="url(#fmDelta)" opacity="0.80" points="277,301 131,0 378,0"/>
 
-  <!-- Distance labels on routes -->
-  <text x="332" y="215" class="label-distance" transform="rotate(-40 332 215)">~30 km</text>
-  <text x="225" y="208" class="label-distance" transform="rotate(-10 225 208)">~94 km</text>
+  <!-- Agricultural patches inside delta -->
+  <ellipse cx="200" cy="115" rx="38" ry="22" fill="#3A6020" opacity="0.42"/>
+  <ellipse cx="315" cy="75"  rx="42" ry="18" fill="#4A7230" opacity="0.40"/>
+  <ellipse cx="255" cy="45"  rx="28" ry="12" fill="#528038" opacity="0.35"/>
+  <ellipse cx="355" cy="115" rx="30" ry="15" fill="#3A6020" opacity="0.32"/>
+  <rect x="148" y="25" width="44"  height="26" rx="5" fill="#4A7228" opacity="0.25"/>
+  <rect x="275" y="138" width="48" height="26" rx="5" fill="#3D6A22" opacity="0.22"/>
 
-  <!-- Legend -->
-  <rect x="20" y="355" width="220" height="70" rx="8" fill="white" fill-opacity="0.85"/>
-  <circle cx="38" cy="374" r="7" class="dot-obour"/>
-  <text x="52" y="378" class="label-facility">Obour City (Head Office)</text>
-  <circle cx="38" cy="395" r="7" class="dot-sadat"/>
-  <text x="52" y="399" class="label-facility">Sadat City (Factory &amp; Farm)</text>
-  <circle cx="38" cy="416" r="7" class="dot-cairo"/>
-  <text x="52" y="420" class="label-city" font-size="11">Cairo (reference)</text>
+  <!-- ════════════════════════════════════
+       NILE VALLEY — green strip south of Cairo
+  ════════════════════════════════════ -->
+  <polygon fill="#4A7830" opacity="0.72" points="252,302 255,440 298,440 300,302"/>
 
-  <!-- Title bar -->
-  <rect x="0" y="0" width="600" height="46" rx="12" fill="#2D4A35"/>
+  <!-- ════════════════════════════════════
+       GREEN STRIPS ALONG BRANCHES
+  ════════════════════════════════════ -->
+
+  <!-- Valley along Rosetta Branch -->
+  <polygon fill="#4A7A30" opacity="0.60" points="
+    270,300 262,300
+    122,24  108,0   155,0
+    178,26  280,296"/>
+
+  <!-- Valley along Damietta Branch -->
+  <polygon fill="#4A7A30" opacity="0.60" points="
+    282,296 290,296
+    330,148 366,44 402,0 428,0
+    380,50  340,155 294,296"/>
+
+  <!-- ════════════════════════════════════
+       NILE RIVER CHANNELS
+  ════════════════════════════════════ -->
+
+  <!-- Main Nile south of Cairo -->
+  <polygon fill="url(#fmWater)" opacity="0.90" points="
+    264,303 265,350 268,440
+    285,440 287,350 286,303"/>
+
+  <!-- Rosetta Branch: Cairo (277,301) → (131,0), slight NW curve -->
+  <polygon fill="url(#fmWater)" opacity="0.90" points="
+    272,300 198,154 146,46 122,0
+    140,0   166,44  213,151 281,296"/>
+
+  <!-- Damietta Branch: Cairo (277,301) → (378,0), slight NE -->
+  <polygon fill="url(#fmWater)" opacity="0.90" points="
+    280,296 318,158 352,54 372,0
+    395,0   374,58  328,162 289,296"/>
+
+  <!-- River highlights/sheen -->
+  <polygon fill="rgba(180,225,255,0.22)" points="273,300 202,156 150,46 126,0 140,0 167,44 215,152 279,296"/>
+
+  <!-- ════════════════════════════════════
+       BITTER LAKES + GULF OF SUEZ (right edge)
+  ════════════════════════════════════ -->
+  <!-- Bitter Lakes -->
+  <ellipse cx="510" cy="192" rx="24" ry="65" fill="#4E8CB5" opacity="0.58"/>
+  <!-- Suez Canal north of lakes -->
+  <rect x="507" y="127" width="6" height="65" rx="3" fill="#5A98C0" opacity="0.52"/>
+  <!-- Gulf of Suez (lower right) -->
+  <polygon fill="#4A88B2" opacity="0.52" points="
+    575,255 562,320 558,390 570,440 600,440 600,248"/>
+
+  <!-- ════════════════════════════════════
+       CAIRO URBAN AREA
+  ════════════════════════════════════ -->
+  <ellipse cx="278" cy="305" rx="36"  ry="25" fill="#7A6858" opacity="0.70"/>
+  <ellipse cx="278" cy="306" rx="21"  ry="15" fill="#6A5848" opacity="0.58"/>
+  <!-- Giza / west bank suburbs -->
+  <ellipse cx="256" cy="301" rx="14"  ry="10" fill="#7A6858" opacity="0.48"/>
+
+  <!-- ════════════════════════════════════
+       ROAD NETWORK
+  ════════════════════════════════════ -->
+  <!-- Cairo–Alexandria Desert Rd (NW toward Sadat City) -->
+  <line x1="258" y1="294" x2="0"   y2="210" stroke="#C8A858" stroke-width="1.6" opacity="0.55"/>
+  <!-- Cairo Ring Road / NE toward Obour City -->
+  <line x1="288" y1="287" x2="400" y2="208" stroke="#C8A858" stroke-width="1.5" opacity="0.52"/>
+  <!-- Airport access road -->
+  <line x1="286" y1="290" x2="374" y2="266" stroke="#C8A858" stroke-width="1.2" opacity="0.48"/>
+  <!-- Cairo–Suez Road (east) -->
+  <line x1="292" y1="300" x2="568" y2="328" stroke="#C8A858" stroke-width="1.2" opacity="0.42"/>
+  <!-- SW road -->
+  <line x1="265" y1="310" x2="128" y2="404" stroke="#C0A050" stroke-width="1.0" opacity="0.32"/>
+  <!-- Desert track north-west -->
+  <line x1="0"   y1="310" x2="105" y2="250" stroke="#C0A050" stroke-width="0.8" opacity="0.22"/>
+  <!-- Eastern track -->
+  <line x1="480" y1="148" x2="558" y2="110" stroke="#C0A050" stroke-width="0.8" opacity="0.22"/>
+
+  <!-- ════════════════════════════════════
+       "NILE BRANCH" WATER LABEL
+  ════════════════════════════════════ -->
+  <text x="197" y="152" font-family="Georgia, serif" font-size="10" fill="#8AD4EC"
+        font-style="italic" text-anchor="middle" opacity="0.88"
+        transform="rotate(-42 197 152)">Nile Branch</text>
+
+  <!-- ════════════════════════════════════
+       CAIRO REFERENCE MARKER
+  ════════════════════════════════════ -->
+  <circle cx="277" cy="301" r="8" class="dot-cairo"/>
+  <text x="288" y="300" class="lbl-city" fill="#FFF5DC">Cairo</text>
+
+  <!-- ════════════════════════════════════
+       OBOUR CITY MARKER + LABELS
+  ════════════════════════════════════ -->
+  <circle cx="325" cy="241" r="10" class="dot-obour"/>
+  <text x="340" y="238" class="lbl-sub">Obour City</text>
+  <text x="340" y="252" class="lbl-info">Head Office &amp; QC Lab</text>
+  <text x="340" y="265" class="lbl-info">~15 min from Cairo Airport</text>
+  <text x="340" y="281" class="lbl-info">Showcasing the clean rooms,</text>
+  <text x="340" y="294" class="lbl-info">test labs, and administrative</text>
+  <text x="340" y="307" class="lbl-info">center</text>
+
+  <!-- ════════════════════════════════════
+       SADAT CITY MARKER + LABELS
+  ════════════════════════════════════ -->
+  <circle cx="130" cy="215" r="10" class="dot-sadat"/>
+  <text x="145" y="211" class="lbl-sub">Sadat City</text>
+  <text x="145" y="225" class="lbl-info">Factory &amp; Farm</text>
+  <text x="145" y="239" class="lbl-info">~94 km NW of Cairo</text>
+  <text x="52"  y="264" class="lbl-info">Detailed view of the</text>
+  <text x="52"  y="278" class="lbl-info">100-acre modern farm and</text>
+  <text x="52"  y="292" class="lbl-info">state-of-the-art facility</text>
+
+  <!-- ════════════════════════════════════
+       ROUTE LINES
+  ════════════════════════════════════ -->
+  <line x1="277" y1="301" x2="325" y2="241" class="route"/>
+  <line x1="277" y1="301" x2="130" y2="215" class="route"/>
+
+  <!-- Distance labels -->
+  <text x="310" y="270" font-family="Georgia,serif" font-size="10" font-style="italic"
+        fill="#C8F070" transform="rotate(-47 310 270)">~30 km</text>
+  <text x="200" y="272" font-family="Georgia,serif" font-size="10" font-style="italic"
+        fill="#C8F070" transform="rotate(-18 200 272)">~94 km</text>
+
+  <!-- ════════════════════════════════════
+       CAIRO AIRPORT MARKER
+  ════════════════════════════════════ -->
+  <!-- Runway icon -->
+  <rect x="305" y="276" width="14" height="14" rx="2" fill="#7A9060" opacity="0.88"/>
+  <line x1="312" y1="277" x2="312" y2="289" stroke="#FFFFFF" stroke-width="1.5"/>
+  <line x1="306" y1="283" x2="318" y2="283" stroke="#FFFFFF" stroke-width="1.5"/>
+  <text x="323" y="287" font-family="Georgia,serif" font-size="9.5" fill="#E0D8B0" font-style="italic">Cairo Airport</text>
+
+  <!-- ════════════════════════════════════
+       LEGEND
+  ════════════════════════════════════ -->
+  <rect x="14" y="344" width="224" height="84" rx="8" fill="white" fill-opacity="0.92"/>
+  <circle cx="32" cy="366" r="7" class="dot-obour"/>
+  <text x="47" y="371" font-family="Georgia,serif" font-size="11" font-weight="600" fill="#2D4A35">Obour City (Head Office)</text>
+  <circle cx="32" cy="391" r="7" class="dot-sadat"/>
+  <text x="47" y="396" font-family="Georgia,serif" font-size="11" font-weight="600" fill="#2D4A35">Sadat City (Factory &amp; Farm)</text>
+  <circle cx="32" cy="416" r="7" class="dot-cairo"/>
+  <text x="47" y="421" font-family="Georgia,serif" font-size="11" font-weight="700" fill="#1A1A1A">Cairo (reference)</text>
+
+  <!-- ════════════════════════════════════
+       TITLE BAR
+  ════════════════════════════════════ -->
+  <rect x="0" y="0" width="600" height="46" rx="10" fill="#2D4A35"/>
+  <!-- Square off bottom corners of title bar -->
   <rect x="0" y="34" width="600" height="12" fill="#2D4A35"/>
-  <text x="300" y="28" text-anchor="middle" font-family="Georgia, serif" font-size="15" font-weight="700" fill="#C9A84C">PHATRADE — Production Facilities, Egypt</text>
+  <text x="300" y="28" text-anchor="middle"
+        font-family="Georgia, serif" font-size="15" font-weight="700"
+        fill="#C9A84C" letter-spacing="0.5">PHATRADE — Production Facilities, Egypt</text>
 </svg>
