@@ -151,12 +151,17 @@
   justify-content: center;
 }
 
-.hero__botanical {
+.hero__logo-badge {
   width: 100%;
-  max-width: 320px;
+  max-width: 340px;
   height: auto;
-  opacity: 0.85;
-  filter: drop-shadow(0 20px 60px rgba(201,168,76,0.15));
+  border-radius: 50%;
+  filter: drop-shadow(0 8px 40px rgba(201,168,76,0.30)) drop-shadow(0 0 80px rgba(201,168,76,0.12));
+  transition: transform 0.4s ease;
+}
+
+.hero__logo-badge:hover {
+  transform: scale(1.03);
 }
 
 /* --------------------------------------------------------------------------
