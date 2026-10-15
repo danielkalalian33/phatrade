@@ -243,7 +243,7 @@ const products = [
     tagline: 'Warm, herbaceous marjoram high in terpinen-4-ol for aromatherapy and fragrance.',
     botanicalName: 'Origanum majorana',
     origin: 'Egypt',
-    extractionMethod: 'Steam Distillation from over ground parts of plant',
+    extractionMethod: 'Over ground parts of plant',
     color: 'Pale yellow to yellow',
     aroma: 'Spicy, cardamom note',
     regulatoryIds: { FEMA: '2725', CAS: '8015-01-8; 84082-58-6', FDA: '182.10', EINECS: '282-004-4', CoE: '250n', H: '3301.29', NAT: '1' },
