@@ -402,7 +402,7 @@ const products = [
     shelfLife: '24 months from manufacture date.',
     storage: 'Store in a cool, dry place below 25°C in sealed containers, protected from light and heat.',
     packSizes: ['1 kg', '5 kg', '25 kg', '200 kg drum'],
-    description: 'Petitgrain Citronnier is steam-distilled from the leaves of Citrus lemon L. grown in Egypt. The oil is characterised by a high limonene content (40–58%), giving it a fresh, pleasant floral-citrus character quite distinct from petitgrain bigarade. It is used in eau de cologne formulations, fresh fragrance compositions, cosmetics, and personal care products.',
+    description: 'Petitgrain Citronnier is steam-distilled from the leaves of Citrus lemon L. grown in Egypt. The oil is characterised by a high limonene content (40–58%), giving it a fresh, pleasant floral-citrus character quite distinct from petitgrain lemon. It is used in eau de cologne formulations, fresh fragrance compositions, cosmetics, and personal care products.',
     applications: ['Fine Fragrance', 'Cosmetics', 'Personal Care', 'Aromatherapy'],
     image: 'assets/images/products/petitgrain-citronnier.jpg',
   },
