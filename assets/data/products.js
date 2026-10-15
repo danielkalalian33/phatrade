@@ -547,7 +547,7 @@ const products = [
     shelfLife: '24 months from manufacture date.',
     storage: 'Store in a cool, dry place below 25°C in sealed containers, protected from light and heat.',
     packSizes: ['1 kg', '5 kg', '25 kg', '200 kg drum'],
-    description: 'Cassie Concrete is one of the most complex and refined naturals in perfumery, extracted from the flowers of Acacia farnesiana. Its warm, powdery, violet-like character with honey and balsamic nuances makes it a precious ingredient in Oriental and floral fragrances.',
+    description: 'Cassie Concrete is one of the most complex and refined naturals in perfumery, extracted from the flowers of Acacia farnesiana. Its warm, powdery, flowery-like character with honey and balsamic nuances makes it a precious ingredient in Oriental and floral fragrances.',
     applications: ['Fine Fragrance', 'Luxury Perfumery', 'Absolute Production'],
     image: 'assets/images/products/cassie-con.jpg',
   },
