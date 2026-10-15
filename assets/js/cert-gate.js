@@ -11,7 +11,8 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const STORAGE_KEY = 'phatrade_gate_lead';
 
 const CERTS = {
-  iso22000: { title: 'ISO 22000 Food Safety Certificate',              fileUrl: 'assets/docs/cert-iso22000.pdf' },
+  iso22000:  { title: 'ISO 22000 Food Safety Certificate',              fileUrl: 'assets/docs/cert-iso22000.pdf'  },
+  fssc22000: { title: 'FSSC 22000 Food Safety Certificate',             fileUrl: 'assets/docs/cert-iso22000.pdf'  },
   iso14001: { title: 'ISO 14001 Environmental Management Certificate', fileUrl: 'assets/docs/cert-iso14001.pdf' },
   iso45001: { title: 'ISO 45001 Health & Safety Certificate',          fileUrl: 'assets/docs/cert-iso45001.pdf' },
   halal:    { title: 'HALAL Certificate',                              fileUrl: 'assets/docs/cert-halal.pdf'    },
