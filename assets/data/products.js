@@ -87,7 +87,7 @@ const products = [
     shelfLife: '24 months from manufacture date.',
     storage: 'Store in a cool, dry place below 25°C in sealed containers, protected from light and heat.',
     packSizes: ['1 kg', '5 kg', '25 kg', '200 kg drum'],
-    description: 'Distilled from the peel of Citrus aurantium L. grown on PHATRADE\'s own orchards, Bitter Orange Distilled oil offers a rich, warm citrus profile with a minimum of 80% limonene. Distinct from cold-pressed peel oil, distillation removes photosensitising coumarins making it suitable for leave-on cosmetics.',
+    description: 'Distilled from the peel of Citrus aurantium L. grown on PHATRADE\'s own orchards, Bitter Orange Distilled oil offers a rich, warm citrus profile.',
     applications: ['Fine Fragrance', 'Cosmetics', 'Flavours & Food', 'Personal Care'],
     image: 'assets/images/products/bitter-orange-distilled.jpg',
   },
