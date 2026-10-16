@@ -1,65 +1,90 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="EcoVadis Committed Sustainability Rating">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="EcoVadis Committed Sustainability Rating JUL 2026">
   <title>EcoVadis Committed Sustainability Rating</title>
+  <defs>
+    <!-- Clip to circle -->
+    <clipPath id="ev_circle">
+      <circle cx="100" cy="100" r="94"/>
+    </clipPath>
+    <!-- Petal sage greens -->
+    <linearGradient id="ev_petal_l" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7A9E82"/>
+      <stop offset="100%" stop-color="#5C8068"/>
+    </linearGradient>
+    <linearGradient id="ev_petal_c" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#A8C4A2"/>
+      <stop offset="100%" stop-color="#7AA882"/>
+    </linearGradient>
+    <linearGradient id="ev_petal_r" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7A9E82"/>
+      <stop offset="100%" stop-color="#5C8068"/>
+    </linearGradient>
+  </defs>
 
-  <!-- White background circle -->
-  <circle cx="100" cy="100" r="97" fill="#FFFFFF"/>
+  <!-- Cream background -->
+  <circle cx="100" cy="100" r="97" fill="#F4EFE8"/>
 
-  <!-- Outer border ring -->
-  <circle cx="100" cy="100" r="96" fill="none" stroke="#C8A86A" stroke-width="2.5"/>
-  <!-- Inner border ring -->
-  <circle cx="100" cy="100" r="88" fill="none" stroke="#C8A86A" stroke-width="1" opacity="0.6"/>
+  <!-- ═══ BOTTOM PETAL DECORATION ═══ (clipped to circle) -->
+  <g clip-path="url(#ev_circle)">
+    <!-- Far-left outer petal -->
+    <path d="M 20,200 C 20,155 55,145 100,148 C 55,145 30,120 20,200 Z"
+          fill="#6B9272" opacity="0.85"/>
+    <!-- Left petal -->
+    <path d="M 50,200 C 50,162 72,148 100,148 C 72,148 48,135 50,200 Z"
+          fill="#8AB592" opacity="0.85"/>
+    <!-- Centre petal (tallest) -->
+    <path d="M 72,200 C 72,168 84,148 100,148 C 116,148 128,168 128,200 Z"
+          fill="#A6C4A8" opacity="0.90"/>
+    <!-- Right petal -->
+    <path d="M 150,200 C 150,162 128,148 100,148 C 128,148 152,135 150,200 Z"
+          fill="#8AB592" opacity="0.85"/>
+    <!-- Far-right outer petal -->
+    <path d="M 180,200 C 180,155 145,145 100,148 C 145,145 170,120 180,200 Z"
+          fill="#6B9272" opacity="0.85"/>
+    <!-- Copper divider lines over petals -->
+    <line x1="100" y1="148" x2="20"  y2="200" stroke="#C4987A" stroke-width="1.2" opacity="0.75"/>
+    <line x1="100" y1="148" x2="50"  y2="200" stroke="#C4987A" stroke-width="1.2" opacity="0.75"/>
+    <line x1="100" y1="148" x2="100" y2="200" stroke="#C4987A" stroke-width="1.2" opacity="0.75"/>
+    <line x1="100" y1="148" x2="150" y2="200" stroke="#C4987A" stroke-width="1.2" opacity="0.75"/>
+    <line x1="100" y1="148" x2="180" y2="200" stroke="#C4987A" stroke-width="1.2" opacity="0.75"/>
+  </g>
 
-  <!-- COMMITTED arc text (straight, spaced, at top) -->
+  <!-- ═══ OUTER RING (copper / rose-gold) ═══ -->
+  <circle cx="100" cy="100" r="94" fill="none" stroke="#C4987A" stroke-width="3.5"/>
+  <circle cx="100" cy="100" r="97" fill="none" stroke="#C4987A" stroke-width="1" opacity="0.4"/>
+
+  <!-- ═══ COMMITTED ═══ -->
   <text x="100" y="38" text-anchor="middle"
-    font-family="Arial,Helvetica,sans-serif" font-size="11.5" font-weight="700"
-    fill="#B8935A" letter-spacing="4.5">COMMITTED</text>
+    font-family="'Arial Black', Arial, sans-serif" font-size="14" font-weight="900"
+    fill="#8B5E3C" letter-spacing="3">COMMITTED</text>
 
-  <!-- Top divider line -->
-  <line x1="55" y1="46" x2="145" y2="46" stroke="#C8A86A" stroke-width="0.9" opacity="0.7"/>
+  <!-- ═══ ecovadis WORDMARK ═══ -->
+  <!-- "eco" in dark gray -->
+  <text x="30" y="82" text-anchor="start"
+    font-family="Arial, sans-serif" font-size="34" font-weight="300"
+    fill="#3A3A3A" letter-spacing="-1">eco</text>
+  <!-- Green leaf accent above "v" -->
+  <path d="M 101,52 C 101,52 97,58 97,62 a4,4 0 0 0 8,0 C 105,58 101,52 101,52 Z"
+        fill="#4CAF50"/>
+  <!-- "v" -->
+  <text x="101" y="82" text-anchor="start"
+    font-family="Arial, sans-serif" font-size="34" font-weight="300"
+    fill="#3A3A3A" letter-spacing="-1">v</text>
+  <!-- "adis" -->
+  <text x="116" y="82" text-anchor="start"
+    font-family="Arial, sans-serif" font-size="34" font-weight="300"
+    fill="#3A3A3A" letter-spacing="-1">adis</text>
 
-  <!-- ecoVadis wordmark  -->
-  <!-- "eco" in dark gray, thin weight -->
-  <text x="58" y="88" text-anchor="start"
-    font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="300"
-    fill="#3A3A3A" letter-spacing="-0.5">eco</text>
-  <!-- "V" with green leaf sprout -->
-  <text x="100" y="88" text-anchor="start"
-    font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="300"
-    fill="#3A3A3A" letter-spacing="-0.5">V</text>
-  <!-- Green leaf above the V -->
-  <ellipse cx="109" cy="63" rx="3.5" ry="6.5" fill="#5DAA6F" transform="rotate(-8 109 63)"/>
-  <ellipse cx="113" cy="61" rx="2.8" ry="5.5" fill="#7ABF8A" opacity="0.7" transform="rotate(12 113 61)"/>
-  <!-- "adis" continuation -->
-  <text x="116" y="88" text-anchor="start"
-    font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="300"
-    fill="#3A3A3A" letter-spacing="-0.5">adis</text>
+  <!-- ═══ Sustainability Rating ═══ -->
+  <text x="100" y="103" text-anchor="middle"
+    font-family="Arial, sans-serif" font-size="12.5" font-weight="400"
+    fill="#555555" letter-spacing="0.3">Sustainability Rating</text>
 
-  <!-- Sustainability Rating -->
-  <text x="100" y="104" text-anchor="middle"
-    font-family="Arial,Helvetica,sans-serif" font-size="10.5" font-weight="400"
-    fill="#777777" letter-spacing="0.6">Sustainability Rating</text>
+  <!-- ═══ Copper divider line ═══ -->
+  <line x1="52" y1="112" x2="148" y2="112" stroke="#C4987A" stroke-width="1.4"/>
 
-  <!-- Divider line -->
-  <line x1="55" y1="113" x2="145" y2="113" stroke="#C8A86A" stroke-width="0.9" opacity="0.7"/>
+  <!-- ═══ JUL 2026 ═══ -->
+  <text x="100" y="135" text-anchor="middle"
+    font-family="'Arial Black', Arial, sans-serif" font-size="20" font-weight="900"
+    fill="#2A2A2A" letter-spacing="1.5">JUL 2026</text>
 
-  <!-- JUL 2026 -->
-  <text x="100" y="132" text-anchor="middle"
-    font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700"
-    fill="#3A3A3A" letter-spacing="2">JUL 2026</text>
-
-  <!-- Green leaf decorations at bottom -->
-  <!-- Left outer leaf -->
-  <path d="M 100,182 C 72,172 55,150 66,128 C 78,150 96,166 100,175 Z"
-        fill="#7BBF8A" opacity="0.55"/>
-  <!-- Right outer leaf -->
-  <path d="M 100,182 C 128,172 145,150 134,128 C 122,150 104,166 100,175 Z"
-        fill="#7BBF8A" opacity="0.55"/>
-  <!-- Left inner leaf -->
-  <path d="M 100,182 C 80,173 68,156 76,140 C 84,157 96,168 100,176 Z"
-        fill="#5DAA6F" opacity="0.75"/>
-  <!-- Right inner leaf -->
-  <path d="M 100,182 C 120,173 132,156 124,140 C 116,157 104,168 100,176 Z"
-        fill="#5DAA6F" opacity="0.75"/>
-  <!-- Central stem -->
-  <line x1="100" y1="182" x2="100" y2="152" stroke="#5DAA6F" stroke-width="1.5" opacity="0.6"/>
 </svg>
