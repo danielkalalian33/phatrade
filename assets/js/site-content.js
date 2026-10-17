@@ -217,6 +217,15 @@
         if (d[ck.h]) { var ch2 = cc.querySelector('h3'); if (ch2) ch2.textContent = d[ck.h]; }
         if (d[ck.b]) { var cb2 = cc.querySelector('.cert-card__body'); if (cb2) cb2.textContent = d[ck.b]; }
       }
+
+      // Traceability pipeline
+      var stages = document.querySelectorAll('.trace-stage, .pipeline-stage, .traceability-step');
+      for (var ti = 0; ti < stages.length && ti < 4; ti++) {
+        var tn = ti + 1;
+        var tt = d['trace'+tn+'-title']; var td = d['trace'+tn+'-desc'];
+        if (tt) { var th = stages[ti].querySelector('h3, h4, strong'); if (th) th.textContent = tt; }
+        if (td) { var tp = stages[ti].querySelector('p'); if (tp) tp.textContent = td; }
+      }
     }
 
     // ── SUSTAINABILITY PAGE ──
@@ -225,6 +234,15 @@
       setText('.sus-hero__subtitle', d['sus-subtitle']);
       setText('.sus-sourcing__lead', d['sus-sourcing-lead']);
       setText('.sus-process__subtitle', d['sus-process-subtitle']);
+
+      // Pillars
+      var pillars = document.querySelectorAll('.sus-pillar, .pillar-item, .sus-hero__pillars li, .sus-pillars .pillar');
+      for (var pi = 0; pi < pillars.length && pi < 4; pi++) {
+        var pn = pi + 1;
+        var pt = d['sus-p'+pn+'-title']; var ptx = d['sus-p'+pn+'-text'];
+        if (pt)  { var ph = pillars[pi].querySelector('h3, h4, strong'); if (ph) ph.textContent = pt; }
+        if (ptx) { var pp = pillars[pi].querySelector('p'); if (pp) pp.textContent = ptx; }
+      }
     }
 
     // ── FACILITIES PAGE ──
@@ -233,6 +251,30 @@
       setText('.page-header .section-heading__subtitle', d['facilities-subtitle']);
       setText('#obour-city .facility-section__intro', d['obour-intro']);
       setText('#sadat-city .facility-section__intro', d['sadat-intro']);
+
+      // Stats strip
+      var statsItems = document.querySelectorAll('.stat-item');
+      var statMap = ['fac-stat-extraction-lines','fac-stat-distillers','fac-stat-extractors','fac-stat-dist-units','fac-stat-airport'];
+      statsItems.forEach(function(si, idx){ if(statMap[idx] && d[statMap[idx]]){ var sv = si.querySelector('.stat-item__value'); if(sv) sv.textContent = d[statMap[idx]]; } });
+
+      // Obour capabilities
+      var caps = document.querySelectorAll('.facility-capabilities__item');
+      for (var ci = 0; ci < caps.length && ci < 5; ci++) {
+        var n = ci + 1;
+        var ct = d['obour-cap'+n+'-title']; var cd = d['obour-cap'+n+'-desc'];
+        if (ct) { var ch = caps[ci].querySelector('.facility-capabilities__label, strong'); if (ch) ch.textContent = ct; }
+        if (cd) { var cp = caps[ci].querySelector('.facility-capabilities__desc, p'); if (cp) cp.textContent = cd; }
+      }
+
+      // Farm crops
+      var crops = document.querySelectorAll('.farm-crop');
+      for (var ki = 0; ki < crops.length && ki < 4; ki++) {
+        var m = ki + 1;
+        var cn = d['crop'+m+'-name']; var cb = d['crop'+m+'-botanical']; var cdesc = d['crop'+m+'-desc'];
+        if (cn) { var cnh = crops[ki].querySelector('.farm-crop__name, h3'); if (cnh) cnh.textContent = cn; }
+        if (cb) { var cbe = crops[ki].querySelector('.farm-crop__botanical em, em'); if (cbe) cbe.textContent = cb; }
+        if (cdesc) { var cdp = crops[ki].querySelector('.farm-crop__desc, p'); if (cdp) cdp.textContent = cdesc; }
+      }
     }
 
     // ── APPLICATIONS PAGE ──
@@ -287,7 +329,35 @@
       }
     }
 
-    // ── IMAGE URLS (all pages) ──
+    // ── FOOTER (all pages via MutationObserver already handles email/social) ──
+    // Additional footer fields
+    var footerObs = new MutationObserver(function() {
+      if (d['footer-tagline']) setText('.footer__tagline', d['footer-tagline']);
+      if (d['footer-slogan'])  setText('.footer__slogan', d['footer-slogan']);
+      if (d['footer-copyright']) setText('.footer__copyright, .footer__bottom p', d['footer-copyright']);
+      var certBadges = document.querySelectorAll('.footer__cert-badge');
+      var certBadgeKeys = ['footer-cert1','footer-cert2','footer-cert3','footer-cert4'];
+      certBadges.forEach(function(b, i){ if(d[certBadgeKeys[i]]) b.textContent = d[certBadgeKeys[i]]; });
+      // Nav labels
+      var navLinks = document.querySelectorAll('.navbar__links a, .navbar__mobile-menu__links a');
+      var navKeys = ['nav-home','nav-about','nav-products','nav-applications','nav-facilities','nav-quality','nav-sustainability','nav-contact'];
+      navLinks.forEach(function(a, i){ if(navKeys[i] && d[navKeys[i]]) a.textContent = d[navKeys[i]]; });
+    });
+    if (document.getElementById('footer-root')) {
+      footerObs.observe(document.getElementById('footer-root'), { childList: true, subtree: true });
+    }
+
+    // ── ABOUT TIMELINE ──
+    if (page === 'about.html') {
+      var tlItems = document.querySelectorAll('.timeline-item, .timeline__item, .milestone');
+      for (var tli = 0; tli < tlItems.length && tli < 6; tli++) {
+        var tln = tli + 1;
+        var tly = d['tl'+tln+'-year']; var tll = d['tl'+tln+'-label']; var tld = d['tl'+tln+'-desc'];
+        if (tly) { var tlyEl = tlItems[tli].querySelector('.timeline-year, .year, time'); if (tlyEl) tlyEl.textContent = tly; }
+        if (tll) { var tllEl = tlItems[tli].querySelector('h3, h4, .label, strong'); if (tllEl) tllEl.textContent = tll; }
+        if (tld) { var tldEl = tlItems[tli].querySelector('p'); if (tldEl) tldEl.textContent = tld; }
+      }
+    }
     // Apply any image URL overrides stored in the CMS
     (function applyImages() {
       var imgMap = [

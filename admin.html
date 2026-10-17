@@ -7,6 +7,7 @@
   <meta name="robots" content="noindex, nofollow" />
   <link rel="icon" href="assets/images/logo.png" />
   <link rel="stylesheet" href="assets/css/admin.css" />
+  <script src="assets/data/products.js"></script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-E6LFQT70DC"></script>
   <script>
@@ -104,6 +105,30 @@
         <button class="admin-nav__item" data-section="image-urls">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
           Image URLs
+        </button>
+        <button class="admin-nav__item" data-section="products-editor">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+          Products Editor
+        </button>
+        <button class="admin-nav__item" data-section="facilities-details">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M8 21V8M16 21V8M2 12h20"/></svg>
+          Facilities Details
+        </button>
+        <button class="admin-nav__item" data-section="sus-details">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 20V10"/><path d="M18 6s-1 8-6 10C7 14 6 6 6 6s6-4 12 0z"/></svg>
+          Sustainability Details
+        </button>
+        <button class="admin-nav__item" data-section="traceability">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          Quality Traceability
+        </button>
+        <button class="admin-nav__item" data-section="timeline">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/><circle cx="12" cy="12" r="10"/></svg>
+          About Timeline
+        </button>
+        <button class="admin-nav__item" data-section="footer-nav">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+          Footer &amp; Navigation
         </button>
         <button class="admin-nav__item" data-section="cta-banner">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 11.69 19 19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6"/></svg>
@@ -534,6 +559,167 @@
         </div>
       </section>
 
+      <!-- PRODUCTS EDITOR -->
+      <section id="section-products-editor" class="admin-section" style="display:none">
+        <div class="admin-card">
+          <h3 class="admin-card__title">Select a Product to Edit</h3>
+          <div class="admin-grid">
+            <div class="admin-field admin-field--full">
+              <label>Product</label>
+              <select id="prod-selector" style="width:100%;padding:10px 12px;border:1px solid #d0c8b8;border-radius:8px;font-size:14px;background:#fff">
+                <option value="">— choose a product —</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div id="prod-edit-card" class="admin-card" style="display:none">
+          <h3 class="admin-card__title">Edit Product: <span id="prod-edit-name"></span></h3>
+          <div class="admin-grid">
+            <div class="admin-field admin-field--full"><label>Product Name</label><input type="text" id="pe-name"/></div>
+            <div class="admin-field admin-field--full"><label>Tagline</label><input type="text" id="pe-tagline"/></div>
+            <div class="admin-field admin-field--full"><label>Description</label><textarea id="pe-description" rows="4"></textarea></div>
+            <div class="admin-field admin-field--full"><label>Image URL (leave blank to keep current)</label><input type="url" id="pe-image" placeholder="https://…"/></div>
+            <div class="admin-field"><label>Extraction Method</label><input type="text" id="pe-extraction"/></div>
+            <div class="admin-field"><label>Colour</label><input type="text" id="pe-color"/></div>
+            <div class="admin-field admin-field--full"><label>Aroma Profile</label><input type="text" id="pe-aroma"/></div>
+            <div class="admin-field admin-field--full"><label>Applications (comma-separated)</label><input type="text" id="pe-applications" placeholder="Fine Fragrance, Cosmetics, Aromatherapy"/></div>
+          </div>
+          <div style="margin-top:16px;display:flex;gap:10px">
+            <button id="pe-save-btn" class="admin-btn admin-btn--primary">Save This Product</button>
+            <button id="pe-reset-btn" class="admin-btn admin-btn--ghost admin-btn--sm">Reset to Original</button>
+          </div>
+          <p id="pe-toast" style="display:none;color:#2D4A35;margin-top:8px;font-weight:600">&#10003; Saved.</p>
+        </div>
+      </section>
+
+      <!-- FACILITIES DETAILS -->
+      <section id="section-facilities-details" class="admin-section" style="display:none">
+        <div class="admin-card"><h3 class="admin-card__title">Stats Strip Numbers</h3>
+          <div class="admin-grid">
+            <div class="admin-field"><label>Extraction Lines</label><input type="text" id="fac-stat-extraction-lines"/></div>
+            <div class="admin-field"><label>Distillers</label><input type="text" id="fac-stat-distillers"/></div>
+            <div class="admin-field"><label>Extractors</label><input type="text" id="fac-stat-extractors"/></div>
+            <div class="admin-field"><label>Distillation Units</label><input type="text" id="fac-stat-dist-units"/></div>
+            <div class="admin-field"><label>Airport Time (e.g. 15 min)</label><input type="text" id="fac-stat-airport"/></div>
+          </div>
+        </div>
+        <div class="admin-card"><h3 class="admin-card__title">Obour City — 5 Capabilities</h3>
+          <div class="admin-grid">
+            <div class="admin-field"><label>Capability 1 Title</label><input type="text" id="obour-cap1-title"/></div>
+            <div class="admin-field admin-field--full"><label>Capability 1 Description</label><textarea id="obour-cap1-desc" rows="2"></textarea></div>
+            <div class="admin-field"><label>Capability 2 Title</label><input type="text" id="obour-cap2-title"/></div>
+            <div class="admin-field admin-field--full"><label>Capability 2 Description</label><textarea id="obour-cap2-desc" rows="2"></textarea></div>
+            <div class="admin-field"><label>Capability 3 Title</label><input type="text" id="obour-cap3-title"/></div>
+            <div class="admin-field admin-field--full"><label>Capability 3 Description</label><textarea id="obour-cap3-desc" rows="2"></textarea></div>
+            <div class="admin-field"><label>Capability 4 Title</label><input type="text" id="obour-cap4-title"/></div>
+            <div class="admin-field admin-field--full"><label>Capability 4 Description</label><textarea id="obour-cap4-desc" rows="2"></textarea></div>
+            <div class="admin-field"><label>Capability 5 Title</label><input type="text" id="obour-cap5-title"/></div>
+            <div class="admin-field admin-field--full"><label>Capability 5 Description</label><textarea id="obour-cap5-desc" rows="2"></textarea></div>
+          </div>
+        </div>
+        <div class="admin-card"><h3 class="admin-card__title">Farm Crop Cards (4 crops)</h3>
+          <div class="admin-grid">
+            <div class="admin-field"><label>Crop 1 Name</label><input type="text" id="crop1-name"/></div>
+            <div class="admin-field"><label>Crop 1 Botanical</label><input type="text" id="crop1-botanical"/></div>
+            <div class="admin-field admin-field--full"><label>Crop 1 Description</label><textarea id="crop1-desc" rows="2"></textarea></div>
+            <div class="admin-field"><label>Crop 2 Name</label><input type="text" id="crop2-name"/></div>
+            <div class="admin-field"><label>Crop 2 Botanical</label><input type="text" id="crop2-botanical"/></div>
+            <div class="admin-field admin-field--full"><label>Crop 2 Description</label><textarea id="crop2-desc" rows="2"></textarea></div>
+            <div class="admin-field"><label>Crop 3 Name</label><input type="text" id="crop3-name"/></div>
+            <div class="admin-field"><label>Crop 3 Botanical</label><input type="text" id="crop3-botanical"/></div>
+            <div class="admin-field admin-field--full"><label>Crop 3 Description</label><textarea id="crop3-desc" rows="2"></textarea></div>
+            <div class="admin-field"><label>Crop 4 Name</label><input type="text" id="crop4-name"/></div>
+            <div class="admin-field"><label>Crop 4 Botanical</label><input type="text" id="crop4-botanical"/></div>
+            <div class="admin-field admin-field--full"><label>Crop 4 Description</label><textarea id="crop4-desc" rows="2"></textarea></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SUSTAINABILITY DETAILS -->
+      <section id="section-sus-details" class="admin-section" style="display:none">
+        <div class="admin-card"><h3 class="admin-card__title">4 Sustainability Pillars</h3>
+          <div class="admin-grid">
+            <div class="admin-field"><label>Pillar 1 Title</label><input type="text" id="sus-p1-title"/></div>
+            <div class="admin-field admin-field--full"><label>Pillar 1 Text</label><textarea id="sus-p1-text" rows="2"></textarea></div>
+            <div class="admin-field"><label>Pillar 2 Title</label><input type="text" id="sus-p2-title"/></div>
+            <div class="admin-field admin-field--full"><label>Pillar 2 Text</label><textarea id="sus-p2-text" rows="2"></textarea></div>
+            <div class="admin-field"><label>Pillar 3 Title</label><input type="text" id="sus-p3-title"/></div>
+            <div class="admin-field admin-field--full"><label>Pillar 3 Text</label><textarea id="sus-p3-text" rows="2"></textarea></div>
+            <div class="admin-field"><label>Pillar 4 Title</label><input type="text" id="sus-p4-title"/></div>
+            <div class="admin-field admin-field--full"><label>Pillar 4 Text</label><textarea id="sus-p4-text" rows="2"></textarea></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- QUALITY TRACEABILITY -->
+      <section id="section-traceability" class="admin-section" style="display:none">
+        <div class="admin-card"><h3 class="admin-card__title">4 Traceability Pipeline Stages</h3>
+          <div class="admin-grid">
+            <div class="admin-field"><label>Stage 1 Title</label><input type="text" id="trace1-title"/></div>
+            <div class="admin-field admin-field--full"><label>Stage 1 Description</label><textarea id="trace1-desc" rows="2"></textarea></div>
+            <div class="admin-field"><label>Stage 2 Title</label><input type="text" id="trace2-title"/></div>
+            <div class="admin-field admin-field--full"><label>Stage 2 Description</label><textarea id="trace2-desc" rows="2"></textarea></div>
+            <div class="admin-field"><label>Stage 3 Title</label><input type="text" id="trace3-title"/></div>
+            <div class="admin-field admin-field--full"><label>Stage 3 Description</label><textarea id="trace3-desc" rows="2"></textarea></div>
+            <div class="admin-field"><label>Stage 4 Title</label><input type="text" id="trace4-title"/></div>
+            <div class="admin-field admin-field--full"><label>Stage 4 Description</label><textarea id="trace4-desc" rows="2"></textarea></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT TIMELINE -->
+      <section id="section-timeline" class="admin-section" style="display:none">
+        <div class="admin-card"><h3 class="admin-card__title">Company Timeline Milestones (up to 6)</h3>
+          <div class="admin-grid">
+            <div class="admin-field"><label>Milestone 1 Year</label><input type="text" id="tl1-year"/></div>
+            <div class="admin-field"><label>Milestone 1 Label</label><input type="text" id="tl1-label"/></div>
+            <div class="admin-field admin-field--full"><label>Milestone 1 Description</label><textarea id="tl1-desc" rows="2"></textarea></div>
+            <div class="admin-field"><label>Milestone 2 Year</label><input type="text" id="tl2-year"/></div>
+            <div class="admin-field"><label>Milestone 2 Label</label><input type="text" id="tl2-label"/></div>
+            <div class="admin-field admin-field--full"><label>Milestone 2 Description</label><textarea id="tl2-desc" rows="2"></textarea></div>
+            <div class="admin-field"><label>Milestone 3 Year</label><input type="text" id="tl3-year"/></div>
+            <div class="admin-field"><label>Milestone 3 Label</label><input type="text" id="tl3-label"/></div>
+            <div class="admin-field admin-field--full"><label>Milestone 3 Description</label><textarea id="tl3-desc" rows="2"></textarea></div>
+            <div class="admin-field"><label>Milestone 4 Year</label><input type="text" id="tl4-year"/></div>
+            <div class="admin-field"><label>Milestone 4 Label</label><input type="text" id="tl4-label"/></div>
+            <div class="admin-field admin-field--full"><label>Milestone 4 Description</label><textarea id="tl4-desc" rows="2"></textarea></div>
+            <div class="admin-field"><label>Milestone 5 Year</label><input type="text" id="tl5-year"/></div>
+            <div class="admin-field"><label>Milestone 5 Label</label><input type="text" id="tl5-label"/></div>
+            <div class="admin-field admin-field--full"><label>Milestone 5 Description</label><textarea id="tl5-desc" rows="2"></textarea></div>
+            <div class="admin-field"><label>Milestone 6 Year</label><input type="text" id="tl6-year"/></div>
+            <div class="admin-field"><label>Milestone 6 Label</label><input type="text" id="tl6-label"/></div>
+            <div class="admin-field admin-field--full"><label>Milestone 6 Description</label><textarea id="tl6-desc" rows="2"></textarea></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER & NAVIGATION -->
+      <section id="section-footer-nav" class="admin-section" style="display:none">
+        <div class="admin-card"><h3 class="admin-card__title">Footer</h3>
+          <div class="admin-grid">
+            <div class="admin-field admin-field--full"><label>Footer Tagline</label><input type="text" id="footer-tagline"/></div>
+            <div class="admin-field admin-field--full"><label>Footer Slogan</label><input type="text" id="footer-slogan"/></div>
+            <div class="admin-field"><label>Cert Badge 1</label><input type="text" id="footer-cert1"/></div>
+            <div class="admin-field"><label>Cert Badge 2</label><input type="text" id="footer-cert2"/></div>
+            <div class="admin-field"><label>Cert Badge 3</label><input type="text" id="footer-cert3"/></div>
+            <div class="admin-field"><label>Cert Badge 4</label><input type="text" id="footer-cert4"/></div>
+            <div class="admin-field admin-field--full"><label>Copyright Text</label><input type="text" id="footer-copyright"/></div>
+          </div>
+        </div>
+        <div class="admin-card"><h3 class="admin-card__title">Navigation Labels</h3>
+          <div class="admin-grid">
+            <div class="admin-field"><label>Home</label><input type="text" id="nav-home"/></div>
+            <div class="admin-field"><label>About</label><input type="text" id="nav-about"/></div>
+            <div class="admin-field"><label>Products</label><input type="text" id="nav-products"/></div>
+            <div class="admin-field"><label>Applications</label><input type="text" id="nav-applications"/></div>
+            <div class="admin-field"><label>Facilities</label><input type="text" id="nav-facilities"/></div>
+            <div class="admin-field"><label>Quality</label><input type="text" id="nav-quality"/></div>
+            <div class="admin-field"><label>Sustainability</label><input type="text" id="nav-sustainability"/></div>
+            <div class="admin-field"><label>Contact</label><input type="text" id="nav-contact"/></div>
+          </div>
+        </div>
+      </section>
+
       <!-- PASSWORD -->
       <section id="section-password" class="admin-section" style="display:none">
         <div class="admin-card">
@@ -688,7 +874,71 @@
     'img-obour-dist': '',
     'img-sadat1': '',
     'img-sadat2': '',
-    'img-sadat3': ''
+    'img-sadat3': '',
+    'fac-stat-extraction-lines': '4',
+    'fac-stat-distillers': '15',
+    'fac-stat-extractors': '15',
+    'fac-stat-dist-units': '4',
+    'fac-stat-airport': '15 min',
+    'obour-cap1-title': 'Steam Distillation',
+    'obour-cap1-desc': 'Multi-stage stainless steel distillation lines for essential oil production from fresh and dried plant material.',
+    'obour-cap2-title': 'GC Laboratory',
+    'obour-cap2-desc': 'Three in-house Gas Chromatography units for purity verification and composition analysis of every production batch.',
+    'obour-cap3-title': 'Cold Pressing',
+    'obour-cap3-desc': 'Cold-press extraction lines for citrus peel oils, preserving volatile aromatic fractions lost during distillation.',
+    'obour-cap4-title': 'R&D Centre',
+    'obour-cap4-desc': 'On-site R&D centre developing new extraction methods and formulation-ready specialty ingredients.',
+    'obour-cap5-title': 'Packing & Shipping',
+    'obour-cap5-desc': 'Full packing and export-shipment operations, with direct access to Cairo International Airport approximately 15 minutes away.',
+    'crop1-name': 'Bitter Orange Flowers',
+    'crop1-botanical': 'Citrus aurantium',
+    'crop1-desc': 'Hand-harvested blossoms used to produce Neroli essential oil and Orange Flower Concrete, prized in fine fragrance and luxury cosmetics.',
+    'crop2-name': 'Geranium',
+    'crop2-botanical': 'Pelargonium graveolens',
+    'crop2-desc': 'Steam-distilled leaves and stems yield a balanced rose-like oil widely used in personal care, aromatherapy, and fine fragrances.',
+    'crop3-name': 'Cassie',
+    'crop3-botanical': 'Acacia farnesiana L.',
+    'crop3-desc': 'Hand-harvested flowers solvent-extracted to yield Cassie Concrete, one of the most prized naturals in luxury perfumery.',
+    'crop4-name': 'Violet',
+    'crop4-botanical': 'Viola odorata',
+    'crop4-desc': 'Delicate violet leaves are solvent-extracted to produce Violet Concrete and Absolute, among the most sought-after materials in niche fragrance.',
+    'sus-p1-title': 'Environment',
+    'sus-p1-text': 'ISO 14001 certified environmental management across both facilities, covering energy use, water consumption, and waste reduction.',
+    'sus-p2-title': 'Labour & Human Rights',
+    'sus-p2-text': 'SMETA-audited labour practices ensuring fair wages, safe working conditions, and zero forced labour across all operations.',
+    'sus-p3-title': 'Ethics',
+    'sus-p3-text': 'Anti-bribery, anti-corruption, and transparent business practices certified through SEDEX registration and EcoVadis Committed rating.',
+    'sus-p4-title': 'Sustainable Procurement',
+    'sus-p4-text': 'Farm-to-ingredient traceability with responsible raw material sourcing and preference for local Egyptian suppliers.',
+    'trace1-title': 'Cultivation',
+    'trace1-desc': 'Crops grown on our own 100-acre farm in Sadat City under controlled conditions, with full planting and irrigation records.',
+    'trace2-title': 'Extraction',
+    'trace2-desc': 'Steam distillation and solvent extraction at our certified Sadat City and Obour City facilities, with batch identification from first process step.',
+    'trace3-title': 'GC Testing',
+    'trace3-desc': 'Every batch analysed by in-house Gas Chromatography for purity, composition, and compliance with specification before release.',
+    'trace4-title': 'Export',
+    'trace4-desc': 'Full documentation package — CoA, MSDS, and certificates of origin — dispatched with every shipment from Obour City.',
+    'tl1-year': '1975', 'tl1-label': 'Founded', 'tl1-desc': 'Established in Cairo as a spice and herb trading company.',
+    'tl2-year': '1987', 'tl2-label': 'First Distillation', 'tl2-desc': 'Opened the Obour City essential oil production facility.',
+    'tl3-year': '1999', 'tl3-label': 'Farm Expansion', 'tl3-desc': 'Acquired land in Sadat City to establish our own cultivation farm.',
+    'tl4-year': '2010', 'tl4-label': 'ISO Certified', 'tl4-desc': 'Achieved first ISO certifications, opening export markets in Europe and the USA.',
+    'tl5-year': '2020', 'tl5-label': 'FSSC 22000', 'tl5-desc': 'Achieved FSSC 22000 GFSI-recognised food safety certification.',
+    'tl6-year': '2024', 'tl6-label': 'EcoVadis Committed', 'tl6-desc': 'Achieved EcoVadis Committed sustainability rating.',
+    'footer-tagline': 'Natural aromatic ingredients from Egypt since 1975. Trusted by fragrance, flavour and cosmetics manufacturers worldwide.',
+    'footer-slogan': 'Where Nature Meets Global Trust',
+    'footer-cert1': 'GFSI',
+    'footer-cert2': 'HACCP',
+    'footer-cert3': 'FDA',
+    'footer-cert4': 'KOSHER',
+    'footer-copyright': '',
+    'nav-home': 'Home',
+    'nav-about': 'About',
+    'nav-products': 'Products',
+    'nav-applications': 'Applications',
+    'nav-facilities': 'Facilities',
+    'nav-quality': 'Quality',
+    'nav-sustainability': 'Sustainability',
+    'nav-contact': 'Contact'
   };
 
   function loadData() {
@@ -887,6 +1137,71 @@
     }
 
   });
+
+  // ── PRODUCT EDITOR ──────────────────────────────────────────────
+  (function initProductEditor() {
+    var PROD_KEY = 'phatrade_prod_overrides';
+    var allProds = (window.products || []).filter(function(p){ return p.enquirable; });
+    var sel = el('prod-selector');
+    if (!sel || !allProds.length) return;
+
+    allProds.forEach(function(p){
+      var opt = document.createElement('option');
+      opt.value = p.id;
+      opt.textContent = p.name + ' (' + p.category + ')';
+      sel.appendChild(opt);
+    });
+
+    function getOverrides() { try { return JSON.parse(localStorage.getItem(PROD_KEY) || '{}'); } catch(e){ return {}; } }
+    function saveOverrides(obj) { localStorage.setItem(PROD_KEY, JSON.stringify(obj)); }
+
+    sel.addEventListener('change', function(){
+      var id = sel.value;
+      if (!id) { el('prod-edit-card').style.display = 'none'; return; }
+      var orig = allProds.find(function(p){ return p.id === id; });
+      if (!orig) return;
+      var ov = getOverrides()[id] || {};
+      el('prod-edit-card').style.display = '';
+      el('prod-edit-name').textContent = orig.name;
+      el('pe-name').value         = ov.name         !== undefined ? ov.name         : (orig.name         || '');
+      el('pe-tagline').value      = ov.tagline       !== undefined ? ov.tagline      : (orig.tagline      || '');
+      el('pe-description').value  = ov.description   !== undefined ? ov.description  : (orig.description  || '');
+      el('pe-image').value        = ov.image         !== undefined ? ov.image        : '';
+      el('pe-extraction').value   = ov.extractionMethod !== undefined ? ov.extractionMethod : (orig.extractionMethod || '');
+      el('pe-color').value        = ov.color         !== undefined ? ov.color        : (orig.color        || '');
+      el('pe-aroma').value        = ov.aroma         !== undefined ? ov.aroma        : (orig.aroma        || '');
+      el('pe-applications').value = ov.applications  !== undefined ? ov.applications : ((orig.applications || []).join(', '));
+    });
+
+    var peSave = el('pe-save-btn');
+    if (peSave) {
+      peSave.addEventListener('click', function(){
+        var id = sel.value; if (!id) return;
+        var all = getOverrides();
+        all[id] = {
+          name: el('pe-name').value.trim() || undefined,
+          tagline: el('pe-tagline').value.trim() || undefined,
+          description: el('pe-description').value.trim() || undefined,
+          image: el('pe-image').value.trim() || undefined,
+          extractionMethod: el('pe-extraction').value.trim() || undefined,
+          color: el('pe-color').value.trim() || undefined,
+          aroma: el('pe-aroma').value.trim() || undefined,
+          applications: el('pe-applications').value.trim() || undefined
+        };
+        saveOverrides(all);
+        var t = el('pe-toast'); if (t) { t.style.display = ''; setTimeout(function(){ t.style.display='none'; }, 3000); }
+      });
+    }
+    var peReset = el('pe-reset-btn');
+    if (peReset) {
+      peReset.addEventListener('click', function(){
+        var id = sel.value; if (!id) return;
+        var all = getOverrides(); delete all[id]; saveOverrides(all);
+        sel.dispatchEvent(new Event('change'));
+      });
+    }
+  })();
+
 })();
 </script>
 </body>

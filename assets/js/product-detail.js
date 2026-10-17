@@ -18,6 +18,22 @@ function boot() {
     return;
   }
 
+  // Apply any admin overrides from localStorage
+  try {
+    var prodOverrides = JSON.parse(localStorage.getItem('phatrade_prod_overrides') || '{}');
+    var ov = prodOverrides[productId];
+    if (ov) {
+      if (ov.name)              product = Object.assign({}, product, { name: ov.name });
+      if (ov.tagline)           product = Object.assign({}, product, { tagline: ov.tagline });
+      if (ov.description)       product = Object.assign({}, product, { description: ov.description });
+      if (ov.image)             product = Object.assign({}, product, { image: ov.image });
+      if (ov.extractionMethod)  product = Object.assign({}, product, { extractionMethod: ov.extractionMethod });
+      if (ov.color)             product = Object.assign({}, product, { color: ov.color });
+      if (ov.aroma)             product = Object.assign({}, product, { aroma: ov.aroma });
+      if (ov.applications)      product = Object.assign({}, product, { applications: ov.applications.split(',').map(function(s){ return s.trim(); }) });
+    }
+  } catch(e) {}
+
   // Page title
   document.title = product.name + ' – PHATRADE | Phatrade Essential Oils';
   const titleEl = document.getElementById('page-title');
