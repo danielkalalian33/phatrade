@@ -298,28 +298,6 @@ function inject() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
-  // Cookie notice — only shown once per browser session
-  if (!sessionStorage.getItem('phatrade_cookie_dismissed')) {
-    const notice = document.createElement('div');
-    notice.id = 'cookie-notice';
-    notice.className = 'cookie-notice';
-    notice.setAttribute('role', 'status');
-    notice.setAttribute('aria-live', 'polite');
-    notice.innerHTML = `
-      <p class="cookie-notice__text">This site uses no tracking cookies. Your visit is private.</p>
-      <button class="cookie-notice__dismiss btn btn--sm" aria-label="Dismiss cookie notice">Got it</button>
-    `;
-    document.body.appendChild(notice);
-
-    // Show with a slight delay so it doesn't flash on load
-    setTimeout(() => notice.classList.add('cookie-notice--visible'), 800);
-
-    notice.querySelector('.cookie-notice__dismiss').addEventListener('click', () => {
-      notice.classList.remove('cookie-notice--visible');
-      setTimeout(() => notice.remove(), 300);
-      sessionStorage.setItem('phatrade_cookie_dismissed', '1');
-    });
-  }
 }
 
 // Run immediately if DOM is ready; otherwise wait for the event.
