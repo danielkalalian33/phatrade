@@ -1315,6 +1315,10 @@
 
   function saveData(d) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(d));
+    // Also save to Firebase for live site updates
+    if (window.PHATRADE_FB) {
+      window.PHATRADE_FB.saveCMS(d);
+    }
   }
 
   function getPW() {
@@ -1354,7 +1358,17 @@
   function showDashboard() {
     hide('login-screen');
     show('dashboard');
-    populateForms();
+    // Load from Firebase first, fall back to localStorage
+    if (window.PHATRADE_FB) {
+      window.PHATRADE_FB.readCMS(function(remoteData) {
+        // Merge: remote wins over defaults
+        var merged = Object.assign({}, remoteData);
+        try { localStorage.setItem(STORAGE_KEY, JSON.stringify(merged)); } catch(e) {}
+        populateForms();
+      });
+    } else {
+      populateForms();
+    }
   }
 
   window.addEventListener('load', function() {
@@ -1521,7 +1535,10 @@
     });
 
     function getOverrides() { try { return JSON.parse(localStorage.getItem(PROD_KEY) || '{}'); } catch(e){ return {}; } }
-    function saveOverrides(obj) { localStorage.setItem(PROD_KEY, JSON.stringify(obj)); }
+    function saveOverrides(obj) {
+      localStorage.setItem(PROD_KEY, JSON.stringify(obj));
+      if (window.PHATRADE_FB) { window.PHATRADE_FB.saveProducts(obj); }
+    }
 
     sel.addEventListener('change', function(){
       var id = sel.value;

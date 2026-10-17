@@ -31,8 +31,27 @@
   var path = location.pathname;
   var page = path.split('/').pop() || 'index.html';
 
+  // ── Apply CMS data function ──────────────────────────────────────
+  function applyCMS(d) {
+    // (All the existing DOMContentLoaded logic, moved into this function)
+    applyAllContent(d);
+  }
+
   document.addEventListener('DOMContentLoaded', function() {
     var d = getData();
+    applyAllContent(d);
+
+    // Then fetch fresh data from Firebase and re-apply
+    if (window.PHATRADE_FB) {
+      window.PHATRADE_FB.readCMS(function(remoteData) {
+        if (remoteData && Object.keys(remoteData).length) {
+          applyAllContent(remoteData);
+        }
+      });
+    }
+  });
+
+  function applyAllContent(d) {
 
     // ── ALL PAGES: Footer social links via MutationObserver ──
     var footerRoot = document.getElementById('footer-root');
@@ -529,5 +548,6 @@
       }
     })();
 
-  });
+  } // end applyAllContent
+
 })();
