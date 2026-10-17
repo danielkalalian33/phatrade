@@ -115,8 +115,8 @@ function renderProductCard(product) {
         ${botanical}
         ${shortDesc ? `<p class="product-card__desc">${shortDesc}</p>` : ''}
         <div class="product-card__actions">
-          <a href="product-detail.html?id=${escapeAttr(product.id)}" class="btn btn--primary btn--sm">View Details</a>
-          <button class="btn btn--secondary btn--sm product-card__enquire" data-product="${escapeAttr(product.name)}" data-action="enquire" aria-label="Enquire about ${escapeAttr(product.name)}">Enquire</button>
+          <a href="product-detail.html?id=${escapeAttr(product.id)}" class="btn btn--primary btn--sm">${escapeHtml((function(){ try{ var ov=JSON.parse(localStorage.getItem('phatrade_cms')||'{}'); return ov['btn-view-details']||'View Details'; }catch(e){ return 'View Details'; } })())}</a>
+          <button class="btn btn--secondary btn--sm product-card__enquire" data-product="${escapeAttr(product.name)}" data-action="enquire" aria-label="Enquire about ${escapeAttr(product.name)}">${escapeHtml((function(){ try{ var ov=JSON.parse(localStorage.getItem('phatrade_cms')||'{}'); return ov['btn-enquire']||'Enquire'; }catch(e){ return 'Enquire'; } })())}</button>
         </div>
       </div>
     </article>`.trim();

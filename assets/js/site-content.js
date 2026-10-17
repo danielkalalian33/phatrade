@@ -448,6 +448,49 @@
     }
     // Apply any image URL overrides stored in the CMS
     (function applyImages() {
+      // Cert logos (quality page)
+      if (page === 'quality.html') {
+        var certLogoMap = [
+          ['img-cert-fssc','img-cert-iso22','img-cert-iso14','img-cert-iso45',
+           'img-cert-halal','img-cert-fda','img-cert-kosher','img-cert-sedex','img-cert-ecovadis']
+        ][0];
+        var certImgs = document.querySelectorAll('.cert-card img');
+        certLogoMap.forEach(function(k, idx) { if (d[k] && certImgs[idx]) certImgs[idx].src = d[k]; });
+      }
+
+      // "Why PHATRADE" block (product detail page)
+      if (page === 'product-detail.html') {
+        var whyH = document.querySelector('#why-heading');
+        if (whyH && d['why-heading']) whyH.textContent = d['why-heading'];
+        var whyItems = document.querySelectorAll('.pd-why__item');
+        var whyData = [
+          { t:'why1-title', tx:'why1-text' },{ t:'why2-title', tx:'why2-text' },
+          { t:'why3-title', tx:'why3-text' },{ t:'why4-title', tx:'why4-text' }
+        ];
+        whyItems.forEach(function(wi,idx) {
+          if (idx>=4) return;
+          var wh=wi.querySelector('h3'); if(wh&&d[whyData[idx].t]) wh.textContent=d[whyData[idx].t];
+          var wp=wi.querySelector('p');  if(wp&&d[whyData[idx].tx]) wp.textContent=d[whyData[idx].tx];
+        });
+        // Product detail button labels
+        var pBtns = document.querySelectorAll('.pd-hero__actions a.btn, .pd-hero__actions button.btn');
+        if(pBtns[0] && d['btn-send-enquiry'])  pBtns[0].textContent = d['btn-send-enquiry'];
+        if(pBtns[1] && d['btn-request-sample']) pBtns[1].textContent = d['btn-request-sample'];
+      }
+
+      // Cert download button labels
+      if (page === 'quality.html' && d['btn-download-cert']) {
+        document.querySelectorAll('.cert-card__download').forEach(function(btn) {
+          var t=btn.childNodes[btn.childNodes.length-1]; if(t&&t.nodeType===3) t.textContent='\n              '+d['btn-download-cert'];
+        });
+      }
+
+      // Contact form submit buttons
+      if (page === 'contact.html' && d['btn-form-submit']) {
+        document.querySelectorAll('button[type="submit"].btn').forEach(function(btn){
+          if (!btn.classList.contains('cert-card__download')) btn.textContent = d['btn-form-submit'];
+        });
+      }
       var imgMap = [
         // selector → cms key
         ['header .navbar__logo img, .footer__logo-link img',   'img-logo'],

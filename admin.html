@@ -162,6 +162,14 @@
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
           404 Page
         </button>
+        <button class="admin-nav__item" data-section="why-phatrade">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2L3 7v5c0 5 3.9 9.7 9 11 5.1-1.3 9-6 9-11V7l-9-5z"/><polyline points="9 12 11 14 15 10"/></svg>
+          Why PHATRADE Block
+        </button>
+        <button class="admin-nav__item" data-section="button-labels">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="8" width="18" height="8" rx="4"/><line x1="7" y1="12" x2="17" y2="12"/></svg>
+          Button Labels
+        </button>
         <button class="admin-nav__item" data-section="cta-banner">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 11.69 19 19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6"/></svg>
           CTA Banner
@@ -569,6 +577,20 @@
             <div class="admin-field admin-field--full"><label>Sadat City — Photo 3 URL</label><input type="url" id="img-sadat3" placeholder="https://…"/></div>
           </div>
         </div>
+        <div class="admin-card"><h3 class="admin-card__title">Certification Logo Image URLs</h3>
+          <p class="admin-hint" style="margin-bottom:12px">Paste a URL to override any certification logo on the Quality page.</p>
+          <div class="admin-grid">
+            <div class="admin-field admin-field--full"><label>FSSC 22000 Logo URL</label><input type="url" id="img-cert-fssc" placeholder="https://…"/></div>
+            <div class="admin-field admin-field--full"><label>ISO 22000 Logo URL</label><input type="url" id="img-cert-iso22" placeholder="https://…"/></div>
+            <div class="admin-field admin-field--full"><label>ISO 14001 Logo URL</label><input type="url" id="img-cert-iso14" placeholder="https://…"/></div>
+            <div class="admin-field admin-field--full"><label>ISO 45001 Logo URL</label><input type="url" id="img-cert-iso45" placeholder="https://…"/></div>
+            <div class="admin-field admin-field--full"><label>HALAL Logo URL</label><input type="url" id="img-cert-halal" placeholder="https://…"/></div>
+            <div class="admin-field admin-field--full"><label>FDA Logo URL</label><input type="url" id="img-cert-fda" placeholder="https://…"/></div>
+            <div class="admin-field admin-field--full"><label>Kosher Logo URL</label><input type="url" id="img-cert-kosher" placeholder="https://…"/></div>
+            <div class="admin-field admin-field--full"><label>SEDEX Logo URL</label><input type="url" id="img-cert-sedex" placeholder="https://…"/></div>
+            <div class="admin-field admin-field--full"><label>EcoVadis Logo URL</label><input type="url" id="img-cert-ecovadis" placeholder="https://…"/></div>
+          </div>
+        </div>
       </section>
 
       <!-- CTA BANNER -->
@@ -640,7 +662,22 @@
             </div>
           </details>
           <details style="margin-top:8px">
-            <summary style="cursor:pointer;font-weight:600;color:#2D4A35;padding:8px 0">&#9658; Pack Sizes &amp; Shelf Life</summary>
+            <summary style="cursor:pointer;font-weight:600;color:#2D4A35;padding:8px 0">&#9658; GC Composition (up to 6 compounds)</summary>
+            <div class="admin-grid" style="margin-top:8px">
+              <div class="admin-field"><label>Compound 1 Name</label><input type="text" id="pe-c1-name" placeholder="Trans-Anethole"/></div>
+              <div class="admin-field"><label>Compound 1 Range</label><input type="text" id="pe-c1-range" placeholder="85–95%"/></div>
+              <div class="admin-field"><label>Compound 2 Name</label><input type="text" id="pe-c2-name"/></div>
+              <div class="admin-field"><label>Compound 2 Range</label><input type="text" id="pe-c2-range"/></div>
+              <div class="admin-field"><label>Compound 3 Name</label><input type="text" id="pe-c3-name"/></div>
+              <div class="admin-field"><label>Compound 3 Range</label><input type="text" id="pe-c3-range"/></div>
+              <div class="admin-field"><label>Compound 4 Name</label><input type="text" id="pe-c4-name"/></div>
+              <div class="admin-field"><label>Compound 4 Range</label><input type="text" id="pe-c4-range"/></div>
+              <div class="admin-field"><label>Compound 5 Name</label><input type="text" id="pe-c5-name"/></div>
+              <div class="admin-field"><label>Compound 5 Range</label><input type="text" id="pe-c5-range"/></div>
+              <div class="admin-field"><label>Compound 6 Name</label><input type="text" id="pe-c6-name"/></div>
+              <div class="admin-field"><label>Compound 6 Range</label><input type="text" id="pe-c6-range"/></div>
+            </div>
+          </details>
             <div class="admin-grid" style="margin-top:8px">
               <div class="admin-field admin-field--full"><label>Pack Sizes (comma-separated)</label><input type="text" id="pe-packsizes" placeholder="1 kg, 5 kg, 25 kg, 200 kg drum"/></div>
               <div class="admin-field admin-field--full"><label>Shelf Life</label><input type="text" id="pe-shelflife" placeholder="36 months from manufacture date."/></div>
@@ -925,6 +962,37 @@
             <div class="admin-field admin-field--full"><label>Body Text</label><textarea id="p404-body" rows="2"></textarea></div>
             <div class="admin-field"><label>Button 1 Text</label><input type="text" id="p404-btn1"/></div>
             <div class="admin-field"><label>Button 2 Text</label><input type="text" id="p404-btn2"/></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHY SOURCE FROM PHATRADE -->
+      <section id="section-why-phatrade" class="admin-section" style="display:none">
+        <div class="admin-card"><h3 class="admin-card__title">"Why Source From PHATRADE" — 4 Items on Product Pages</h3>
+          <div class="admin-grid">
+            <div class="admin-field admin-field--full"><label>Section Heading</label><input type="text" id="why-heading"/></div>
+            <div class="admin-field"><label>Item 1 Title</label><input type="text" id="why1-title"/></div>
+            <div class="admin-field admin-field--full"><label>Item 1 Text</label><textarea id="why1-text" rows="2"></textarea></div>
+            <div class="admin-field"><label>Item 2 Title</label><input type="text" id="why2-title"/></div>
+            <div class="admin-field admin-field--full"><label>Item 2 Text</label><textarea id="why2-text" rows="2"></textarea></div>
+            <div class="admin-field"><label>Item 3 Title</label><input type="text" id="why3-title"/></div>
+            <div class="admin-field admin-field--full"><label>Item 3 Text</label><textarea id="why3-text" rows="2"></textarea></div>
+            <div class="admin-field"><label>Item 4 Title</label><input type="text" id="why4-title"/></div>
+            <div class="admin-field admin-field--full"><label>Item 4 Text</label><textarea id="why4-text" rows="2"></textarea></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BUTTON LABELS -->
+      <section id="section-button-labels" class="admin-section" style="display:none">
+        <div class="admin-card"><h3 class="admin-card__title">Product Card &amp; Page Button Labels</h3>
+          <div class="admin-grid">
+            <div class="admin-field"><label>Product Card — "View Details"</label><input type="text" id="btn-view-details"/></div>
+            <div class="admin-field"><label>Product Card — "Enquire"</label><input type="text" id="btn-enquire"/></div>
+            <div class="admin-field"><label>Product Detail — "Send Enquiry"</label><input type="text" id="btn-send-enquiry"/></div>
+            <div class="admin-field"><label>Product Detail — "Request Sample"</label><input type="text" id="btn-request-sample"/></div>
+            <div class="admin-field"><label>Contact Form — Submit Button</label><input type="text" id="btn-form-submit"/></div>
+            <div class="admin-field"><label>Certificate — "Download Certificate"</label><input type="text" id="btn-download-cert"/></div>
           </div>
         </div>
       </section>
@@ -1220,7 +1288,25 @@
     'p404-heading': '404 — Page Not Found',
     'p404-body': 'The page you\'re looking for doesn\'t exist or has been moved.',
     'p404-btn1': 'Go to Homepage',
-    'p404-btn2': 'Contact Us'
+    'p404-btn2': 'Contact Us',
+    'img-cert-fssc': '', 'img-cert-iso22': '', 'img-cert-iso14': '',
+    'img-cert-iso45': '', 'img-cert-halal': '', 'img-cert-fda': '',
+    'img-cert-kosher': '', 'img-cert-sedex': '', 'img-cert-ecovadis': '',
+    'why-heading': 'Why Source From PHATRADE',
+    'why1-title': 'GC-Verified Quality',
+    'why1-text': 'Every batch analysed by our in-house GC laboratory against international reference standards.',
+    'why2-title': 'Full Traceability',
+    'why2-text': 'Complete batch documentation from farm harvest to final shipment, available to qualified buyers.',
+    'why3-title': 'Egyptian Origin',
+    'why3-text': 'Cultivated on our own farm or sourced from verified Egyptian growers. Authentic provenance guaranteed.',
+    'why4-title': 'GFSI, HACCP, FDA & Kosher',
+    'why4-text': 'Internationally recognised certifications supporting access to regulated global markets.',
+    'btn-view-details': 'View Details',
+    'btn-enquire': 'Enquire',
+    'btn-send-enquiry': 'Send Enquiry',
+    'btn-request-sample': 'Request Sample',
+    'btn-form-submit': 'Send Message',
+    'btn-download-cert': 'Download Certificate'
   };
 
   function loadData() {
@@ -1474,6 +1560,14 @@
       el('pe-packsizes').value = ov.packSizes !== undefined ? (Array.isArray(ov.packSizes) ? ov.packSizes.join(', ') : ov.packSizes) : ((orig.packSizes||[]).join(', '));
       el('pe-shelflife').value = ov.shelfLife !== undefined ? ov.shelfLife : (orig.shelfLife || '');
       el('pe-storage').value   = ov.storage   !== undefined ? ov.storage   : (orig.storage   || '');
+      // composition
+      var comp = ov.composition || orig.composition || [];
+      for (var ci2 = 1; ci2 <= 6; ci2++) {
+        var co = comp[ci2-1] || {};
+        var en = el('pe-c'+ci2+'-name'); var er = el('pe-c'+ci2+'-range');
+        if (en) en.value = co.compound || '';
+        if (er) er.value = co.range || '';
+      }
     });
 
     var peSave = el('pe-save-btn');
@@ -1505,7 +1599,15 @@
           'rg-h':      el('pe-h').value.trim()      || undefined,
           packSizes: el('pe-packsizes').value.trim() ? el('pe-packsizes').value.trim().split(',').map(function(s){ return s.trim(); }) : undefined,
           shelfLife: el('pe-shelflife').value.trim() || undefined,
-          storage:   el('pe-storage').value.trim()   || undefined
+          storage:   el('pe-storage').value.trim()   || undefined,
+          composition: (function() {
+            var arr = [];
+            for (var ci3 = 1; ci3 <= 6; ci3++) {
+              var cn2 = el('pe-c'+ci3+'-name'); var cr = el('pe-c'+ci3+'-range');
+              if (cn2 && cn2.value.trim()) arr.push({ compound: cn2.value.trim(), range: cr ? cr.value.trim() : '' });
+            }
+            return arr.length ? arr : undefined;
+          })()
         };
         saveOverrides(all);
         var t = el('pe-toast'); if (t) { t.style.display = ''; setTimeout(function(){ t.style.display='none'; }, 3000); }

@@ -37,6 +37,7 @@ function boot() {
       // regulatory IDs overrides
       var rgKeys = {'rg-cas':'CAS','rg-fema':'FEMA','rg-fda':'FDA','rg-einecs':'EINECS','rg-coe':'CoE','rg-h':'H'};
       Object.keys(rgKeys).forEach(function(k){ if(ov[k]){ var rr = Object.assign({}, product.regulatoryIds||{}); rr[rgKeys[k]] = ov[k]; product = Object.assign({}, product, {regulatoryIds: rr}); } });
+      if (ov.composition)    product = Object.assign({}, product, { composition: ov.composition });
       if (ov.packSizes)  product = Object.assign({}, product, { packSizes: Array.isArray(ov.packSizes) ? ov.packSizes : ov.packSizes.split(',').map(function(s){ return s.trim(); }) });
       if (ov.shelfLife)  product = Object.assign({}, product, { shelfLife: ov.shelfLife });
       if (ov.storage)    product = Object.assign({}, product, { storage: ov.storage });
