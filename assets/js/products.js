@@ -35,6 +35,37 @@ function filterProducts(productList, category) {
   return productList.filter(p => p.category === category);
 }
 
+/* Apply any admin product overrides saved in localStorage */
+function applyProductOverrides(productList) {
+  try {
+    const overrides = JSON.parse(localStorage.getItem('phatrade_prod_overrides') || '{}');
+    if (!Object.keys(overrides).length) return productList;
+    return productList.map(p => {
+      const ov = overrides[p.id];
+      if (!ov) return p;
+      const updated = Object.assign({}, p);
+      if (ov.name)             updated.name             = ov.name;
+      if (ov.tagline)          updated.tagline          = ov.tagline;
+      if (ov.image)            updated.image            = ov.image;
+      if (ov.extractionMethod) updated.extractionMethod = ov.extractionMethod;
+      if (ov.color)            updated.color            = ov.color;
+      if (ov.aroma)            updated.aroma            = ov.aroma;
+      if (ov.description)      updated.description      = ov.description;
+      if (ov.packSizes)        updated.packSizes        = ov.packSizes;
+      if (ov.shelfLife)        updated.shelfLife        = ov.shelfLife;
+      if (ov.storage)          updated.storage          = ov.storage;
+      if (ov.applications)     updated.applications     = ov.applications.split ? ov.applications.split(',').map(s => s.trim()) : ov.applications;
+      // physical properties overrides
+      var spKeys = {'sp-density':'density','sp-ri':'refractiveIndex','sp-rotation':'opticalRotation','sp-sg':'specificGravity','sp-solubility':'solubility','sp-acidno':'acidNo','sp-meltpt':'meltingPoint'};
+      Object.keys(spKeys).forEach(function(k){ if(ov[k]){ updated.physicalProperties = Object.assign({}, updated.physicalProperties||{}); updated.physicalProperties[spKeys[k]] = ov[k]; } });
+      // regulatory IDs overrides
+      var rgKeys = {'rg-cas':'CAS','rg-fema':'FEMA','rg-fda':'FDA','rg-einecs':'EINECS','rg-coe':'CoE','rg-h':'H'};
+      Object.keys(rgKeys).forEach(function(k){ if(ov[k]){ updated.regulatoryIds = Object.assign({}, updated.regulatoryIds||{}); updated.regulatoryIds[rgKeys[k]] = ov[k]; } });
+      return updated;
+    });
+  } catch(e) { return productList; }
+}
+
 /* --------------------------------------------------------------------------
    Product card rendering (Requirements 5.1 — 5.5, 5.7)
    -------------------------------------------------------------------------- */
@@ -154,7 +185,7 @@ function activateTab(activeTab, allTabs, gridEl) {
   // Render products
   const category = getTabIdToCategory()[activeTab.id] ?? 'all';
   const _products = (typeof window !== 'undefined' && window.products) ? window.products : [];
-  const filtered = filterProducts(_products, category);
+  const filtered = filterProducts(applyProductOverrides(_products), category);
   renderGrid(filtered, gridEl);
 }
 

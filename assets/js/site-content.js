@@ -218,6 +218,21 @@
         if (d[ck.b]) { var cb2 = cc.querySelector('.cert-card__body'); if (cb2) cb2.textContent = d[ck.b]; }
       }
 
+      // GC Lab Stats
+      var gcStats = document.querySelectorAll('.gc-lab__stat');
+      for (var gsi = 0; gsi < gcStats.length && gsi < 3; gsi++) {
+        var gsn = gsi+1;
+        var gsv = gcStats[gsi].querySelector('.gc-lab__stat-value'); if(gsv && d['gcstat'+gsn+'-val']) gsv.textContent = d['gcstat'+gsn+'-val'];
+        var gsl = gcStats[gsi].querySelector('.gc-lab__stat-label'); if(gsl && d['gcstat'+gsn+'-lbl']) gsl.textContent = d['gcstat'+gsn+'-lbl'];
+      }
+      // GC Lab Capabilities
+      var gcCaps = document.querySelectorAll('.gc-capability');
+      for (var gci = 0; gci < gcCaps.length && gci < 4; gci++) {
+        var gcn = gci+1;
+        var gct = gcCaps[gci].querySelector('.gc-capability__title, h3'); if(gct && d['gccap'+gcn+'-title']) gct.textContent = d['gccap'+gcn+'-title'];
+        var gcp = gcCaps[gci].querySelector('.gc-capability__desc, p');   if(gcp && d['gccap'+gcn+'-desc'])  gcp.textContent  = d['gccap'+gcn+'-desc'];
+      }
+
       // Traceability pipeline
       var stages = document.querySelectorAll('.trace-stage, .pipeline-stage, .traceability-step');
       for (var ti = 0; ti < stages.length && ti < 4; ti++) {
@@ -234,6 +249,9 @@
       setText('.sus-hero__subtitle', d['sus-subtitle']);
       setText('.sus-sourcing__lead', d['sus-sourcing-lead']);
       setText('.sus-process__subtitle', d['sus-process-subtitle']);
+      // Our Farm section
+      setText('#farm-heading', d['farm-heading']);
+      setText('#farm .section-heading__subtitle', d['farm-subtitle']);
 
       // Pillars
       var pillars = document.querySelectorAll('.sus-pillar, .pillar-item, .sus-hero__pillars li, .sus-pillars .pillar');
@@ -275,6 +293,19 @@
         if (cb) { var cbe = crops[ki].querySelector('.farm-crop__botanical em, em'); if (cbe) cbe.textContent = cb; }
         if (cdesc) { var cdp = crops[ki].querySelector('.farm-crop__desc, p'); if (cdp) cdp.textContent = cdesc; }
       }
+
+      // Obour Key Facts aside
+      var kfRows = document.querySelectorAll('#obour-city .facility-highlight__row');
+      var kfData = [
+        { l: 'obour-kf1-label', v: 'obour-kf1-value' },
+        { l: 'obour-kf2-label', v: 'obour-kf2-value' },
+        { l: 'obour-kf3-label', v: 'obour-kf3-value' }
+      ];
+      kfRows.forEach(function(row, idx) {
+        if (idx >= kfData.length) return;
+        var dt = row.querySelector('dt'); if (dt && d[kfData[idx].l]) dt.textContent = d[kfData[idx].l];
+        var dd = row.querySelector('dd'); if (dd && d[kfData[idx].v]) dd.textContent = d[kfData[idx].v];
+      });
     }
 
     // ── APPLICATIONS PAGE ──
@@ -313,23 +344,80 @@
       var wa = document.querySelector('.contact-whatsapp');
       if (wa && d['contact-whatsapp']) wa.href = 'https://wa.me/' + d['contact-whatsapp'];
 
-      // FAQ
-      var faqs = document.querySelectorAll('.faq-item, .faq__item');
-      if (faqs[0]) {
-        var fq1 = faqs[0].querySelector('.faq-question, dt, summary, button');
-        var fa1 = faqs[0].querySelector('.faq-answer p, dd, p');
-        if (fq1 && d['faq1-q']) fq1.textContent = d['faq1-q'];
-        if (fa1 && d['faq1-a']) fa1.textContent = d['faq1-a'];
-      }
-      if (faqs[1]) {
-        var fq2 = faqs[1].querySelector('.faq-question, dt, summary, button');
-        var fa2 = faqs[1].querySelector('.faq-answer p, dd, p');
-        if (fq2 && d['faq2-q']) fq2.textContent = d['faq2-q'];
-        if (fa2 && d['faq2-a']) fa2.textContent = d['faq2-a'];
-      }
+      // FAQ — all 7
+      if (d['faq-heading']) setText('#faq-heading', d['faq-heading']);
+      var faqItems = document.querySelectorAll('.faq-item');
+      var faqData = [
+        { q: 'faq1q', a: 'faq1a' }, { q: 'faq2q', a: 'faq2a' }, { q: 'faq3q', a: 'faq3a' },
+        { q: 'faq4q', a: 'faq4a' }, { q: 'faq5q', a: 'faq5a' }, { q: 'faq6q', a: 'faq6a' },
+        { q: 'faq7q', a: 'faq7a' }
+      ];
+      faqItems.forEach(function(fi, idx) {
+        if (idx >= faqData.length) return;
+        var fq = fi.querySelector('.faq-question'); if (fq && d[faqData[idx].q]) fq.childNodes[0].textContent = d[faqData[idx].q];
+        var fa = fi.querySelector('.faq-answer p'); if (fa && d[faqData[idx].a]) fa.textContent = d[faqData[idx].a];
+      });
+
+      // Form section headings (4 forms)
+      var formSections = document.querySelectorAll('.contact-form-section');
+      var formData = [
+        { h: 'form1-heading', s: 'form1-subtitle' },
+        { h: 'form2-heading', s: 'form2-subtitle' },
+        { h: 'form3-heading', s: 'form3-subtitle' },
+        { h: 'form4-heading', s: 'form4-subtitle' }
+      ];
+      formSections.forEach(function(fs, idx) {
+        if (idx >= formData.length) return;
+        var fh = fs.querySelector('h2, h3'); if (fh && d[formData[idx].h]) fh.textContent = d[formData[idx].h];
+        var fp = fs.querySelector('.section-heading__subtitle, p.form-subtitle'); if (fp && d[formData[idx].s]) fp.textContent = d[formData[idx].s];
+      });
+
+      // Obour Key Facts
+      var kfRows = document.querySelectorAll('.facility-highlight__row');
+      var kfData = [
+        { l: 'obour-kf1-label', v: 'obour-kf1-value' },
+        { l: 'obour-kf2-label', v: 'obour-kf2-value' },
+        { l: 'obour-kf3-label', v: 'obour-kf3-value' }
+      ];
+      kfRows.forEach(function(row, idx) {
+        if (idx >= kfData.length) return;
+        var dt = row.querySelector('dt'); if (dt && d[kfData[idx].l]) dt.textContent = d[kfData[idx].l];
+        var dd = row.querySelector('dd'); if (dd && d[kfData[idx].v]) dd.textContent = d[kfData[idx].v];
+      });
     }
 
-    // ── FOOTER (all pages via MutationObserver already handles email/social) ──
+    // ── ALL PAGES: SEO ──
+    if (d['seo-'+page.replace('.html','')+'-title'])
+      document.title = d['seo-'+page.replace('.html','')+'-title'];
+    var metaDesc = document.querySelector('meta[name="description"]');
+    var seoDescKey = 'seo-' + page.replace('.html','') + '-desc';
+    if (metaDesc && d[seoDescKey]) metaDesc.setAttribute('content', d[seoDescKey]);
+
+    // ── 404 PAGE ──
+    if (page === '404.html') {
+      setText('h1', d['p404-heading']);
+      var p404p = document.querySelector('.not-found__body, main p');
+      if (p404p && d['p404-body']) p404p.textContent = d['p404-body'];
+      var p404btns = document.querySelectorAll('main a.btn, .not-found a');
+      if (p404btns[0] && d['p404-btn1']) p404btns[0].textContent = d['p404-btn1'];
+      if (p404btns[1] && d['p404-btn2']) p404btns[1].textContent = d['p404-btn2'];
+    }
+
+    // ── INDEX / HOME — marquee ──
+    if (page === 'index.html' || page === '' || path === '/') {
+      var mqEls = document.querySelectorAll('.marquee-item');
+      var mqKeys = ['mq1','mq2','mq3','mq4','mq5','mq6','mq7','mq8','mq9','mq10','mq11'];
+      var seen = {};
+      var mqIdx = 0;
+      mqEls.forEach(function(mEl) {
+        var txt = mEl.childNodes[mEl.childNodes.length-1];
+        if (txt && txt.nodeType === 3 && mqIdx < mqKeys.length) {
+          var k = mqKeys[mqIdx % 11];
+          if (d[k] && !seen[k]) { seen[k] = true; txt.textContent = '\n            ' + d[k] + '\n          '; }
+          mqIdx++;
+        }
+      });
+    }
     // Additional footer fields
     var footerObs = new MutationObserver(function() {
       if (d['footer-tagline']) setText('.footer__tagline', d['footer-tagline']);

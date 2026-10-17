@@ -30,7 +30,16 @@ function boot() {
       if (ov.extractionMethod)  product = Object.assign({}, product, { extractionMethod: ov.extractionMethod });
       if (ov.color)             product = Object.assign({}, product, { color: ov.color });
       if (ov.aroma)             product = Object.assign({}, product, { aroma: ov.aroma });
-      if (ov.applications)      product = Object.assign({}, product, { applications: ov.applications.split(',').map(function(s){ return s.trim(); }) });
+      if (ov.applications)      product = Object.assign({}, product, { applications: ov.applications.split ? ov.applications.split(',').map(function(s){ return s.trim(); }) : ov.applications });
+      // physical properties overrides
+      var spKeys = {'sp-density':'density','sp-ri':'refractiveIndex','sp-rotation':'opticalRotation','sp-sg':'specificGravity','sp-solubility':'solubility','sp-acidno':'acidNo','sp-meltpt':'meltingPoint'};
+      Object.keys(spKeys).forEach(function(k){ if(ov[k]){ var pp = Object.assign({}, product.physicalProperties||{}); pp[spKeys[k]] = ov[k]; product = Object.assign({}, product, {physicalProperties: pp}); } });
+      // regulatory IDs overrides
+      var rgKeys = {'rg-cas':'CAS','rg-fema':'FEMA','rg-fda':'FDA','rg-einecs':'EINECS','rg-coe':'CoE','rg-h':'H'};
+      Object.keys(rgKeys).forEach(function(k){ if(ov[k]){ var rr = Object.assign({}, product.regulatoryIds||{}); rr[rgKeys[k]] = ov[k]; product = Object.assign({}, product, {regulatoryIds: rr}); } });
+      if (ov.packSizes)  product = Object.assign({}, product, { packSizes: Array.isArray(ov.packSizes) ? ov.packSizes : ov.packSizes.split(',').map(function(s){ return s.trim(); }) });
+      if (ov.shelfLife)  product = Object.assign({}, product, { shelfLife: ov.shelfLife });
+      if (ov.storage)    product = Object.assign({}, product, { storage: ov.storage });
     }
   } catch(e) {}
 
