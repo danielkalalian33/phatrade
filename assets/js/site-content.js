@@ -115,6 +115,22 @@
       setText('#location-reach-heading', d['reach-heading']);
       setText('.location-reach__description', d['reach-description']);
 
+      // Home features grid
+      var feats = document.querySelectorAll('.feature-item');
+      var featData = [
+        { t: d['feat1-title'], tx: d['feat1-text'] },
+        { t: d['feat2-title'], tx: d['feat2-text'] },
+        { t: d['feat3-title'], tx: d['feat3-text'] },
+        { t: d['feat4-title'], tx: d['feat4-text'] },
+        { t: d['feat5-title'], tx: d['feat5-text'] },
+        { t: d['feat6-title'], tx: d['feat6-text'] }
+      ];
+      for (var fi = 0; fi < feats.length && fi < 6; fi++) {
+        var fe = feats[fi]; var fd = featData[fi];
+        if (fd.t)  { var fh = fe.querySelector('.feature-item__title, h3'); if (fh) fh.textContent = fd.t; }
+        if (fd.tx) { var fp = fe.querySelector('.feature-item__text, p');   if (fp) fp.textContent = fd.tx; }
+      }
+
       // Hero background image
       if (d['hero-bg-image']) {
         var hero = document.querySelector('.hero');
@@ -131,6 +147,42 @@
       setText('#company-story-heading', d['about-heading'] ? 'About PHATRADE' : null);
       setText('.story-banner__subtitle', d['about-body']);
       setText('.story-banner__slogan-main', d['company-slogan']);
+
+      // Story chapters
+      var chapters = document.querySelectorAll('.story-chapter');
+      var chData = [
+        { year: d['story1-year'], h: d['story1-heading'], t: d['story1-text'] },
+        { year: d['story2-year'], h: d['story2-heading'], t: d['story2-text'] },
+        { year: d['story3-year'], h: d['story3-heading'], t: d['story3-text'] }
+      ];
+      for (var ci = 0; ci < chapters.length && ci < 3; ci++) {
+        var ch = chapters[ci];
+        var cd = chData[ci];
+        if (cd.year) { var yl = ch.querySelector('.story-chapter__year'); if (yl) yl.textContent = cd.year; }
+        if (cd.h)    { var hl = ch.querySelector('h3, h2'); if (hl) hl.textContent = cd.h; }
+        if (cd.t)    { var tl = ch.querySelector('p');   if (tl) tl.textContent = cd.t; }
+      }
+
+      // Values
+      var values = document.querySelectorAll('.value-item, .about-value');
+      var vData = [
+        { t: d['val1-title'], d: d['val1-text'] },
+        { t: d['val2-title'], d: d['val2-text'] },
+        { t: d['val3-title'], d: d['val3-text'] },
+        { t: d['val4-title'], d: d['val4-text'] }
+      ];
+      for (var vi = 0; vi < values.length && vi < 4; vi++) {
+        var vEl = values[vi]; var vd = vData[vi];
+        if (vd.t) { var vh = vEl.querySelector('h3, h4, strong'); if (vh) vh.textContent = vd.t; }
+        if (vd.d) { var vp = vEl.querySelector('p'); if (vp) vp.textContent = vd.d; }
+      }
+
+      // About page images
+      if (d['img-about1'] || d['img-about2'] || d['img-about3'] || d['img-about4']) {
+        var imgs = document.querySelectorAll('.about-photos img, .story-photos img, .about-mosaic img');
+        var imgUrls = [d['img-about1'], d['img-about2'], d['img-about3'], d['img-about4']];
+        for (var ai = 0; ai < imgs.length && ai < 4; ai++) { if (imgUrls[ai]) imgs[ai].src = imgUrls[ai]; }
+      }
     }
 
     // ── PRODUCTS PAGE ──
@@ -146,6 +198,25 @@
       setText('#gc-lab-heading', d['gclab-heading']);
       setText('.gc-lab__intro', d['gclab-intro']);
       setText('#traceability .section-heading__subtitle', d['traceability-subtitle']);
+
+      // Cert cards
+      var certCards = document.querySelectorAll('.cert-card');
+      var certKeys = [
+        { h: 'cert-fssc-heading', b: 'cert-fssc-body' },
+        { h: 'cert-iso22-heading', b: 'cert-iso22-body' },
+        { h: 'cert-iso14-heading', b: 'cert-iso14-body' },
+        { h: 'cert-iso45-heading', b: 'cert-iso45-body' },
+        { h: 'cert-halal-heading', b: 'cert-halal-body' },
+        { h: 'cert-fda-heading',   b: 'cert-fda-body'   },
+        { h: 'cert-kosher-heading',b: 'cert-kosher-body' },
+        { h: 'cert-sedex-heading', b: 'cert-sedex-body'  }
+      ];
+      for (var qi = 0; qi < certCards.length && qi < certKeys.length; qi++) {
+        var cc = certCards[qi];
+        var ck = certKeys[qi];
+        if (d[ck.h]) { var ch2 = cc.querySelector('h3'); if (ch2) ch2.textContent = d[ck.h]; }
+        if (d[ck.b]) { var cb2 = cc.querySelector('.cert-card__body'); if (cb2) cb2.textContent = d[ck.b]; }
+      }
     }
 
     // ── SUSTAINABILITY PAGE ──
@@ -170,10 +241,28 @@
       setText('.applications-header__intro', d['applications-intro']);
       setText('#sector-cards-heading', d['sectors-heading']);
       setText('#sector-cards .section-heading__subtitle', d['sectors-subtitle']);
+
+      // Sector cards
+      var sectors = document.querySelectorAll('.sector-card, .application-card');
+      var secData = [
+        { t: d['sec1-title'], d: d['sec1-desc'] },
+        { t: d['sec2-title'], d: d['sec2-desc'] },
+        { t: d['sec3-title'], d: d['sec3-desc'] },
+        { t: d['sec4-title'], d: d['sec4-desc'] },
+        { t: d['sec5-title'], d: d['sec5-desc'] },
+        { t: d['sec6-title'], d: d['sec6-desc'] }
+      ];
+      for (var si = 0; si < sectors.length && si < 6; si++) {
+        var sc = sectors[si]; var sd = secData[si];
+        if (sd.t) { var sh = sc.querySelector('h3, h2'); if (sh) sh.textContent = sd.t; }
+        if (sd.d) { var sp = sc.querySelector('p:not(.sector-card__featured)'); if (sp) sp.textContent = sd.d; }
+      }
     }
 
     // ── CONTACT PAGE ──
     if (page === 'contact.html') {
+      setText('.page-header h1', d['contact-page-heading']);
+      setText('.page-header .section-heading__subtitle', d['contact-page-subtitle']);
       var phones = document.querySelectorAll('.contact-phones a[href^="tel"]');
       if (phones[0] && d['contact-phone1']) { phones[0].textContent = d['contact-phone1']; phones[0].href = 'tel:' + d['contact-phone1'].replace(/\s/g,''); }
       if (phones[1] && d['contact-phone2']) { phones[1].textContent = d['contact-phone2']; phones[1].href = 'tel:' + d['contact-phone2'].replace(/\s/g,''); }
@@ -181,7 +270,63 @@
       if (emailLink && d['contact-email']) { emailLink.textContent = d['contact-email']; emailLink.href = 'mailto:' + d['contact-email']; }
       var wa = document.querySelector('.contact-whatsapp');
       if (wa && d['contact-whatsapp']) wa.href = 'https://wa.me/' + d['contact-whatsapp'];
+
+      // FAQ
+      var faqs = document.querySelectorAll('.faq-item, .faq__item');
+      if (faqs[0]) {
+        var fq1 = faqs[0].querySelector('.faq-question, dt, summary, button');
+        var fa1 = faqs[0].querySelector('.faq-answer p, dd, p');
+        if (fq1 && d['faq1-q']) fq1.textContent = d['faq1-q'];
+        if (fa1 && d['faq1-a']) fa1.textContent = d['faq1-a'];
+      }
+      if (faqs[1]) {
+        var fq2 = faqs[1].querySelector('.faq-question, dt, summary, button');
+        var fa2 = faqs[1].querySelector('.faq-answer p, dd, p');
+        if (fq2 && d['faq2-q']) fq2.textContent = d['faq2-q'];
+        if (fa2 && d['faq2-a']) fa2.textContent = d['faq2-a'];
+      }
     }
+
+    // ── IMAGE URLS (all pages) ──
+    // Apply any image URL overrides stored in the CMS
+    (function applyImages() {
+      var imgMap = [
+        // selector → cms key
+        ['header .navbar__logo img, .footer__logo-link img',   'img-logo'],
+        // About page photos
+        ['.about-mosaic__item:nth-child(1) img, .about-photos img:nth-child(1)', 'img-about1'],
+        ['.about-mosaic__item:nth-child(2) img, .about-photos img:nth-child(2)', 'img-about2'],
+        ['.about-mosaic__item:nth-child(3) img, .about-photos img:nth-child(3)', 'img-about3'],
+        ['.about-mosaic__item:nth-child(4) img, .about-photos img:nth-child(4)', 'img-about4'],
+        // Facilities gallery
+        ['.facility-gallery__item--featured img', 'img-fac-gallery1'],
+        ['.facility-gallery__item:nth-child(2) img', 'img-fac-gallery2'],
+        ['.facility-gallery__item:nth-child(3) img', 'img-fac-gallery3'],
+        // Obour photos
+        ['.facility-photos[aria-label*="Obour"] .facility-photos__item:nth-child(1) img', 'img-obour-lab'],
+        ['.facility-photos[aria-label*="Obour"] .facility-photos__item:nth-child(2) img', 'img-obour-proc'],
+        ['.facility-photos[aria-label*="Obour"] .facility-photos__item:nth-child(3) img', 'img-obour-dist'],
+        // Sadat photos
+        ['.facility-photos[aria-label*="Sadat"] .facility-photos__item:nth-child(1) img', 'img-sadat1'],
+        ['.facility-photos[aria-label*="Sadat"] .facility-photos__item:nth-child(2) img', 'img-sadat2'],
+        ['.facility-photos[aria-label*="Sadat"] .facility-photos__item:nth-child(3) img', 'img-sadat3']
+      ];
+      for (var ii = 0; ii < imgMap.length; ii++) {
+        var imgUrl = d[imgMap[ii][1]];
+        if (!imgUrl) continue;
+        var imgEls = document.querySelectorAll(imgMap[ii][0]);
+        for (var ij = 0; ij < imgEls.length; ij++) { imgEls[ij].src = imgUrl; }
+      }
+      // Logo via MutationObserver for navbar/footer (injected after DOMContentLoaded)
+      if (d['img-logo']) {
+        var obs2 = new MutationObserver(function() {
+          document.querySelectorAll('.navbar__logo img, .footer__logo-link img').forEach(function(el) {
+            el.src = d['img-logo'];
+          });
+        });
+        obs2.observe(document.body, { childList: true, subtree: true });
+      }
+    })();
 
   });
 })();
