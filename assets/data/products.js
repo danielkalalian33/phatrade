@@ -508,7 +508,8 @@ const products = [
     image: 'assets/images/products/petitgrain-citronnier.jpg',
   },
 
-  // ── CONCRETES ─────────────────────────────────────────────────────────────  {
+  // ── CONCRETES ─────────────────────────────────────────────────────────────
+  {
     id: 'basil-grand-vert', name: 'Basil Grand Vert', category: CATEGORIES.CONCRETES, enquirable: true,
     productCode: 'Conc.-004/PH',
     tagline: 'Full-complexity green basil concrete from our farm, richer and deeper than the essential oil.',
