@@ -1,0 +1,339 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#2D4A35" />
+  <title>Who We Are | PHATRADE | Egyptian Essential Oil Manufacturer Since 1975</title>
+  <meta name="description" content="PHATRADE is Egypt's leading manufacturer of natural aromatic ingredients. Discover our story, mission, values, and what makes us the trusted partner for fragrance and flavour manufacturers worldwide." />
+  <link rel="canonical" href="https://www.phatrade-eg.com/who-we-are.html" />
+  <meta property="og:type"        content="website" />
+  <meta property="og:site_name"   content="PHATRADE" />
+  <meta property="og:title"       content="Who We Are | PHATRADE | Egyptian Essential Oil Manufacturer Since 1975" />
+  <meta property="og:description" content="PHATRADE is Egypt's leading manufacturer of natural aromatic ingredients since 1975." />
+  <meta property="og:image"       content="https://www.phatrade-eg.com/assets/images/logo.png" />
+  <meta name="twitter:card"        content="summary" />
+  <meta name="twitter:title"       content="Who We Are | PHATRADE" />
+  <meta name="twitter:description" content="Egypt's leading producer of essential oils, concretes, absolutes, and aroma chemicals since 1975." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="icon" href="assets/images/logo.png" type="image/png" sizes="any" />
+
+  <!-- Firebase SDK (Realtime Database) -->
+  <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-database-compat.js"></script>
+  <script src="assets/js/firebase-cms.js"></script>
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+  <link rel="stylesheet" href="assets/css/pages/about.css" />
+  <style>
+    #navbar-root { display: block; height: 116px; background-color: #2D4A35; }
+    main { padding-top: 116px; }
+
+    /* Who We Are specific styles */
+    .wwa-hero {
+      background: linear-gradient(135deg, #2D4A35 0%, #3D6347 60%, #4A7A52 100%);
+      padding: clamp(3rem,8vw,6rem) 0;
+      text-align: center;
+      color: var(--color-white);
+    }
+    .wwa-hero__eyebrow {
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #C9A84C;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .wwa-hero__title {
+      font-size: clamp(2rem,5vw,3.5rem);
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      line-height: 1.15;
+    }
+    .wwa-hero__title em {
+      font-style: normal;
+      color: #C9A84C;
+    }
+    .wwa-hero__subtitle {
+      font-size: clamp(1rem,2vw,1.2rem);
+      max-width: 680px;
+      margin: 0 auto 2.5rem;
+      opacity: 0.9;
+      line-height: 1.7;
+    }
+    .wwa-hero__logo {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 3px solid #C9A84C;
+      margin: 0 auto 2rem;
+      display: block;
+      background: rgba(255,255,255,0.08);
+      padding: 8px;
+    }
+
+    /* Stats bar */
+    .wwa-stats {
+      background: #F8F5EF;
+      padding: 2.5rem 0;
+      border-bottom: 1px solid #E8E0D0;
+    }
+    .wwa-stats__grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 1.5rem;
+      text-align: center;
+    }
+    @media (max-width: 767px) { .wwa-stats__grid { grid-template-columns: repeat(2,1fr); } }
+    .wwa-stat__value {
+      font-size: clamp(2rem,4vw,3rem);
+      font-weight: 800;
+      color: #2D4A35;
+      line-height: 1;
+    }
+    .wwa-stat__suffix { color: #C9A84C; }
+    .wwa-stat__label {
+      font-size: 0.85rem;
+      color: #666;
+      margin-top: 0.4rem;
+      font-weight: 500;
+    }
+
+    /* Story section */
+    .wwa-story { padding: clamp(3rem,6vw,5rem) 0; }
+    .wwa-story__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    @media (max-width: 767px) { .wwa-story__grid { grid-template-columns: 1fr; } }
+    .wwa-story__img {
+      border-radius: var(--radius-xl);
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      box-shadow: var(--shadow-lg);
+    }
+    .wwa-story__eyebrow { color: #C9A84C; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; margin-bottom: 1rem; }
+    .wwa-story__heading { font-size: clamp(1.6rem,3vw,2.5rem); font-weight: 800; color: #1A2A10; margin-bottom: 1.2rem; line-height: 1.2; }
+    .wwa-story__body { font-size: 1rem; line-height: 1.8; color: #444; margin-bottom: 1rem; }
+
+    /* Values */
+    .wwa-values { background: #2D4A35; padding: clamp(3rem,6vw,5rem) 0; color: white; }
+    .wwa-values__heading { font-size: clamp(1.6rem,3vw,2.5rem); font-weight: 800; color: white; text-align: center; margin-bottom: 0.5rem; }
+    .wwa-values__subtitle { text-align: center; opacity: 0.8; margin-bottom: 3rem; font-size: 1rem; }
+    .wwa-values__grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.5rem; }
+    @media (max-width: 900px) { .wwa-values__grid { grid-template-columns: repeat(2,1fr); } }
+    @media (max-width: 480px) { .wwa-values__grid { grid-template-columns: 1fr; } }
+    .wwa-value {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(201,168,76,0.25);
+      border-radius: var(--radius-lg);
+      padding: 1.8rem 1.5rem;
+      text-align: center;
+    }
+    .wwa-value__icon { font-size: 2rem; margin-bottom: 1rem; }
+    .wwa-value__title { font-size: 1.1rem; font-weight: 700; color: #C9A84C; margin-bottom: 0.6rem; }
+    .wwa-value__text { font-size: 0.9rem; opacity: 0.85; line-height: 1.6; }
+
+    /* Why choose us */
+    .wwa-why { padding: clamp(3rem,6vw,5rem) 0; background: #F8F5EF; }
+    .wwa-why__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; }
+    @media (max-width: 767px) { .wwa-why__grid { grid-template-columns: 1fr; } }
+    .wwa-why__item {
+      background: white;
+      border-radius: var(--radius-lg);
+      padding: 2rem 1.5rem;
+      box-shadow: 0 2px 16px rgba(45,74,53,0.08);
+      border-top: 4px solid #C9A84C;
+    }
+    .wwa-why__title { font-size: 1.1rem; font-weight: 700; color: #2D4A35; margin-bottom: 0.6rem; }
+    .wwa-why__text { font-size: 0.9rem; color: #555; line-height: 1.7; }
+
+    /* CTA */
+    .wwa-cta { padding: clamp(3rem,6vw,5rem) 0; text-align: center; }
+    .wwa-cta__heading { font-size: clamp(1.6rem,3vw,2.5rem); font-weight: 800; color: #1A2A10; margin-bottom: 1rem; }
+    .wwa-cta__text { font-size: 1rem; color: #555; margin-bottom: 2rem; max-width: 560px; margin-left: auto; margin-right: auto; }
+    .wwa-cta__actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E6LFQT70DC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-E6LFQT70DC');
+  </script>
+</head>
+<body>
+  <div id="navbar-root"></div>
+
+  <main id="main-content">
+
+    <!-- ── HERO ── -->
+    <section class="wwa-hero">
+      <div class="container">
+        <img src="assets/images/logo.png" alt="PHATRADE logo" class="wwa-hero__logo" loading="eager"/>
+        <p class="wwa-hero__eyebrow">Egyptian Origin · Global Reach · Since 1975</p>
+        <h1 class="wwa-hero__title">Who We Are</h1>
+        <p class="wwa-hero__subtitle">
+          PHATRADE is Egypt's leading manufacturer and exporter of premium natural aromatic ingredients —
+          essential oils, concretes, absolutes, and aroma chemicals crafted from our own farm to your formulation.
+        </p>
+        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+          <a href="products.html" class="btn btn--primary btn--lg">Explore Our Products</a>
+          <a href="contact.html#form-sample" class="btn btn--ghost btn--lg">Request a Sample</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── STATS BAR ── -->
+    <section class="wwa-stats">
+      <div class="container">
+        <div class="wwa-stats__grid">
+          <div>
+            <div class="wwa-stat__value">50<span class="wwa-stat__suffix">+</span></div>
+            <div class="wwa-stat__label">Years of Experience</div>
+          </div>
+          <div>
+            <div class="wwa-stat__value">29<span class="wwa-stat__suffix">+</span></div>
+            <div class="wwa-stat__label">Product Lines</div>
+          </div>
+          <div>
+            <div class="wwa-stat__value">5</div>
+            <div class="wwa-stat__label">Export Continents</div>
+          </div>
+          <div>
+            <div class="wwa-stat__value">9</div>
+            <div class="wwa-stat__label">International Certifications</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── OUR STORY ── -->
+    <section class="wwa-story section">
+      <div class="container">
+        <div class="wwa-story__grid">
+          <div>
+            <p class="wwa-story__eyebrow">Our Story</p>
+            <h2 class="wwa-story__heading">From Spice Trader to Global Ingredient Supplier</h2>
+            <p class="wwa-story__body">
+              Founded in 1975 in Cairo, PHATRADE began as a spice and herb trading company supplying
+              the Egyptian market. Over five decades we have grown into one of Egypt's most respected
+              producers and exporters of natural aromatic ingredients.
+            </p>
+            <p class="wwa-story__body">
+              Today we operate two integrated facilities — a head office, manufacturing plant, and
+              GC laboratory in Obour City, and a 100-acre extraction factory and cultivation farm
+              in Sadat City. Every ingredient we produce travels a fully documented, traceable
+              journey from seed to shipment.
+            </p>
+            <p class="wwa-story__body">
+              Our clients are fragrance houses, flavour manufacturers, cosmetic producers, and
+              pharmaceutical companies across Europe, the Middle East, North America, Asia-Pacific,
+              and Africa who rely on PHATRADE for consistent quality, reliable supply, and full
+              traceability.
+            </p>
+          </div>
+          <img
+            src="assets/images/facilities/facility-distillation-hall-panoramic.jpg"
+            alt="PHATRADE distillation facility"
+            class="wwa-story__img"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ── VALUES ── -->
+    <section class="wwa-values">
+      <div class="container">
+        <h2 class="wwa-values__heading">Our Core Values</h2>
+        <p class="wwa-values__subtitle">The principles that guide every decision we make</p>
+        <div class="wwa-values__grid">
+          <div class="wwa-value">
+            <div class="wwa-value__icon">🌿</div>
+            <h3 class="wwa-value__title">Purity</h3>
+            <p class="wwa-value__text">Every product is GC-verified in our own laboratory. No blending, no adulteration — ever.</p>
+          </div>
+          <div class="wwa-value">
+            <div class="wwa-value__icon">📋</div>
+            <h3 class="wwa-value__title">Traceability</h3>
+            <p class="wwa-value__text">From seed to shipment, every batch carries full documentation for supplier audits.</p>
+          </div>
+          <div class="wwa-value">
+            <div class="wwa-value__icon">🏆</div>
+            <h3 class="wwa-value__title">Global Standards</h3>
+            <p class="wwa-value__text">Nine international certifications across food safety, environmental management, and ethical trade.</p>
+          </div>
+          <div class="wwa-value">
+            <div class="wwa-value__icon">🌱</div>
+            <h3 class="wwa-value__title">Sustainability</h3>
+            <p class="wwa-value__text">Responsible cultivation on our own farm, reducing environmental footprint with every harvest.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── WHY CHOOSE US ── -->
+    <section class="wwa-why section">
+      <div class="container">
+        <div class="section-heading reveal" style="text-align:center;margin-bottom:2.5rem">
+          <span class="section-heading__eyebrow">Why PHATRADE</span>
+          <h2 class="section-heading__title">What Makes Us Different</h2>
+        </div>
+        <div class="wwa-why__grid">
+          <div class="wwa-why__item">
+            <h3 class="wwa-why__title">Farm-to-Ingredient Control</h3>
+            <p class="wwa-why__text">We grow our own raw materials on our Sadat City farm and process them in our own facilities — complete vertical integration you can audit.</p>
+          </div>
+          <div class="wwa-why__item">
+            <h3 class="wwa-why__title">In-House GC Laboratory</h3>
+            <p class="wwa-why__text">Three dedicated Gas Chromatography units analyse 100% of batches in-house. Every shipment comes with a full CoA and chromatogram.</p>
+          </div>
+          <div class="wwa-why__item">
+            <h3 class="wwa-why__title">Egyptian Expertise</h3>
+            <p class="wwa-why__text">Egypt's unique climate and soil produce aromatic crops of exceptional quality. We have cultivated this advantage for over 50 years.</p>
+          </div>
+          <div class="wwa-why__item">
+            <h3 class="wwa-why__title">FSSC 22000 &amp; GFSI Certified</h3>
+            <p class="wwa-why__text">Nine international certifications open doors to the world's most regulated markets — from FDA-registered to Kosher and HALAL.</p>
+          </div>
+          <div class="wwa-why__item">
+            <h3 class="wwa-why__title">Responsive B2B Service</h3>
+            <p class="wwa-why__text">Dedicated account management, fast sample dispatch, flexible pack sizes from 1 kg to 200 kg drums, and full export documentation.</p>
+          </div>
+          <div class="wwa-why__item">
+            <h3 class="wwa-why__title">Global Logistics</h3>
+            <p class="wwa-why__text">Located 15 minutes from Cairo International Airport with DHL, FedEx, and TNT partnerships for efficient worldwide dispatch.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA ── -->
+    <section class="wwa-cta">
+      <div class="container">
+        <h2 class="wwa-cta__heading">Ready to Work With Us?</h2>
+        <p class="wwa-cta__text">Request a sample, explore our product range, or start the supplier qualification process today.</p>
+        <div class="wwa-cta__actions">
+          <a href="products.html" class="btn btn--primary btn--lg">View All Products</a>
+          <a href="contact.html" class="btn btn--secondary btn--lg">Contact Our Team</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer-root"></div>
+
+  <script defer src="assets/js/site-content.js"></script>
+  <script defer src="assets/js/components.js"></script>
+  <script defer src="assets/js/nav.js"></script>
+  <script defer src="assets/js/animations.js"></script>
+</body>
+</html>

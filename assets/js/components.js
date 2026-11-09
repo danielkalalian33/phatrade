@@ -21,8 +21,8 @@
 const NAV_LINKS = [
   { href: 'index.html',           label: 'Home'           },
   { href: 'about.html',           label: 'About'          },
+  { href: 'who-we-are.html',      label: 'Who We Are'     },
   { href: 'products.html',        label: 'Products'       },
-  { href: 'applications.html',    label: 'Applications'   },
   { href: 'facilities.html',      label: 'Facilities'     },
   { href: 'quality.html',         label: 'Quality'        },
   { href: 'sustainability.html',  label: 'Sustainability'  },
