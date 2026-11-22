@@ -1,4 +1,4 @@
-﻿/* ==========================================================================
+/* ==========================================================================
    PHATRADE
    components.css — Shared component styles: navbar, footer, cards, buttons, forms
    ========================================================================== */
@@ -1667,7 +1667,7 @@ dialog[open] {
 }
 
 .download-gate .form-field__error {
-  font-size: var(--text-sm);
+  font-size: clamp(1rem, 0.75rem + 0.5vw, 1.25rem);
   color: var(--color-error);
   font-weight: 500;
 }
