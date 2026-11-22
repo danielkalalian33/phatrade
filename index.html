@@ -160,7 +160,58 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-E6LFQT70DC');
-  </script></head>
+  </script>
+<style id="certifications-single-row">
+  #certifications .certifications-strip {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    box-sizing: border-box;
+    padding: 24px;
+    margin: 0;
+    list-style: none;
+    overflow-x: auto;
+  }
+  #certifications .certifications-strip > .cert-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1 0 90px;
+    width: auto;
+    min-width: 90px;
+    max-width: none;
+    height: 110px;
+    min-height: 0;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  #certifications .cert-badge__logo {
+    display: block;
+    width: 100%;
+    max-width: 120px;
+    height: 90px;
+    max-height: 90px;
+    object-fit: contain;
+  }
+  @media (max-width: 767px) {
+    #certifications .certifications-strip {
+      justify-content: flex-start;
+      padding: 16px;
+      gap: 20px;
+    }
+    #certifications .certifications-strip > .cert-badge {
+      flex: 0 0 90px;
+    }
+  }
+</style>
+
+</head>
 
 <body>
 
@@ -574,10 +625,10 @@
       <div class="container">
         <div class="section-heading reveal">
           <span class="section-heading__eyebrow">Compliance &amp; Standards</span>
-          <h2 id="certifications-heading">Quality Certifications</h2>
+          <h2 id="certifications-heading" style="color: #ffffff;">Quality Certifications</h2>
           <p class="section-heading__subtitle">Audited, registered, and certified by internationally recognised bodies.</p>
         </div>
-        <ul class="certifications-strip" role="list" aria-label="Quality certifications list">
+        <ul class="certifications-strip" role="list" aria-label="Quality certifications list" >
           <li class="cert-badge reveal">
             <img src="assets/images/certifications/fssc22000.jpg" alt="FSSC 22000 Food Safety Certification" width="90" height="90" loading="lazy" class="cert-badge__logo"/>
           </li>
@@ -606,7 +657,7 @@
             <img src="assets/images/certifications/ecovadis.svg" alt="EcoVadis Committed Sustainability Rating JUL 2026" width="90" height="90" loading="lazy" class="cert-badge__logo"/>
           </li>
 			  <li class="cert-badge reveal">
-            <img src="assets/images/certifications/IFEAT-logo-with-long-name-1.jp" alt="IFEAT" width="90" height="90" loading="lazy" class="cert-badge__logo"/>
+            <img src="assets/images/certifications/IFEAT-logo-with-long-name-1.jpg" alt="IFEAT" width="90" height="90" loading="lazy" class="cert-badge__logo"/>
           </li>
         </ul>
       </div>
